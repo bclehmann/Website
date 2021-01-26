@@ -6,6 +6,8 @@ import glob
 for fname in glob.glob("*/index.md"):
     with open(fname) as f:
         lines = f.readlines()
+    if lines[0].startswith("---"):
+        continue
     version = os.path.dirname(fname)
     frontmatter = "---\n" +\
         "Title: ScottPlot %s Cookbook\n" % version +\
