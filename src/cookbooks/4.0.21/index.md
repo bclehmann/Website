@@ -1,8 +1,17 @@
+---
+Title: ScottPlot 4.0.21 Cookbook
+---
 <!-- ScottPlot Cookbook 4.0.21 -->
 
 _Generated on Monday, March 16, 2020 at 9:51 PM_
 
-![](cookbookNote.md)
+
+<div class="alert alert-secondary" role="alert">
+  <strong>&#9888;&#65039; WARNING: This cookbook is specific to ScottPlot version 4.0.21.</strong>
+  The API of different versions may vary, and newer versions of ScottPlot may be available. See the 
+  <strong><a href="https://swharden.com/scottplot/cookbook">ScottPlot Cookbook Page</a></strong>
+  for links to the latest versions of the cookbook.
+</div>
 
 ## Table of Contents
 

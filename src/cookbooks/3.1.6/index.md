@@ -1,10 +1,19 @@
+---
+Title: ScottPlot 3.1.6 Cookbook
+---
 # ScottPlot 3.1.6 Cookbook
 
 > ⚠️ **[ScottPlot 3.1.6](https://github.com/swharden/ScottPlot/releases/tag/3.1.6) is the final version of ScottPlot to support .NET Framework 4.5**
 
 _This page was automatically generated on Oct 10, 2019_
 
-![](cookbookNote.md)
+
+<div class="alert alert-secondary" role="alert">
+  <strong>&#9888;&#65039; WARNING: This cookbook is specific to ScottPlot version 3.1.6.</strong>
+  The API of different versions may vary, and newer versions of ScottPlot may be available. See the 
+  <strong><a href="https://swharden.com/scottplot/cookbook">ScottPlot Cookbook Page</a></strong>
+  for links to the latest versions of the cookbook.
+</div>
 
 ## Table of Contents
 
