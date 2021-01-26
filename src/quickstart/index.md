@@ -17,7 +17,7 @@ plt.PlotScatter(dataX, dataY);
 plt.SaveFig("quickstart.png");
 ```
 
-![](graphics/scottplot-quickstart-console.png)
+![](scottplot-quickstart-console.png)
 
 ## Windows Forms Quickstart
 
@@ -34,7 +34,7 @@ formsPlot1.plt.PlotScatter(dataX, dataY);
 formsPlot1.Render();
 ```
 
-![](graphics/scottplot-quickstart-winforms.png)
+![](scottplot-quickstart-winforms.png)
 
 ## WPF Quickstart
 
@@ -54,7 +54,7 @@ wpfPlot1.plt.PlotScatter(dataX, dataY);
 wpfPlot1.Render();
 ```
 
-![](graphics/scottplot-quickstart-wpf.png)
+![](scottplot-quickstart-wpf.png)
 
 
 ## Avalonia Quickstart
@@ -77,4 +77,4 @@ avaplot1.plt.PlotScatter(dataX, dataY);
 avaplot1.Render();
 ```
 
-![](graphics/scottplot-quickstart-avalonia.png)
+![](scottplot-quickstart-avalonia.png)

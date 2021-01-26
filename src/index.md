@@ -1,4 +1,7 @@
-<!-- ScottPlot - Interactive Plotting Library for .NET -->
+---
+Title: ScottPlot - Interactive Plotting Library for .NET
+Description: ScottPlot is a free and open-source plotting library for .NET that makes it easy to interactively display large datasets. Line plots, bar charts, pie graphs, scatter plots, and more can be created with just a few lines of code.
+---
 
 # ScottPlot
 
@@ -9,9 +12,9 @@
 
 * [**ScottPlot Cookbook**](cookbook) 👈 _Learn how to use ScottPlot_
 
-<div align="center">
+<div class="text-center">
 
-![](graphics/scottplot.gif)
+![](scottplot.gif)
 
 </div>
 
@@ -32,20 +35,6 @@ _ScottPlot [3.1.6](https://github.com/swharden/ScottPlot/releases/tag/3.1.6) was
 ### ScottPlot Cookbook
 
 The [ScottPlot Cookbook](cookbook) demonstrates how to create line plots, bar charts, pie graphs, scatter plots, and more with just a few lines of code. Every cookbook example is also included in the [ScottPlot Demo](demo) application.
-
-
-<a href='cookbooks/4.0.26/#quickstart-quickstart-scatter-plot-quickstart'><img style='display: inline;' src='cookbooks/4.0.26/images/Quickstart_Quickstart_Scatter.png' height='140'></a>
-<a href='cookbooks/4.0.26/#plottypes-bar-bar-plot-quickstart'><img style='display: inline;' src='cookbooks/4.0.26/images/PlotTypes_Bar_Quickstart.png' height='140'></a>
-<a href='cookbooks/4.0.26/#plottypes-populations-unique-population-series'><img style='display: inline;' src='cookbooks/4.0.26/images/PlotTypes_Populations_PlotPopulationSeriesUnique.png' height='140'></a>
-<a href='cookbooks/4.0.26/#advanced-statistics-histogram'><img style='display: inline;' src='cookbooks/4.0.26/images/Advanced_Statistics_Histogram.png' height='140'></a>
-<a href='cookbooks/4.0.26/#plottypes-signal-display-data-density'><img style='display: inline;' src='cookbooks/4.0.26/images/PlotTypes_Signal_Density.png' height='140'></a>
-<a href='cookbooks/4.0.26/#plottypes-populations-advanced-styling'><img style='display: inline;' src='cookbooks/4.0.26/images/PlotTypes_Populations_AdvancedStyling.png' height='140'></a>
-<a href='cookbooks/4.0.26/#plottypes-scatter-custom-lines'><img style='display: inline;' src='cookbooks/4.0.26/images/PlotTypes_Scatter_CustomizeLines.png' height='140'></a>
-<a href='cookbooks/4.0.26/#plottypes-finance-ohlc-without-gaps'><img style='display: inline;' src='cookbooks/4.0.26/images/PlotTypes_Finance_CandleNoSkippedDays.png' height='140'></a>
-<a href='cookbooks/4.0.26/#customize-axis-log-axis'><img style='display: inline;' src='cookbooks/4.0.26/images/Customize_Axis_LogAxis.png' height='140'></a>
-<a href='cookbooks/4.0.26/#advanced-multiplot-multiplot-quickstart'><img style='display: inline;' src='cookbooks/4.0.26/images/Advanced_Multiplot_Quickstart.png' height='140'></a>
-<a href='cookbooks/4.0.26/#customize-plotstyle-custom-fonts-everywhere'><img style='display: inline;' src='cookbooks/4.0.26/images/Customize_PlotStyle_StyledLabels.png' height='140'></a>
-<a href='cookbooks/4.0.26/#advanced-statistics-linear-regression'><img style='display: inline;' src='cookbooks/4.0.26/images/Advanced_Statistics_LinReg.png' height='140'></a>
 
 ### Miscellaneous
 
