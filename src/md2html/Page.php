@@ -156,12 +156,18 @@ class Page
 
         // fix relative file paths in header
         $http = isset($_SERVER['HTTPS']) ? "https://" : "http://";
-        $baseUrl = $http . $_SERVER['HTTP_HOST'] . str_replace($_SERVER['DOCUMENT_ROOT'], "", dirname(__DIR__));
+
+        // HACKED-IN LOGIC SO BASE URL WORKS FROM SYMBOLICALLY LINKED DIRECTORIES
+        $baseUrl = strstr(__DIR__, "/gitRepos/") ?
+            "https://swharden.com/scottplot2" :
+            $http . $_SERVER['HTTP_HOST'] . str_replace($_SERVER['DOCUMENT_ROOT'], "", dirname(__DIR__));
+
+        // replace all base url references
         $html = str_replace('href="resources/', 'href="{{baseUrl}}/md2html/resources/', $html);
         $html = str_replace('src="resources/', 'src="{{baseUrl}}/md2html/resources/', $html);
+        $html = str_replace('{{baseUrl}}', $baseUrl, $html);
 
         // hard-coded replacements
-        $html = str_replace('{{baseUrl}}', $baseUrl, $html);
         $html = str_replace('{{year}}', gmdate("Y", date("Z") + time()), $html);
         $html = str_replace('{{date}}', gmdate("F jS, Y", date("Z") + time()), $html);
         $html = str_replace('{{time}}', gmdate("H:i:s", time() + time()), $html);
