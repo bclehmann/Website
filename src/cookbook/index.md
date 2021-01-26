@@ -1,6 +1,11 @@
+---
+Title: ScottPlot Cookbook
+Description: A collection of sample plots with code that demonstrates how to use every major feature of ScottPlot
+---
+
 # ScottPlot Cookbook
 
-**The _best_ way to learn how to use ScottPlot is to look at the Cookbook!** The ScottPlot Cookbook is a collection of sample plots which demonstrate how to use every major feature of ScottPlot. Each figure in the cookbook is displayed next to the code used to generate it. All cookbook examples are displayed _interactively_ in the [ScottPlot demo](../demo).
+**The _best_ way to learn how to use ScottPlot is to look at the Cookbook!** The ScottPlot Cookbook is a collection of sample plots with code demonstrate how to use every major feature of ScottPlot. All cookbook examples are displayed interactively in the [ScottPlot Demo](../demo).
 
 <div class="container my-5">
   <div class="row justify-content-evenly">

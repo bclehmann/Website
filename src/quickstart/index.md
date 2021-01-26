@@ -1,3 +1,8 @@
+---
+Title: ScottPlot Quickstart
+Description: These simple examples demonstrate how to use ScottPlot in the console, WinForms, WPF, or Avalonia
+---
+
 # ScottPlot Quickstart
 
 * These examples demonstrate how to plot simple data with ScottPlot

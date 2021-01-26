@@ -1,6 +1,11 @@
+---
+Title: ScottPlot Demo Application
+Description: A click-to-run application designed to make it easy to assess the capabilities of ScottPlot
+---
+
 # ScottPlot Demo
 
-**The ScottPlot Demo is a click-to-run EXE for Windows designed to make it easy to assess the capabilities of ScottPlot.** The demo application displays all **[ScottPlot Cookbook](../cookbook)** figures and also demonstrate advanced uses such as mouse tracking, displaying live data, draggable plot components. Source code for this application is available on [GitHub](https://github.com/swharden/ScottPlot), including demos for Windows Forms and WPF.
+**The ScottPlot Demo is a click-to-run application designed to make it easy to assess the capabilities of ScottPlot.** The demo application displays all **[ScottPlot Cookbook](../cookbook)** figures and also demonstrate advanced uses such as mouse tracking, displaying live data, draggable plot components. Source code for this application is available on [GitHub](https://github.com/swharden/ScottPlot), including demos for Windows Forms and WPF.
 
 
 <div class='text-center m-5'>
