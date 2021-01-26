@@ -1,33 +1,24 @@
-<html>
+<?php
 
-<head>
-    <style>
-        body {
-            background-color: #000000;
-            color: #FFFFFF;
-            margin: 2em;
-        }
+// Ensure root files are accessible (they aren't in docker)
+$canAccessRoot = file_exists('../../deploy.sh');
+if ($canAccessRoot == false) {
+    echo "Cannot access root folder (script does not work in Docker)";
+    die();
+}
 
-        pre {
-            font-size: 1.5em;
-            color: #00FF00;
-        }
-    </style>
-</head>
+// Get authorization header from Apache
+$headers = apache_request_headers();
+if (!isset($headers['Authorization'])) {
+    echo "Authorization Required";
+    die();
+}
 
-<body>
-    <?php
-
-    $isAuthenticated = false;
-    echo "<pre>";
-    if ($isAuthenticated) {
-        system('../../deploy.sh');
-    } else {
-        echo "ERROR: deployment requires authentication";
-    }
-    echo "</pre>";
-
-    ?>
-</body>
-
-</html>
+// Compare given token vs one on disk
+$givenToken = substr($headers['Authorization'], 7);
+$realToken = readfile('../../api.key');
+if ($givenToken == $realToken) {
+    system('../../deploy.sh');
+} else {
+    echo "Authorization Failed";
+}
