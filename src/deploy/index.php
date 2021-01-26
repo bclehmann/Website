@@ -1,16 +1,15 @@
 <?php
 
-// Ensure root files are accessible (they aren't in docker)
-$canAccessRoot = file_exists('../../deploy.sh');
-if ($canAccessRoot == false) {
-    echo "Cannot access root folder (script does not work in Docker)";
+// Ensure root files are accessible
+if (file_exists('../../api.key') == false) {
+    echo "ERROR: api.key does not exist";
     die();
 }
 
 // Get authorization header from Apache
 $headers = apache_request_headers();
 if (!isset($headers['Authorization'])) {
-    echo "Authorization Required";
+    echo "ERROR: Authorization Required";
     die();
 }
 
@@ -20,5 +19,5 @@ $realToken = trim(file_get_contents('../../api.key'));
 if ($givenToken == $realToken) {
     system('../../deploy.sh');
 } else {
-    echo "Authorization Failed";
+    echo "ERROR: Authorization Failed";
 }
