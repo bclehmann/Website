@@ -7,7 +7,8 @@
   <link href="resources/bootstrap.css" rel="stylesheet" />
   <link href="resources/style.css" rel="stylesheet" />
   <link rel="shortcut icon" href="resources/favicon.ico" />
-  <script src="resources/prettify.js"></script>
+  <script async defer src="resources/prettify.js"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
   <title>{{title}}</title>
   <meta name='description' content='{{description}}' />
   <meta name="robots" content="{{robotsContent}}">
@@ -42,7 +43,7 @@
           <a class="btn btn-lg menuButton ms-2 text-light" href="{{baseUrl}}/demo" role="button">Demo</a>
           <a class="btn btn-lg menuButton ms-2 text-light" href="{{baseUrl}}/quickstart" role="button">Quickstart</a>
           <a class="btn btn-lg menuButton ms-2 text-light" href="{{baseUrl}}/cookbook" role="button">Cookbook</a>
-          
+
           <div class="dropdown d-inline-block">
             <a class="btn btn-lg menuButton ms-2 text-light dropdown-toggle" role="button" id="dropdownMenuLink"
               data-bs-toggle="dropdown" aria-expanded="false">
@@ -58,7 +59,7 @@
         </nav>
 
         <!-- CUSTOMIZE PAGE TITLES -->
-        <header class="row mt-3 p-2 text-light">
+        <header class="row mt-3 mb-3 p-2 text-light">
           <div class="display-3 fw-normal">
             <a href="{{baseUrl}}/" style="color: inherit;">
               ScottPlot
@@ -67,7 +68,12 @@
           <div class="fs-6" style="opacity: 50%;">
             Interactive Plotting Library for .NET
           </div>
+          <div class="text-end" style="height: 0px; position: relative; top: -30px;">
+            <a class="github-button" href="https://github.com/scottplot/scottplot" data-size="large"
+              data-show-count="true" aria-label="GitHub Stars" data-text="GitHub Stars"></a>
+          </div>
         </header>
+
 
         <!-- ARTICLES -->
         {{articles}}
