@@ -159,7 +159,7 @@ class Page
 
         // HACKED-IN LOGIC SO BASE URL WORKS FROM SYMBOLICALLY LINKED DIRECTORIES
         $baseUrl = strstr(__DIR__, "/gitRepos/") ?
-            "https://swharden.com/scottplot2" :
+            "https://swharden.com/scottplot" :
             $http . $_SERVER['HTTP_HOST'] . str_replace($_SERVER['DOCUMENT_ROOT'], "", dirname(__DIR__));
 
         // replace all base url references
