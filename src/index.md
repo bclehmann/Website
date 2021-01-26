@@ -38,7 +38,7 @@ The [ScottPlot Cookbook](cookbook) demonstrates how to create line plots, bar ch
 
 <div class="text-center">
 
-![](cookbook/cookbook-thumbnails-small.jpg)
+[![](cookbook/cookbook-thumbnails-small.jpg)](cookbook)
 
 </div>
 
