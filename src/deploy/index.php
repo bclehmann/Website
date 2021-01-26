@@ -16,7 +16,7 @@ if (!isset($headers['Authorization'])) {
 
 // Compare given token vs one on disk
 $givenToken = substr($headers['Authorization'], 7);
-$realToken = readfile('../../api.key');
+$realToken = trim(file_get_contents('../../api.key'));
 if ($givenToken == $realToken) {
     system('../../deploy.sh');
 } else {
