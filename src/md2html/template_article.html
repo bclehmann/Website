@@ -18,7 +18,7 @@
         <div class="px-3 pb-3 text-muted">
             <small>
                 <a data-bs-toggle="collapse" href="#source-article-{{id}}" role="button" aria-expanded="false"
-                    aria-controls="source-article-{{id}}">{{viewSourceMessage}}</a>
+                    aria-controls="source-article-{{id}}" style="opacity: 2; color: black;">{{viewSourceMessage}}</a>
             </small>
         </div>
 
@@ -26,7 +26,7 @@
         <div class="p-3 collapse" id="source-article-{{id}}">
             <div class="card">
                 <div class="card-header">
-                    Markdown source code last modified on {{modifiedDate}}
+                    Source code last modified on {{modifiedDate}} (<a href='https://github.com/ScottPlot/Website'>edit on GitHub</a>)
                 </div>
                 <div class="card-body">
                     <pre class="" style="white-space: pre-wrap;">{{source}}</pre>
