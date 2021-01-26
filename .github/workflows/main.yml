@@ -17,4 +17,4 @@ jobs:
           method: "POST"
           bearerToken: ${{ secrets.API_KEY }}
       - name: Show Response
-        run: echo ${{ steps.req.response }}
+        run: echo ${{ steps.req.outputs.response }}
