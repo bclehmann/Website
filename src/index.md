@@ -36,6 +36,12 @@ _ScottPlot [3.1.6](https://github.com/swharden/ScottPlot/releases/tag/3.1.6) was
 
 The [ScottPlot Cookbook](cookbook) demonstrates how to create line plots, bar charts, pie graphs, scatter plots, and more with just a few lines of code. Every cookbook example is also included in the [ScottPlot Demo](demo) application.
 
+<div class="text-center">
+
+![](cookbook/cookbook-thumbnails-small.jpg)
+
+</div>
+
 ### Miscellaneous
 
 * **If you enjoy ScottPlot [give us a star on GitHub](https://github.com/swharden/ScottPlot)! ⭐**
