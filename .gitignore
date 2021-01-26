@@ -1,5 +1,6 @@
 # ignore changes to cookbook folder
-src/cookbooks
+src/cookbooks/3.*
+src/cookbooks/4.*
 
 # ignore content of demos folder
 src/demos
