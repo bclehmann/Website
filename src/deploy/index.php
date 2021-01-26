@@ -1,17 +1,21 @@
-<?php
+<html>
 
-function execPrint($command) {
-    $result = array();
-    exec($command, $result);
-    print("<pre>");
-    foreach ($result as $line) {
-        print($line . "\n");
-    }
-    print("</pre>");
-}
+<head>
+    <style>
+        body {
+            background-color: #000000;
+            color: #FFFFFF;
+            margin: 2em;
+        }
+        pre {
+            font-size: 1.5em;
+            color: #00FF00;
+        }
+    </style>
+</head>
 
-echo "<h1>PULL</h1>";
-execPrint("git -C ../ pull https://github.com/ScottPlot/Website.git");
+<body>
+    <pre><?php system('../../deploy.sh'); ?></pre>
+</body>
 
-echo "<h1>STATUS</h1>";
-execPrint("git status");
+</html>
