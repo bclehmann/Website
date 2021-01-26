@@ -1,0 +1,151 @@
+<html>
+
+<head>
+    <title>ScottPlot 4.1.4-beta Cookbook: Multi-Axis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script async src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'></script>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-560719-1'></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-560719-1');
+    </script>
+</head>
+
+<body>
+
+    <div id="backsplash" style="background-color: #144371;">&nbsp;</div>
+
+    <div id="content">
+
+        <div id="pageAboveArticle">
+            <div id="headerBlock">
+
+                <div id="headerMenu">
+                    <div class='menuButton'><a href='https://swharden.com/scottplot'>ScottPlot Website</a></div>
+                    <div class='menuButton'><a href='https://swharden.com/scottplot/cookbook'>Latest Cookbook</a></div>
+                </div>
+
+                <div class='title'>
+                    <a href="https://swharden.com/scottplot">ScottPlot</a>
+                    <span style='opacity: .2;'>Cookbook</span>
+                </div>
+
+                <div class='subtitle'>free and open-source plotting library for .NET</div>
+                <div id="githubButtonWrapper">
+                    <a class="github-button" href="https://github.com/swharden/scottplot" data-size="large"
+                       data-show-count="true" aria-label="Star on GitHub" data-text="Star on GitHub"></a>
+                </div>
+            </div>
+        </div>
+
+        <article>
+            <div id="md2html">
+                <h1><a href='./index.html' style='color: black;'>ScottPlot Cookbook</a>: <i><a href='multi-axis.html' style='color: black;'>Multi-Axis</a></i></h1>
+<blockquote><b>&#9888;&#65039;</b> <strong>Documentation is version-specific:</strong> This page was generated for <code>ScottPlot 4.1.4-beta</code><br> Additional documentation and more version-specific cookbooks are on the <a href='https://swharden.com/scottplot' style='font-weight: 600;'>ScottPlot Website</a></blockquote>
+<h2><a href='#multiaxis_primary' name='multiaxis_primary' style='color: black;'>Primary Axes</a></h2>
+Plots always have 4 fundamental axes available to work with. Primary axes (XAxis and YAxis) are axis index 0. Secondary axes (XAxis2 and YAxis2) are axis index 1.By default primary axes are totally visible, and secondary axes have ticks hidden and no label. Sometimes the top axis (XAxis2) is given a label to simulate a plot title.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot one set of data using the primary Y axis
+var sigSmall = plt.AddSignal(DataGen.Sin(51, mult: 1), sampleRate: 1);
+sigSmall.YAxisIndex = 0;
+sigSmall.XAxisIndex = 0;
+plt.XAxis.Label("Primary X Axis");
+plt.YAxis.Label("Secondary Y Axis");
+plt.XAxis.Color(sigSmall.Color);
+plt.YAxis.Color(sigSmall.Color);
+
+// plot another set of data using the secondary axes
+var sigBig = plt.AddSignal(DataGen.Cos(51, mult: 100), sampleRate: 100);
+sigBig.YAxisIndex = 1;
+sigBig.XAxisIndex = 1;
+plt.YAxis2.Ticks(true); // ticks weren't visible by default
+plt.XAxis2.Ticks(true); // ticks weren't visible by default
+plt.YAxis2.Color(sigBig.Color);
+plt.XAxis2.Color(sigBig.Color);
+plt.YAxis2.Label("Secondary Y Axis");
+plt.XAxis2.Label("Secondary X Axis");
+
+plt.SaveFig("multiAxis_primary.png");</pre>
+<div class='center'><img src='source/multiaxis_primary.png' /></div>
+<h2><a href='#multiaxis_additional' name='multiaxis_additional' style='color: black;'>Additional Y Axis</a></h2>
+Additional axes can be added on any edge. Additional axes stack away from the plot area.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot one set of data using the primary Y axis
+var sigSmall = plt.AddSignal(DataGen.Sin(51, mult: 1));
+sigSmall.YAxisIndex = 0;
+plt.YAxis.Label("Primary Axis");
+plt.YAxis.Color(sigSmall.Color);
+
+// plot another set of data using an additional axis
+var sigBig = plt.AddSignal(DataGen.Cos(51, mult: 100));
+var yAxis3 = plt.AddAxis(Renderable.Edge.Left, axisIndex: 2);
+sigBig.YAxisIndex = 2;
+yAxis3.Label("Additional Axis");
+yAxis3.Color(sigBig.Color);
+
+plt.SaveFig("multiAxis_additional.png");</pre>
+<div class='center'><img src='source/multiaxis_additional.png' /></div>
+<h2><a href='#multiaxis_right' name='multiaxis_right' style='color: black;'>Right Y Axis</a></h2>
+This example shows how to display a Y axis only on the right side.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[] values = DataGen.RandomWalk(100);
+plt.AddSignal(values);
+
+plt.YAxis.Ticks(false);
+plt.YAxis2.Ticks(true);
+plt.YAxis2.Label("Value");
+plt.XAxis.Label("Sample Number");
+
+plt.SaveFig("multiAxis_right.png");</pre>
+<div class='center'><img src='source/multiaxis_right.png' /></div>
+<h2><a href='#multiaxis_invisible' name='multiaxis_invisible' style='color: black;'>Axis Visibility</a></h2>
+Visibility of axes can be toggled. In this example an additional Y axis is added but the primary Y axis is hidden. The result is a plot that appears to only have one Y axis.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot one set of data using the primary Y axis
+var sigSmall = plt.AddSignal(DataGen.Sin(51, mult: 1));
+sigSmall.YAxisIndex = 0;
+plt.YAxis.Label("Primary Axis");
+plt.YAxis.Color(sigSmall.Color);
+
+// plot another set of data using an additional axis
+var sigBig = plt.AddSignal(DataGen.Cos(51, mult: 100));
+var yAxis3 = plt.AddAxis(Renderable.Edge.Left, axisIndex: 2);
+sigBig.YAxisIndex = 2;
+yAxis3.Label("Additional Axis");
+yAxis3.Color(sigBig.Color);
+
+// hide the primary Y axis
+plt.YAxis.IsVisible = false;
+
+plt.SaveFig("multiAxis_invisible.png");</pre>
+<div class='center'><img src='source/multiaxis_invisible.png' /></div>
+
+            </div>
+        </article>
+
+        <div id="lowerNavBar">&nbsp;</div>
+
+        <footer>
+            <div id="footerBlock">
+                <div>This page was generated for <code>ScottPlot 4.1.4-beta</code> on January 24, 2021</div>
+                <div>
+                    Additional documentation and resources can be found on the
+                    <a href="https://swharden.com/scottplot">ScottPlot Website</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

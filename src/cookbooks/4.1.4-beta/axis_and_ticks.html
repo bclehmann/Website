@@ -1,0 +1,193 @@
+<html>
+
+<head>
+    <title>ScottPlot 4.1.4-beta Cookbook: Axis and Ticks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script async src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'></script>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-560719-1'></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-560719-1');
+    </script>
+</head>
+
+<body>
+
+    <div id="backsplash" style="background-color: #144371;">&nbsp;</div>
+
+    <div id="content">
+
+        <div id="pageAboveArticle">
+            <div id="headerBlock">
+
+                <div id="headerMenu">
+                    <div class='menuButton'><a href='https://swharden.com/scottplot'>ScottPlot Website</a></div>
+                    <div class='menuButton'><a href='https://swharden.com/scottplot/cookbook'>Latest Cookbook</a></div>
+                </div>
+
+                <div class='title'>
+                    <a href="https://swharden.com/scottplot">ScottPlot</a>
+                    <span style='opacity: .2;'>Cookbook</span>
+                </div>
+
+                <div class='subtitle'>free and open-source plotting library for .NET</div>
+                <div id="githubButtonWrapper">
+                    <a class="github-button" href="https://github.com/swharden/scottplot" data-size="large"
+                       data-show-count="true" aria-label="Star on GitHub" data-text="Star on GitHub"></a>
+                </div>
+            </div>
+        </div>
+
+        <article>
+            <div id="md2html">
+                <h1><a href='./index.html' style='color: black;'>ScottPlot Cookbook</a>: <i><a href='axis_and_ticks.html' style='color: black;'>Axis and Ticks</a></i></h1>
+<blockquote><b>&#9888;&#65039;</b> <strong>Documentation is version-specific:</strong> This page was generated for <code>ScottPlot 4.1.4-beta</code><br> Additional documentation and more version-specific cookbooks are on the <a href='https://swharden.com/scottplot' style='font-weight: 600;'>ScottPlot Website</a></blockquote>
+<h2><a href='#axis_label' name='axis_label' style='color: black;'>Axis Customizations</a></h2>
+Axes can be customized different ways. Axis labels and colors are the most common types of customizations.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// These shortcuts are the easiest way to set axis labels
+plt.XLabel("Horizontal Axis");
+plt.YLabel("Vertical Axis");
+plt.Title("Axis Customization");
+
+// Axes labels can be further customized for any axis
+plt.YAxis.Label("Vertical Axis", Color.Magenta, size: 24, fontName: "Comic Sans MS");
+
+// This method will set the color of axis labels, lines, ticks, and tick labels
+plt.XAxis.Color(Color.Green);
+
+plt.SaveFig("Axis_label.png");</pre>
+<div class='center'><img src='source/axis_label.png' /></div>
+<h2><a href='#axis_griddisableall' name='axis_griddisableall' style='color: black;'>Disable Grid</a></h2>
+Visibility of primary X and Y grids can be set using a single method.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// hide grids
+plt.Grid(false);
+
+plt.SaveFig("axis_gridDisableAll.png");</pre>
+<div class='center'><img src='source/axis_griddisableall.png' /></div>
+<h2><a href='#axis_griddisableone' name='axis_griddisableone' style='color: black;'>Disable Vertical Grid</a></h2>
+Grid line visibility can be controlled for each axis individually. Use this to selectively enable grid lines only for the axes of interest. Keep in mind that vertical grid lines are controlled by horizontal axes.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// each axis has its own visibility controls
+plt.XAxis.Grid(false);
+
+plt.SaveFig("axis_gridDisableOne.png");</pre>
+<div class='center'><img src='source/axis_griddisableone.png' /></div>
+<h2><a href='#asis_gridconfigure' name='asis_gridconfigure' style='color: black;'>Grid Style</a></h2>
+Common grid line configurations are available.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// these helper methods set grid 
+plt.Grid(color: Color.FromArgb(50, Color.Green));
+plt.Grid(lineStyle: LineStyle.Dot);
+
+plt.SaveFig("asis_gridConfigure.png");</pre>
+<div class='center'><img src='source/asis_gridconfigure.png' /></div>
+<h2><a href='#ticks_hidex' name='ticks_hidex' style='color: black;'>Disable X Ticks</a></h2>
+Ticks can be hidden on a single axis.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// hide just the horizontal axis ticks
+plt.XAxis.Ticks(false);
+
+plt.SaveFig("ticks_hidex.png");</pre>
+<div class='center'><img src='source/ticks_hidex.png' /></div>
+<h2><a href='#ticks_rotated' name='ticks_rotated' style='color: black;'>Rotated X Ticks</a></h2>
+Horizontal tick labels can be rotated as desired.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+plt.XAxis.Label("Horizontal Axis");
+plt.YAxis.Label("Vertical Axis");
+
+// rotate horizontal axis tick labels
+plt.XAxis.TickLabelStyle(rotation: 45);
+
+plt.SaveFig("ticks_rotated.png");</pre>
+<div class='center'><img src='source/ticks_rotated.png' /></div>
+<h2><a href='#ticks_rotatedy' name='ticks_rotatedy' style='color: black;'>Rotated Y Ticks</a></h2>
+Vertical tick labels can be rotated as desired.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+plt.XAxis.Label("Horizontal Axis");
+plt.YAxis.Label("Vertical Axis");
+
+// rotate horizontal axis tick labels
+plt.YAxis.TickLabelStyle(rotation: 45);
+
+plt.SaveFig("ticks_rotatedY.png");</pre>
+<div class='center'><img src='source/ticks_rotatedy.png' /></div>
+<h2><a href='#ticks_datetime' name='ticks_datetime' style='color: black;'>Plotting DateTime Data</a></h2>
+This example shows how to display DateTime data on the horizontal axis. Use DateTime.ToOADate() to convert DateTime[] to double[], plot the data,  then tell the axis to format tick labels as dates.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// create data sample data
+DateTime[] myDates = new DateTime[100];
+for (int i = 0; i < myDates.Length; i++)
+    myDates[i] = new DateTime(1985, 9, 24).AddDays(7 * i);
+
+// Convert DateTime[] to double[] before plotting
+double[] xs = myDates.Select(x => x.ToOADate()).ToArray();
+double[] ys = DataGen.RandomWalk(myDates.Length);
+plt.AddScatter(xs, ys);
+
+// Then tell the axis to display tick labels using a time format
+plt.XAxis.DateTimeFormat(true);
+
+plt.SaveFig("ticks_dateTime.png");</pre>
+<div class='center'><img src='source/ticks_datetime.png' /></div>
+
+            </div>
+        </article>
+
+        <div id="lowerNavBar">&nbsp;</div>
+
+        <footer>
+            <div id="footerBlock">
+                <div>This page was generated for <code>ScottPlot 4.1.4-beta</code> on January 24, 2021</div>
+                <div>
+                    Additional documentation and resources can be found on the
+                    <a href="https://swharden.com/scottplot">ScottPlot Website</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

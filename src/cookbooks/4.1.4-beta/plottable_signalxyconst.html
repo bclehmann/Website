@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <title>ScottPlot 4.1.4-beta Cookbook: Plottable: SignalXYConst</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script async src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'></script>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-560719-1'></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-560719-1');
+    </script>
+</head>
+
+<body>
+
+    <div id="backsplash" style="background-color: #144371;">&nbsp;</div>
+
+    <div id="content">
+
+        <div id="pageAboveArticle">
+            <div id="headerBlock">
+
+                <div id="headerMenu">
+                    <div class='menuButton'><a href='https://swharden.com/scottplot'>ScottPlot Website</a></div>
+                    <div class='menuButton'><a href='https://swharden.com/scottplot/cookbook'>Latest Cookbook</a></div>
+                </div>
+
+                <div class='title'>
+                    <a href="https://swharden.com/scottplot">ScottPlot</a>
+                    <span style='opacity: .2;'>Cookbook</span>
+                </div>
+
+                <div class='subtitle'>free and open-source plotting library for .NET</div>
+                <div id="githubButtonWrapper">
+                    <a class="github-button" href="https://github.com/swharden/scottplot" data-size="large"
+                       data-show-count="true" aria-label="Star on GitHub" data-text="Star on GitHub"></a>
+                </div>
+            </div>
+        </div>
+
+        <article>
+            <div id="md2html">
+                <h1><a href='./index.html' style='color: black;'>ScottPlot Cookbook</a>: <i><a href='plottable_signalxyconst.html' style='color: black;'>Plottable - SignalXYConst</a></i></h1>
+<blockquote><b>&#9888;&#65039;</b> <strong>Documentation is version-specific:</strong> This page was generated for <code>ScottPlot 4.1.4-beta</code><br> Additional documentation and more version-specific cookbooks are on the <a href='https://swharden.com/scottplot' style='font-weight: 600;'>ScottPlot Website</a></blockquote>
+<h2><a href='#signalxyconst_quickstart' name='signalxyconst_quickstart' style='color: black;'>SignalConst with X and Y data</a></h2>
+SignalXYConst is a speed-optimized plot for displaying vaues (Ys) with unevenly-spaced positions (Xs) that are in ascending order. If your data is evenly-spaced, Signal and SignalConst is faster.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// generate random, unevenly-spaced data
+Random rand = new Random(0);
+int pointCount = 100_000;
+double[] ys = new double[pointCount];
+double[] xs = new double[pointCount];
+for (int i = 1; i < ys.Length; i++)
+{
+    ys[i] = ys[i - 1] + rand.NextDouble() - .5;
+    xs[i] = xs[i - 1] + rand.NextDouble();
+}
+
+plt.AddSignalXYConst(xs, ys);
+
+plt.SaveFig("signalxyconst_quickstart.png");</pre>
+<div class='center'><img src='source/signalxyconst_quickstart.png' /></div>
+<h2><a href='#signalxyconst_types' name='signalxyconst_types' style='color: black;'>Different data types for xs and ys</a></h2>
+SignalXYConst with (int)Xs and (float)Ys arrays
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+Random rand = new Random(0);
+int pointCount = 1_000_000;
+double[] sine = DataGen.Sin(pointCount, 3);
+double[] noise = DataGen.RandomNormal(rand, pointCount, 0, 0.5);
+float[] ys = sine.Zip(noise, (s, n) => s + n).Select(x => (float)x).ToArray();
+int[] xs = Enumerable.Range(0, pointCount)
+    .Select(x => (int)x)
+    .Select(x => x > 500_000 ? x + 1_000_000 : x)
+    .Select(x => x > 200_000 ? x + 100_000 : x)
+    .ToArray();
+
+plt.AddSignalXYConst(xs, ys);
+
+plt.SaveFig("signalxyconst_types.png");</pre>
+<div class='center'><img src='source/signalxyconst_types.png' /></div>
+
+            </div>
+        </article>
+
+        <div id="lowerNavBar">&nbsp;</div>
+
+        <footer>
+            <div id="footerBlock">
+                <div>This page was generated for <code>ScottPlot 4.1.4-beta</code> on January 24, 2021</div>
+                <div>
+                    Additional documentation and resources can be found on the
+                    <a href="https://swharden.com/scottplot">ScottPlot Website</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

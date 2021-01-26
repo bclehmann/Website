@@ -1,0 +1,133 @@
+<html>
+
+<head>
+    <title>ScottPlot 4.1.4-beta Cookbook: Plottable: SignalXY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script async src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'></script>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-560719-1'></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-560719-1');
+    </script>
+</head>
+
+<body>
+
+    <div id="backsplash" style="background-color: #144371;">&nbsp;</div>
+
+    <div id="content">
+
+        <div id="pageAboveArticle">
+            <div id="headerBlock">
+
+                <div id="headerMenu">
+                    <div class='menuButton'><a href='https://swharden.com/scottplot'>ScottPlot Website</a></div>
+                    <div class='menuButton'><a href='https://swharden.com/scottplot/cookbook'>Latest Cookbook</a></div>
+                </div>
+
+                <div class='title'>
+                    <a href="https://swharden.com/scottplot">ScottPlot</a>
+                    <span style='opacity: .2;'>Cookbook</span>
+                </div>
+
+                <div class='subtitle'>free and open-source plotting library for .NET</div>
+                <div id="githubButtonWrapper">
+                    <a class="github-button" href="https://github.com/swharden/scottplot" data-size="large"
+                       data-show-count="true" aria-label="Star on GitHub" data-text="Star on GitHub"></a>
+                </div>
+            </div>
+        </div>
+
+        <article>
+            <div id="md2html">
+                <h1><a href='./index.html' style='color: black;'>ScottPlot Cookbook</a>: <i><a href='plottable_signalxy.html' style='color: black;'>Plottable - SignalXY</a></i></h1>
+<blockquote><b>&#9888;&#65039;</b> <strong>Documentation is version-specific:</strong> This page was generated for <code>ScottPlot 4.1.4-beta</code><br> Additional documentation and more version-specific cookbooks are on the <a href='https://swharden.com/scottplot' style='font-weight: 600;'>ScottPlot Website</a></blockquote>
+<h2><a href='#signalxy_quickstart' name='signalxy_quickstart' style='color: black;'>SignalXY Quickstart</a></h2>
+SignalXY is a speed-optimized plot for displaying vaues (Ys) with unevenly-spaced positions (Xs) that are in ascending order. If your data is evenly-spaced, Signal and SignalConst is faster.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// generate random, unevenly-spaced data
+Random rand = new Random(0);
+int pointCount = 100_000;
+double[] ys = new double[pointCount];
+double[] xs = new double[pointCount];
+for (int i = 1; i < ys.Length; i++)
+{
+    ys[i] = ys[i - 1] + rand.NextDouble() - .5;
+    xs[i] = xs[i - 1] + rand.NextDouble();
+}
+
+plt.AddSignalXY(xs, ys);
+
+plt.SaveFig("signalxy_quickstart.png");</pre>
+<div class='center'><img src='source/signalxy_quickstart.png' /></div>
+<h2><a href='#signalxy_gaps' name='signalxy_gaps' style='color: black;'>Signal Data with Gaps</a></h2>
+Signal with defined Xs that contain gaps
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+Random rand = new Random(0);
+int pointCount = 1_000_000;
+double[] sine = DataGen.Sin(pointCount, 3);
+double[] noise = DataGen.RandomNormal(rand, pointCount, 0, 0.5);
+double[] ys = sine.Zip(noise, (s, n) => s + n).ToArray();
+double[] xs = Enumerable.Range(0, pointCount)
+    .Select(x => (double)x)
+    .Select(x => x > 500_000 ? x + 1_000_000 : x)
+    .Select(x => x > 200_000 ? x + 100_000 : x)
+    .ToArray();
+
+plt.AddSignalXY(xs, ys);
+
+plt.SaveFig("signalxy_gaps.png");</pre>
+<div class='center'><img src='source/signalxy_gaps.png' /></div>
+<h2><a href='#signalxy_density' name='signalxy_density' style='color: black;'>Different Densities</a></h2>
+Signal with mised low and high density data
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+Random rand = new Random(0);
+int pointCount = 1_000_000;
+double[] sine = DataGen.Sin(pointCount, 3);
+double[] noise = DataGen.RandomNormal(rand, pointCount, 0, 0.5);
+double[] ys = sine.Zip(noise, (s, n) => s + n).ToArray();
+double[] xs = new double[pointCount];
+
+double currentX = 0;
+for (int i = 0; i < pointCount; i++)
+{
+    if ((i % 100000) < 10)
+        currentX += 10;
+    else
+        currentX += 0.0001;
+    xs[i] = currentX;
+}
+
+plt.AddSignalXY(xs, ys);
+
+plt.SaveFig("signalxy_density.png");</pre>
+<div class='center'><img src='source/signalxy_density.png' /></div>
+
+            </div>
+        </article>
+
+        <div id="lowerNavBar">&nbsp;</div>
+
+        <footer>
+            <div id="footerBlock">
+                <div>This page was generated for <code>ScottPlot 4.1.4-beta</code> on January 24, 2021</div>
+                <div>
+                    Additional documentation and resources can be found on the
+                    <a href="https://swharden.com/scottplot">ScottPlot Website</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

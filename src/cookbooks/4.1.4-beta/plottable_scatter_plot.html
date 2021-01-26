@@ -1,0 +1,181 @@
+<html>
+
+<head>
+    <title>ScottPlot 4.1.4-beta Cookbook: Plottable: Scatter Plot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script async src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'></script>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-560719-1'></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-560719-1');
+    </script>
+</head>
+
+<body>
+
+    <div id="backsplash" style="background-color: #144371;">&nbsp;</div>
+
+    <div id="content">
+
+        <div id="pageAboveArticle">
+            <div id="headerBlock">
+
+                <div id="headerMenu">
+                    <div class='menuButton'><a href='https://swharden.com/scottplot'>ScottPlot Website</a></div>
+                    <div class='menuButton'><a href='https://swharden.com/scottplot/cookbook'>Latest Cookbook</a></div>
+                </div>
+
+                <div class='title'>
+                    <a href="https://swharden.com/scottplot">ScottPlot</a>
+                    <span style='opacity: .2;'>Cookbook</span>
+                </div>
+
+                <div class='subtitle'>free and open-source plotting library for .NET</div>
+                <div id="githubButtonWrapper">
+                    <a class="github-button" href="https://github.com/swharden/scottplot" data-size="large"
+                       data-show-count="true" aria-label="Star on GitHub" data-text="Star on GitHub"></a>
+                </div>
+            </div>
+        </div>
+
+        <article>
+            <div id="md2html">
+                <h1><a href='./index.html' style='color: black;'>ScottPlot Cookbook</a>: <i><a href='plottable_scatter_plot.html' style='color: black;'>Plottable - Scatter Plot</a></i></h1>
+<blockquote><b>&#9888;&#65039;</b> <strong>Documentation is version-specific:</strong> This page was generated for <code>ScottPlot 4.1.4-beta</code><br> Additional documentation and more version-specific cookbooks are on the <a href='https://swharden.com/scottplot' style='font-weight: 600;'>ScottPlot Website</a></blockquote>
+<h2><a href='#scatter_quickstart' name='scatter_quickstart' style='color: black;'>Scatter Plot Quickstart</a></h2>
+Scatter plots are best for small numbers of paired X/Y data points. For evenly-spaced data points Signal is much faster.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// create sample X/Y data
+int pointCount = 51;
+double[] x = DataGen.Consecutive(pointCount);
+double[] sin = DataGen.Sin(pointCount);
+double[] cos = DataGen.Cos(pointCount);
+
+// add scatter plots
+plt.AddScatter(x, sin);
+plt.AddScatter(x, cos);
+
+plt.SaveFig("scatter_quickstart.png");</pre>
+<div class='center'><img src='source/scatter_quickstart.png' /></div>
+<h2><a href='#scatter_markers' name='scatter_markers' style='color: black;'>Custom markers</a></h2>
+Markers can be customized using optional arguments and public fields.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+int pointCount = 51;
+double[] x = DataGen.Consecutive(pointCount);
+double[] sin = DataGen.Sin(pointCount);
+double[] cos = DataGen.Cos(pointCount);
+
+// add scatter plots and customize markers
+var sp1 = plt.AddScatter(x, sin, markerSize: 15);
+sp1.MarkerShape = MarkerShape.openCircle;
+
+var sp2 = plt.AddScatter(x, cos, markerSize: 7);
+sp2.MarkerShape = MarkerShape.filledSquare;
+
+plt.SaveFig("scatter_markers.png");</pre>
+<div class='center'><img src='source/scatter_markers.png' /></div>
+<h2><a href='#scatter_markershape' name='scatter_markershape' style='color: black;'>All marker shapes</a></h2>
+Legend indicates names of all available marker shapes
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+int pointCount = 51;
+double[] x = DataGen.Consecutive(pointCount);
+
+string[] markerShapeNames = Enum.GetNames(typeof(MarkerShape));
+for (int i = 0; i < markerShapeNames.Length; i++)
+{
+    Enum.TryParse(markerShapeNames[i], out MarkerShape ms);
+    double[] sin = DataGen.Sin(pointCount, 2, -i);
+    plt.AddScatter(x, sin, markerSize: 7, markerShape: ms, label: markerShapeNames[i]);
+}
+
+plt.Grid(enable: false);
+var legend = plt.Legend();
+legend.FontSize = 10;
+
+plt.SaveFig("scatter_markerShape.png");</pre>
+<div class='center'><img src='source/scatter_markershape.png' /></div>
+<h2><a href='#scatter_linestyle' name='scatter_linestyle' style='color: black;'>Custom lines</a></h2>
+Line color, size, and style can be customized. Setting markerSize to 0 prevents markers from being rendered.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+int pointCount = 51;
+double[] x = DataGen.Consecutive(pointCount);
+double[] sin = DataGen.Sin(pointCount);
+double[] cos = DataGen.Cos(pointCount);
+double[] cos2 = DataGen.Cos(pointCount, mult: -1);
+
+plt.AddScatter(x, sin, color: Color.Magenta, lineWidth: 0, markerSize: 10);
+plt.AddScatter(x, cos, color: Color.Green, lineWidth: 5, markerSize: 0);
+plt.AddScatter(x, cos2, color: Color.Blue, lineWidth: 3, markerSize: 0, lineStyle: LineStyle.DashDot);
+
+var legend = plt.Legend();
+legend.FixedLineWidth = false;
+
+plt.SaveFig("scatter_lineStyle.png");</pre>
+<div class='center'><img src='source/scatter_linestyle.png' /></div>
+<h2><a href='#scatter_random' name='scatter_random' style='color: black;'>Random X/Y Points</a></h2>
+X data for scatter plots does not have to be evenly spaced, making scatter plots are ideal for displaying random data like this.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+Random rand = new Random(0);
+int pointCount = 51;
+double[] xs1 = DataGen.RandomNormal(rand, pointCount, 1);
+double[] xs2 = DataGen.RandomNormal(rand, pointCount, 3);
+double[] ys1 = DataGen.RandomNormal(rand, pointCount, 5);
+double[] ys2 = DataGen.RandomNormal(rand, pointCount, 7);
+
+plt.AddScatter(xs1, ys1, markerSize: 0, label: "lines only");
+plt.AddScatter(xs2, ys2, lineWidth: 0, label: "markers only");
+plt.Legend();
+
+plt.SaveFig("scatter_random.png");</pre>
+<div class='center'><img src='source/scatter_random.png' /></div>
+<h2><a href='#scatter_errorbar' name='scatter_errorbar' style='color: black;'>Scatter Plot with Errorbars</a></h2>
+An array of values can be supplied for error bars and redering options can be customized as desired
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+int pointCount = 20;
+Random rand = new Random(0);
+double[] xs = DataGen.Consecutive(pointCount);
+double[] ys = DataGen.RandomWalk(rand, pointCount);
+double[] xErr = DataGen.RandomNormal(rand, pointCount, .2);
+double[] yErr = DataGen.RandomNormal(rand, pointCount);
+
+var sp = plt.AddScatter(xs, ys);
+sp.XError = xErr;
+sp.YError = yErr;
+sp.ErrorCapSize = 3;
+sp.ErrorLineWidth = 1;
+sp.LineStyle = LineStyle.Dot;
+
+plt.SaveFig("scatter_errorbar.png");</pre>
+<div class='center'><img src='source/scatter_errorbar.png' /></div>
+
+            </div>
+        </article>
+
+        <div id="lowerNavBar">&nbsp;</div>
+
+        <footer>
+            <div id="footerBlock">
+                <div>This page was generated for <code>ScottPlot 4.1.4-beta</code> on January 24, 2021</div>
+                <div>
+                    Additional documentation and resources can be found on the
+                    <a href="https://swharden.com/scottplot">ScottPlot Website</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

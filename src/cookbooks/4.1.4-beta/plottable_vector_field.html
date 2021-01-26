@@ -1,0 +1,165 @@
+<html>
+
+<head>
+    <title>ScottPlot 4.1.4-beta Cookbook: Plottable: Vector Field</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script async src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'></script>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-560719-1'></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-560719-1');
+    </script>
+</head>
+
+<body>
+
+    <div id="backsplash" style="background-color: #144371;">&nbsp;</div>
+
+    <div id="content">
+
+        <div id="pageAboveArticle">
+            <div id="headerBlock">
+
+                <div id="headerMenu">
+                    <div class='menuButton'><a href='https://swharden.com/scottplot'>ScottPlot Website</a></div>
+                    <div class='menuButton'><a href='https://swharden.com/scottplot/cookbook'>Latest Cookbook</a></div>
+                </div>
+
+                <div class='title'>
+                    <a href="https://swharden.com/scottplot">ScottPlot</a>
+                    <span style='opacity: .2;'>Cookbook</span>
+                </div>
+
+                <div class='subtitle'>free and open-source plotting library for .NET</div>
+                <div id="githubButtonWrapper">
+                    <a class="github-button" href="https://github.com/swharden/scottplot" data-size="large"
+                       data-show-count="true" aria-label="Star on GitHub" data-text="Star on GitHub"></a>
+                </div>
+            </div>
+        </div>
+
+        <article>
+            <div id="md2html">
+                <h1><a href='./index.html' style='color: black;'>ScottPlot Cookbook</a>: <i><a href='plottable_vector_field.html' style='color: black;'>Plottable - Vector Field</a></i></h1>
+<blockquote><b>&#9888;&#65039;</b> <strong>Documentation is version-specific:</strong> This page was generated for <code>ScottPlot 4.1.4-beta</code><br> Additional documentation and more version-specific cookbooks are on the <a href='https://swharden.com/scottplot' style='font-weight: 600;'>ScottPlot Website</a></blockquote>
+<h2><a href='#vectorfield_quickstart' name='vectorfield_quickstart' style='color: black;'>Quickstart</a></h2>
+A vector field can be useful to show data explained by differential equations
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[] xPositions = DataGen.Range(0, 10);
+double[] yPositions = DataGen.Range(0, 10);
+Vector2[,] vectors = new Vector2[xPositions.Length, yPositions.Length];
+
+for (int x = 0; x < xPositions.Length; x++)
+    for (int y = 0; y < yPositions.Length; y++)
+        vectors[x, y] = new Vector2(
+x: Math.Sin(xPositions[x]),
+y: Math.Sin(yPositions[y]));
+
+plt.AddVectorField(vectors, xPositions, yPositions);
+
+plt.SaveFig("vectorField_quickstart.png");</pre>
+<div class='center'><img src='source/vectorfield_quickstart.png' /></div>
+<h2><a href='#vectorfield_anglemag' name='vectorfield_anglemag' style='color: black;'>Angle and Magnitude</a></h2>
+This example demonstrates how to define vectors according to a given angle and magnitude.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[] xs = DataGen.Range(-5, 6);
+double[] ys = DataGen.Range(-5, 6);
+Vector2[,] vectors = new Vector2[xs.Length, ys.Length];
+
+for (int i = 0; i < xs.Length; i++)
+{
+    for (int j = 0; j < ys.Length; j++)
+    {
+        double slope = -xs[i];
+        double magnitude = Math.Abs(xs[i]);
+        double angle = Math.Atan(slope);
+
+        vectors[i, j] = new Vector2(Math.Cos(angle) * magnitude, Math.Sin(angle) * magnitude);
+    }
+}
+
+plt.AddVectorField(vectors, xs, ys);
+
+plt.SaveFig("vectorField_angleMag.png");</pre>
+<div class='center'><img src='source/vectorfield_anglemag.png' /></div>
+<h2><a href='#vectorfield_colormap' name='vectorfield_colormap' style='color: black;'>Custom Colormap</a></h2>
+A colormap can be supplied to color arrows according to their magnitude
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[] xs = DataGen.Range(-5, 5, .5);
+double[] ys = DataGen.Range(-5, 5, .5);
+Vector2[,] vectors = new Vector2[xs.Length, ys.Length];
+double r = 0.5;
+
+
+for (int i = 0; i < xs.Length; i++)
+{
+    for (int j = 0; j < ys.Length; j++)
+    {
+        double x = ys[j];
+        double y = -9.81 / r * Math.Sin(xs[i]);
+
+        vectors[i, j] = new Vector2(x, y);
+    }
+}
+
+plt.AddVectorField(vectors, xs, ys, colormap: Drawing.Colormap.Turbo);
+plt.XLabel("θ");
+plt.YLabel("dθ/dt");
+
+plt.SaveFig("vectorField_colormap.png");</pre>
+<div class='center'><img src='source/vectorfield_colormap.png' /></div>
+<h2><a href='#vectorfield_scalefactor' name='vectorfield_scalefactor' style='color: black;'>Custom Scale Factor</a></h2>
+A custom scale factor can adjust the length of the arrows.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[] xs = DataGen.Range(-1.5, 1.5, .25);
+double[] ys = DataGen.Range(-1.5, 1.5, .25);
+Vector2[,] vectors = new Vector2[xs.Length, ys.Length];
+
+for (int i = 0; i < xs.Length; i++)
+{
+    for (int j = 0; j < ys.Length; j++)
+    {
+        double x = xs[i];
+        double y = ys[j];
+        var e = Math.Exp(-x * x - y * y);
+        var dx = (1 - 2 * x * x) * e;
+        var dy = -2 * x * y * e;
+
+        vectors[i, j] = new Vector2(dx, dy);
+    }
+}
+
+plt.AddVectorField(vectors, xs, ys, scaleFactor: 0.3);
+
+plt.SaveFig("vectorField_scaleFactor.png");</pre>
+<div class='center'><img src='source/vectorfield_scalefactor.png' /></div>
+
+            </div>
+        </article>
+
+        <div id="lowerNavBar">&nbsp;</div>
+
+        <footer>
+            <div id="footerBlock">
+                <div>This page was generated for <code>ScottPlot 4.1.4-beta</code> on January 24, 2021</div>
+                <div>
+                    Additional documentation and resources can be found on the
+                    <a href="https://swharden.com/scottplot">ScottPlot Website</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

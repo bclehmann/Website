@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <title>ScottPlot 4.1.4-beta Cookbook: Plottable: Annotation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script async src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'></script>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-560719-1'></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-560719-1');
+    </script>
+</head>
+
+<body>
+
+    <div id="backsplash" style="background-color: #144371;">&nbsp;</div>
+
+    <div id="content">
+
+        <div id="pageAboveArticle">
+            <div id="headerBlock">
+
+                <div id="headerMenu">
+                    <div class='menuButton'><a href='https://swharden.com/scottplot'>ScottPlot Website</a></div>
+                    <div class='menuButton'><a href='https://swharden.com/scottplot/cookbook'>Latest Cookbook</a></div>
+                </div>
+
+                <div class='title'>
+                    <a href="https://swharden.com/scottplot">ScottPlot</a>
+                    <span style='opacity: .2;'>Cookbook</span>
+                </div>
+
+                <div class='subtitle'>free and open-source plotting library for .NET</div>
+                <div id="githubButtonWrapper">
+                    <a class="github-button" href="https://github.com/swharden/scottplot" data-size="large"
+                       data-show-count="true" aria-label="Star on GitHub" data-text="Star on GitHub"></a>
+                </div>
+            </div>
+        </div>
+
+        <article>
+            <div id="md2html">
+                <h1><a href='./index.html' style='color: black;'>ScottPlot Cookbook</a>: <i><a href='plottable_annotation.html' style='color: black;'>Plottable - Annotation</a></i></h1>
+<blockquote><b>&#9888;&#65039;</b> <strong>Documentation is version-specific:</strong> This page was generated for <code>ScottPlot 4.1.4-beta</code><br> Additional documentation and more version-specific cookbooks are on the <a href='https://swharden.com/scottplot' style='font-weight: 600;'>ScottPlot Website</a></blockquote>
+<h2><a href='#annotation_quickstart' name='annotation_quickstart' style='color: black;'>Figure Annotations</a></h2>
+Annotations are labels placed at a X/Y location on the figure (not coordinates of the data area). Unlike the Text plottable, annotations do not move as the axes are adjusted.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[] xs = DataGen.Range(0, 5, .1);
+plt.AddScatter(xs, DataGen.Sin(xs));
+plt.AddScatter(xs, DataGen.Cos(xs));
+
+// default placement is upper left
+plt.AddAnnotation("Top Left", 10, 10);
+
+// negative coordinates can be used to place text along different edges
+plt.AddAnnotation("Lower Left", 10, -10);
+plt.AddAnnotation("Top Right", -10, 10);
+plt.AddAnnotation("Lower Right", -10, -10);
+
+// Additional customizations are available
+var fancy = plt.AddAnnotation("Fancy Annotation", 10, 40);
+fancy.FontSize = 24;
+fancy.FontName = "Impact";
+fancy.FontColor = Color.Red;
+fancy.Shadow = false;
+fancy.BackgroundColor = Color.FromArgb(25, Color.Blue);
+fancy.BorderWidth = 2;
+fancy.BorderColor = Color.Magenta;
+
+plt.SaveFig("annotation_quickstart.png");</pre>
+<div class='center'><img src='source/annotation_quickstart.png' /></div>
+
+            </div>
+        </article>
+
+        <div id="lowerNavBar">&nbsp;</div>
+
+        <footer>
+            <div id="footerBlock">
+                <div>This page was generated for <code>ScottPlot 4.1.4-beta</code> on January 24, 2021</div>
+                <div>
+                    Additional documentation and resources can be found on the
+                    <a href="https://swharden.com/scottplot">ScottPlot Website</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

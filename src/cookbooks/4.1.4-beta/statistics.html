@@ -1,0 +1,210 @@
+<html>
+
+<head>
+    <title>ScottPlot 4.1.4-beta Cookbook: Statistics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script async src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'></script>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-560719-1'></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-560719-1');
+    </script>
+</head>
+
+<body>
+
+    <div id="backsplash" style="background-color: #144371;">&nbsp;</div>
+
+    <div id="content">
+
+        <div id="pageAboveArticle">
+            <div id="headerBlock">
+
+                <div id="headerMenu">
+                    <div class='menuButton'><a href='https://swharden.com/scottplot'>ScottPlot Website</a></div>
+                    <div class='menuButton'><a href='https://swharden.com/scottplot/cookbook'>Latest Cookbook</a></div>
+                </div>
+
+                <div class='title'>
+                    <a href="https://swharden.com/scottplot">ScottPlot</a>
+                    <span style='opacity: .2;'>Cookbook</span>
+                </div>
+
+                <div class='subtitle'>free and open-source plotting library for .NET</div>
+                <div id="githubButtonWrapper">
+                    <a class="github-button" href="https://github.com/swharden/scottplot" data-size="large"
+                       data-show-count="true" aria-label="Star on GitHub" data-text="Star on GitHub"></a>
+                </div>
+            </div>
+        </div>
+
+        <article>
+            <div id="md2html">
+                <h1><a href='./index.html' style='color: black;'>ScottPlot Cookbook</a>: <i><a href='statistics.html' style='color: black;'>Statistics</a></i></h1>
+<blockquote><b>&#9888;&#65039;</b> <strong>Documentation is version-specific:</strong> This page was generated for <code>ScottPlot 4.1.4-beta</code><br> Additional documentation and more version-specific cookbooks are on the <a href='https://swharden.com/scottplot' style='font-weight: 600;'>ScottPlot Website</a></blockquote>
+<h2><a href='#stats_histogram' name='stats_histogram' style='color: black;'>Histogram</a></h2>
+The Histogram class makes it easy to get binned population information.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+Random rand = new Random(0);
+double[] values = DataGen.RandomNormal(rand, pointCount: 1000, mean: 50, stdDev: 20);
+var hist = new ScottPlot.Statistics.Histogram(values, min: 0, max: 100);
+
+// plot the bins as a bar graph (on the primary Y axis)
+var bar = plt.AddBar(hist.counts, hist.bins);
+bar.BarWidth = hist.binSize * 1.2; // oversize to reduce render artifacts
+bar.BorderLineWidth = 0;
+bar.YAxisIndex = 0;
+plt.YAxis.Label("Count (#)");
+plt.YAxis.Color(bar.FillColor);
+
+// plot the mean curve as a scatter plot (on the secondary Y axis)
+var sp = plt.AddScatter(hist.bins, hist.countsFracCurve);
+sp.MarkerSize = 0;
+sp.LineWidth = 2;
+sp.YAxisIndex = 1;
+plt.YAxis2.Label("Fraction");
+plt.YAxis2.Color(sp.Color);
+plt.YAxis2.Ticks(true);
+
+// decorate the plot
+plt.XAxis2.Label("Normal Random Data", bold: true);
+plt.XAxis.Label("Value (units)");
+plt.SetAxisLimits(yMin: 0);
+plt.Grid(lineStyle: LineStyle.Dot);
+
+plt.SaveFig("stats_histogram.png");</pre>
+<div class='center'><img src='source/stats_histogram.png' /></div>
+<h2><a href='#stats_cph' name='stats_cph' style='color: black;'>CPH</a></h2>
+This example demonstrates how to plot a cumulative probability histogram (CPH) to compare the distribution of two datasets.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// create sample data for two datasets
+Random rand = new Random(0);
+double[] values1 = DataGen.RandomNormal(rand, pointCount: 1000, mean: 50, stdDev: 20);
+double[] values2 = DataGen.RandomNormal(rand, pointCount: 1000, mean: 45, stdDev: 25);
+var hist1 = new ScottPlot.Statistics.Histogram(values1, min: 0, max: 100);
+var hist2 = new ScottPlot.Statistics.Histogram(values2, min: 0, max: 100);
+
+// display datasets as step plots
+var sp1 = plt.AddScatter(hist1.bins, hist1.cumulativeFrac);
+sp1.Label = "Sample A";
+sp1.StepDisplay = true;
+sp1.MarkerSize = 0;
+
+var sp2 = plt.AddScatter(hist2.bins, hist2.cumulativeFrac);
+sp2.Label = "Sample B";
+sp2.StepDisplay = true;
+sp2.MarkerSize = 0;
+
+// decorate the plot
+plt.Legend();
+plt.SetAxisLimits(yMin: 0, yMax: 1);
+plt.Grid(lineStyle: LineStyle.Dot);
+plt.Title("Cumulative Probability Histogram");
+plt.XAxis.Label("Probability (fraction)");
+plt.YAxis.Label("Value (units)");
+
+plt.SaveFig("stats_cph.png");</pre>
+<div class='center'><img src='source/stats_cph.png' /></div>
+<h2><a href='#stats_linearregression' name='stats_linearregression' style='color: black;'>Linear Regression</a></h2>
+A regression module is available to simplify the act of creating a linear regression line fitted to the data.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// Create some linear but noisy data
+double[] ys = DataGen.NoisyLinear(null, pointCount: 100, noise: 30);
+double[] xs = DataGen.Consecutive(ys.Length);
+double x1 = xs[0];
+double x2 = xs[xs.Length - 1];
+
+// use the linear regression fitter to fit these data
+var model = new ScottPlot.Statistics.LinearRegressionLine(xs, ys);
+
+// plot the original data and add the regression line
+plt.Title("Linear Regression\n" +
+    $"Y = {model.slope:0.0000}x + {model.offset:0.0} " +
+    $"(R² = {model.rSquared:0.0000})");
+plt.AddScatter(xs, ys, lineWidth: 0);
+plt.AddLine(model.slope, model.offset, (x1, x2), lineWidth: 2);
+
+plt.SaveFig("stats_linearRegression.png");</pre>
+<div class='center'><img src='source/stats_linearregression.png' /></div>
+<h2><a href='#stats_orderstatistics' name='stats_orderstatistics' style='color: black;'>Nth Order Statistics</a></h2>
+The Nth order statistic of a set is the Nth smallest value of the set (indexed from 1).
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+Random rand = new Random(0);
+int pointCount = 500;
+double[] xs = DataGen.Consecutive(pointCount);
+double[] ys = DataGen.Random(rand, pointCount);
+
+int n = 200;
+double nthValue = Statistics.Common.NthOrderStatistic(ys, n);
+
+plt.Title($"{n}th Smallest Value (of {pointCount})");
+plt.AddScatter(xs, ys, lineWidth: 0, markerShape: MarkerShape.openCircle);
+plt.AddHorizontalLine(nthValue, width: 3, style: LineStyle.Dash);
+
+plt.SaveFig("stats_orderStatistics.png");</pre>
+<div class='center'><img src='source/stats_orderstatistics.png' /></div>
+<h2><a href='#stats_percentiles' name='stats_percentiles' style='color: black;'>Percentiles</a></h2>
+Percentiles are a good tool to analyze the distribution of your data and filter out extreme values.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+Random rand = new Random(0);
+int pointCount = 500;
+double[] xs = DataGen.Consecutive(pointCount);
+double[] ys = DataGen.Random(rand, pointCount);
+
+double tenthPercentile = Statistics.Common.Percentile(ys, 10);
+
+plt.Title("10th Percentile");
+plt.AddScatter(xs, ys, lineWidth: 0, markerShape: MarkerShape.openCircle);
+plt.AddHorizontalLine(tenthPercentile, width: 3, style: LineStyle.Dash);
+
+plt.SaveFig("stats_percentiles.png");</pre>
+<div class='center'><img src='source/stats_percentiles.png' /></div>
+<h2><a href='#stats_quantiles' name='stats_quantiles' style='color: black;'>Quantiles</a></h2>
+A q-Quantile is a generalization of quartiles and percentiles to any number of buckets.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+Random rand = new Random(0);
+int pointCount = 500;
+double[] xs = DataGen.Consecutive(pointCount);
+double[] ys = DataGen.Random(rand, pointCount);
+
+// A septile is a 7-quantile
+double secondSeptile = Statistics.Common.Quantile(ys, 2, 7);
+
+plt.Title("Second Septile");
+plt.AddScatter(xs, ys, lineWidth: 0, markerShape: MarkerShape.openCircle);
+plt.AddHorizontalLine(secondSeptile, width: 3, style: LineStyle.Dash);
+
+plt.SaveFig("stats_quantiles.png");</pre>
+<div class='center'><img src='source/stats_quantiles.png' /></div>
+
+            </div>
+        </article>
+
+        <div id="lowerNavBar">&nbsp;</div>
+
+        <footer>
+            <div id="footerBlock">
+                <div>This page was generated for <code>ScottPlot 4.1.4-beta</code> on January 24, 2021</div>
+                <div>
+                    Additional documentation and resources can be found on the
+                    <a href="https://swharden.com/scottplot">ScottPlot Website</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,541 @@
+<html>
+
+<head>
+    <title>ScottPlot 4.1.4-beta Cookbook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script async src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'></script>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-560719-1'></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-560719-1');
+    </script>
+</head>
+
+<body>
+
+    <div id="backsplash" style="background-color: #144371;">&nbsp;</div>
+
+    <div id="content">
+
+        <div id="pageAboveArticle">
+            <div id="headerBlock">
+
+                <div id="headerMenu">
+                    <div class='menuButton'><a href='https://swharden.com/scottplot'>ScottPlot Website</a></div>
+                    <div class='menuButton'><a href='https://swharden.com/scottplot/cookbook'>Latest Cookbook</a></div>
+                </div>
+
+                <div class='title'>
+                    <a href="https://swharden.com/scottplot">ScottPlot</a>
+                    <span style='opacity: .2;'>Cookbook</span>
+                </div>
+
+                <div class='subtitle'>free and open-source plotting library for .NET</div>
+                <div id="githubButtonWrapper">
+                    <a class="github-button" href="https://github.com/swharden/scottplot" data-size="large"
+                       data-show-count="true" aria-label="Star on GitHub" data-text="Star on GitHub"></a>
+                </div>
+            </div>
+        </div>
+
+        <article>
+            <div id="md2html">
+                <h1><a href='./index.html' style='color: black;'>ScottPlot Cookbook</a></h1>
+<blockquote><b>&#9888;&#65039;</b> <strong>Documentation is version-specific:</strong> This page was generated for <code>ScottPlot 4.1.4-beta</code><br> Additional documentation and more version-specific cookbooks are on the <a href='https://swharden.com/scottplot' style='font-weight: 600;'>ScottPlot Website</a></blockquote>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#quickstart' name='quickstart' style='color: black; text-decoration: none; font-weight: 600;'>Quickstart</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='quickstart.html#quickstart_scatter' style='font-weight: 600;'>Scatter Plot</a> - Scatter plots have paired X/Y points.</p>
+<p><a href='quickstart.html#quickstart_signal' style='font-weight: 600;'>Signal Plot</a> - Signal plots have evenly spaced Y points. Signal plots are very fast and can interactively display millions of data points. There are many different types of plottable objects, each serving a different purpose.</p>
+<p><a href='quickstart.html#quickstart_axis' style='font-weight: 600;'>Axis Labels and Limits</a> - Axis labels and limits can be customized</p>
+<p><a href='quickstart.html#quickstart_add' style='font-weight: 600;'>Manually Add a Plottable</a> - You can create a plot manually, then add it to the plot with Add(). This allows you to create custom plot types and add them to the plot.</p>
+<p><a href='quickstart.html#quickstart_clear' style='font-weight: 600;'>Clear plottables</a> - Call Clear() to remove all plottables from the plot. Overloads of Clear() allow you to remote one type of plottable, or a specific plottable.</p>
+</div><a href='quickstart.html#quickstart_scatter'><img src='source/quickstart_scatter_thumb.jpg' style='padding: 10px;'/></a>
+<a href='quickstart.html#quickstart_signal'><img src='source/quickstart_signal_thumb.jpg' style='padding: 10px;'/></a>
+<a href='quickstart.html#quickstart_axis'><img src='source/quickstart_axis_thumb.jpg' style='padding: 10px;'/></a>
+<a href='quickstart.html#quickstart_add'><img src='source/quickstart_add_thumb.jpg' style='padding: 10px;'/></a>
+<a href='quickstart.html#quickstart_clear'><img src='source/quickstart_clear_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#axis_and_ticks' name='axis_and_ticks' style='color: black; text-decoration: none; font-weight: 600;'>Axis and Ticks</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='axis_and_ticks.html#axis_label' style='font-weight: 600;'>Axis Customizations</a> - Axes can be customized different ways. Axis labels and colors are the most common types of customizations.</p>
+<p><a href='axis_and_ticks.html#axis_griddisableall' style='font-weight: 600;'>Disable Grid</a> - Visibility of primary X and Y grids can be set using a single method.</p>
+<p><a href='axis_and_ticks.html#axis_griddisableone' style='font-weight: 600;'>Disable Vertical Grid</a> - Grid line visibility can be controlled for each axis individually. Use this to selectively enable grid lines only for the axes of interest. Keep in mind that vertical grid lines are controlled by horizontal axes.</p>
+<p><a href='axis_and_ticks.html#asis_gridconfigure' style='font-weight: 600;'>Grid Style</a> - Common grid line configurations are available.</p>
+<p><a href='axis_and_ticks.html#ticks_hidex' style='font-weight: 600;'>Disable X Ticks</a> - Ticks can be hidden on a single axis.</p>
+<p><a href='axis_and_ticks.html#ticks_rotated' style='font-weight: 600;'>Rotated X Ticks</a> - Horizontal tick labels can be rotated as desired.</p>
+<p><a href='axis_and_ticks.html#ticks_rotatedy' style='font-weight: 600;'>Rotated Y Ticks</a> - Vertical tick labels can be rotated as desired.</p>
+<p><a href='axis_and_ticks.html#ticks_datetime' style='font-weight: 600;'>Plotting DateTime Data</a> - This example shows how to display DateTime data on the horizontal axis. Use DateTime.ToOADate() to convert DateTime[] to double[], plot the data,  then tell the axis to format tick labels as dates.</p>
+</div><a href='axis_and_ticks.html#axis_label'><img src='source/axis_label_thumb.jpg' style='padding: 10px;'/></a>
+<a href='axis_and_ticks.html#axis_griddisableall'><img src='source/axis_griddisableall_thumb.jpg' style='padding: 10px;'/></a>
+<a href='axis_and_ticks.html#axis_griddisableone'><img src='source/axis_griddisableone_thumb.jpg' style='padding: 10px;'/></a>
+<a href='axis_and_ticks.html#asis_gridconfigure'><img src='source/asis_gridconfigure_thumb.jpg' style='padding: 10px;'/></a>
+<a href='axis_and_ticks.html#ticks_hidex'><img src='source/ticks_hidex_thumb.jpg' style='padding: 10px;'/></a>
+<a href='axis_and_ticks.html#ticks_rotated'><img src='source/ticks_rotated_thumb.jpg' style='padding: 10px;'/></a>
+<a href='axis_and_ticks.html#ticks_rotatedy'><img src='source/ticks_rotatedy_thumb.jpg' style='padding: 10px;'/></a>
+<a href='axis_and_ticks.html#ticks_datetime'><img src='source/ticks_datetime_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#advanced_axis_features' name='advanced_axis_features' style='color: black; text-decoration: none; font-weight: 600;'>Advanced Axis Features</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='advanced_axis_features.html#asis_gridadvanced' style='font-weight: 600;'>Advanced Grid Customization</a> - Grid lines can be extensively customized using various configuration methods.</p>
+<p><a href='advanced_axis_features.html#ticks_numericformatstring' style='font-weight: 600;'>Numeric Format String</a> - Tick labels can be converted to text using a custom format string.</p>
+<p><a href='advanced_axis_features.html#ticks_defined' style='font-weight: 600;'>Manual Tick Labels</a> - Tick positions and labels can be defined manually.</p>
+<p><a href='advanced_axis_features.html#ticks_nonlinearx' style='font-weight: 600;'>NonLinear Tick Spacing</a> - Plot data on regular cartesian space then manually control axis labels to give the appearance of non-linear spacing between points.</p>
+<p><a href='advanced_axis_features.html#ticks_descending' style='font-weight: 600;'>Descending Ticks</a> - ScottPlot will always display data where X values ascend from left to right. To simulate an inverted axis (where numbers decrease from left to right) plot data in the negative space, then invert the sign of tick labels.</p>
+<p><a href='advanced_axis_features.html#ticks_definedspacing' style='font-weight: 600;'>Defined Tick Spacing</a> - The space between tick marks can be manually defined by setting the grid spacing.</p>
+<p><a href='advanced_axis_features.html#ticks_culture' style='font-weight: 600;'>Tick Label Culture</a> - Large numbers and dates are formatted differently for different cultures. Hungarian uses spaces to separate large numbers and periods to separate fields in dates.</p>
+<p><a href='advanced_axis_features.html#ticks_culturecustom' style='font-weight: 600;'>Custom Tick Label Culture</a> - SetCulture() as arguments to let the user manually define formatting strings which will be used globally to change how numbers and dates are formatted.</p>
+<p><a href='advanced_axis_features.html#ticks_multiplier' style='font-weight: 600;'>Multiplier Notation</a> - Multiplier notation keeps tick labels small when plotting large data values.</p>
+<p><a href='advanced_axis_features.html#ticks_offset' style='font-weight: 600;'>Offset Notation</a> - Offset notation keeps tick labels small when plotting large data values that are close together.</p>
+<p><a href='advanced_axis_features.html#ticks_defineddatetimespace' style='font-weight: 600;'>Defined DateTime Spacing</a> - This example shows how to use a fixed inter-tick distance for a DateTime axis</p>
+<p><a href='advanced_axis_features.html#asis_log' style='font-weight: 600;'>Log Scale</a> - ScottPlot will only display data on a linear 2D plane, however you can log-transform data before plotting it to give the appearance of log scales. Customizing tick options for log-spaced minor ticks further improves appearance of these graphs.</p>
+<p><a href='advanced_axis_features.html#asis_ruler' style='font-weight: 600;'>Ruler mode</a> - Ruler mode is an alternative way to display axis ticks. It draws long ticks and offsets the tick labels to give the appearance of a ruler.</p>
+<p><a href='advanced_axis_features.html#asis_polar' style='font-weight: 600;'>Polar Coordinates</a> - A helper function converts radius and theta arrays into Cartesian coordinates suitable for plotting with traditioanl plot types.</p>
+</div><a href='advanced_axis_features.html#asis_gridadvanced'><img src='source/asis_gridadvanced_thumb.jpg' style='padding: 10px;'/></a>
+<a href='advanced_axis_features.html#ticks_numericformatstring'><img src='source/ticks_numericformatstring_thumb.jpg' style='padding: 10px;'/></a>
+<a href='advanced_axis_features.html#ticks_defined'><img src='source/ticks_defined_thumb.jpg' style='padding: 10px;'/></a>
+<a href='advanced_axis_features.html#ticks_nonlinearx'><img src='source/ticks_nonlinearx_thumb.jpg' style='padding: 10px;'/></a>
+<a href='advanced_axis_features.html#ticks_descending'><img src='source/ticks_descending_thumb.jpg' style='padding: 10px;'/></a>
+<a href='advanced_axis_features.html#ticks_definedspacing'><img src='source/ticks_definedspacing_thumb.jpg' style='padding: 10px;'/></a>
+<a href='advanced_axis_features.html#ticks_culture'><img src='source/ticks_culture_thumb.jpg' style='padding: 10px;'/></a>
+<a href='advanced_axis_features.html#ticks_culturecustom'><img src='source/ticks_culturecustom_thumb.jpg' style='padding: 10px;'/></a>
+<a href='advanced_axis_features.html#ticks_multiplier'><img src='source/ticks_multiplier_thumb.jpg' style='padding: 10px;'/></a>
+<a href='advanced_axis_features.html#ticks_offset'><img src='source/ticks_offset_thumb.jpg' style='padding: 10px;'/></a>
+<a href='advanced_axis_features.html#ticks_defineddatetimespace'><img src='source/ticks_defineddatetimespace_thumb.jpg' style='padding: 10px;'/></a>
+<a href='advanced_axis_features.html#asis_log'><img src='source/asis_log_thumb.jpg' style='padding: 10px;'/></a>
+<a href='advanced_axis_features.html#asis_ruler'><img src='source/asis_ruler_thumb.jpg' style='padding: 10px;'/></a>
+<a href='advanced_axis_features.html#asis_polar'><img src='source/asis_polar_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#multi-axis' name='multi-axis' style='color: black; text-decoration: none; font-weight: 600;'>Multi-Axis</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='multi-axis.html#multiaxis_primary' style='font-weight: 600;'>Primary Axes</a> - Plots always have 4 fundamental axes available to work with. Primary axes (XAxis and YAxis) are axis index 0. Secondary axes (XAxis2 and YAxis2) are axis index 1.By default primary axes are totally visible, and secondary axes have ticks hidden and no label. Sometimes the top axis (XAxis2) is given a label to simulate a plot title.</p>
+<p><a href='multi-axis.html#multiaxis_additional' style='font-weight: 600;'>Additional Y Axis</a> - Additional axes can be added on any edge. Additional axes stack away from the plot area.</p>
+<p><a href='multi-axis.html#multiaxis_right' style='font-weight: 600;'>Right Y Axis</a> - This example shows how to display a Y axis only on the right side.</p>
+<p><a href='multi-axis.html#multiaxis_invisible' style='font-weight: 600;'>Axis Visibility</a> - Visibility of axes can be toggled. In this example an additional Y axis is added but the primary Y axis is hidden. The result is a plot that appears to only have one Y axis.</p>
+</div><a href='multi-axis.html#multiaxis_primary'><img src='source/multiaxis_primary_thumb.jpg' style='padding: 10px;'/></a>
+<a href='multi-axis.html#multiaxis_additional'><img src='source/multiaxis_additional_thumb.jpg' style='padding: 10px;'/></a>
+<a href='multi-axis.html#multiaxis_right'><img src='source/multiaxis_right_thumb.jpg' style='padding: 10px;'/></a>
+<a href='multi-axis.html#multiaxis_invisible'><img src='source/multiaxis_invisible_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#statistics' name='statistics' style='color: black; text-decoration: none; font-weight: 600;'>Statistics</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='statistics.html#stats_histogram' style='font-weight: 600;'>Histogram</a> - The Histogram class makes it easy to get binned population information.</p>
+<p><a href='statistics.html#stats_cph' style='font-weight: 600;'>CPH</a> - This example demonstrates how to plot a cumulative probability histogram (CPH) to compare the distribution of two datasets.</p>
+<p><a href='statistics.html#stats_linearregression' style='font-weight: 600;'>Linear Regression</a> - A regression module is available to simplify the act of creating a linear regression line fitted to the data.</p>
+<p><a href='statistics.html#stats_orderstatistics' style='font-weight: 600;'>Nth Order Statistics</a> - The Nth order statistic of a set is the Nth smallest value of the set (indexed from 1).</p>
+<p><a href='statistics.html#stats_percentiles' style='font-weight: 600;'>Percentiles</a> - Percentiles are a good tool to analyze the distribution of your data and filter out extreme values.</p>
+<p><a href='statistics.html#stats_quantiles' style='font-weight: 600;'>Quantiles</a> - A q-Quantile is a generalization of quartiles and percentiles to any number of buckets.</p>
+</div><a href='statistics.html#stats_histogram'><img src='source/stats_histogram_thumb.jpg' style='padding: 10px;'/></a>
+<a href='statistics.html#stats_cph'><img src='source/stats_cph_thumb.jpg' style='padding: 10px;'/></a>
+<a href='statistics.html#stats_linearregression'><img src='source/stats_linearregression_thumb.jpg' style='padding: 10px;'/></a>
+<a href='statistics.html#stats_orderstatistics'><img src='source/stats_orderstatistics_thumb.jpg' style='padding: 10px;'/></a>
+<a href='statistics.html#stats_percentiles'><img src='source/stats_percentiles_thumb.jpg' style='padding: 10px;'/></a>
+<a href='statistics.html#stats_quantiles'><img src='source/stats_quantiles_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_annotation' name='plottable_annotation' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Annotation</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_annotation.html#annotation_quickstart' style='font-weight: 600;'>Figure Annotations</a> - Annotations are labels placed at a X/Y location on the figure (not coordinates of the data area). Unlike the Text plottable, annotations do not move as the axes are adjusted.</p>
+</div><a href='plottable_annotation.html#annotation_quickstart'><img src='source/annotation_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_arrow' name='plottable_arrow' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Arrow</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_arrow.html#plottable_arrow_quickstart' style='font-weight: 600;'>Arrows</a> - Arrows point to specific locations on the plot. Arrows are actually just scatter plots with two points and an arrowhead.</p>
+</div><a href='plottable_arrow.html#plottable_arrow_quickstart'><img src='source/plottable_arrow_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_axis_line_and_span' name='plottable_axis_line_and_span' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Axis Line and Span</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_axis_line_and_span.html#axisline_basics' style='font-weight: 600;'>Axis Line</a> - An axis line marks a position on an axis. Axis lines extend to positive and negative infinity on the other axis.</p>
+<p><a href='plottable_axis_line_and_span.html#axisline_draggable' style='font-weight: 600;'>Draggable Axis Lines</a> - In GUI environments, axis lines can be draggable and moved with the mouse. Drag limits define the boundaries the lines can be dragged.</p>
+<p><a href='plottable_axis_line_and_span.html#axisspan_quickstart' style='font-weight: 600;'>Axis Span</a> - Axis spans shade a portion of one axis. Axis spans extend to negative and positive infinity on the other axis.</p>
+<p><a href='plottable_axis_line_and_span.html#axisspan_draggable' style='font-weight: 600;'>Draggable Axis Span</a> - Axis spans can be dragged using the mouse. Drag limits are boundaries over which the edges of spans cannot cross.</p>
+</div><a href='plottable_axis_line_and_span.html#axisline_basics'><img src='source/axisline_basics_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_axis_line_and_span.html#axisline_draggable'><img src='source/axisline_draggable_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_axis_line_and_span.html#axisspan_quickstart'><img src='source/axisspan_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_axis_line_and_span.html#axisspan_draggable'><img src='source/axisspan_draggable_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_bar_graph' name='plottable_bar_graph' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Bar Graph</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_bar_graph.html#bar_quickstart' style='font-weight: 600;'>Bar Graph</a> - A simple bar graph can be created from a series of values. By default values are palced at X positions 0, 1, 2, etc.</p>
+<p><a href='plottable_bar_graph.html#bar_positions' style='font-weight: 600;'>Bar Graph with Defined Positions</a> - Horizontal positions for each bar can be defined manually. If you define bar positions, you will probably want to define the bar width as well.</p>
+<p><a href='plottable_bar_graph.html#bar_error' style='font-weight: 600;'>Bar Graph with Error Bars</a> - Errorbars can be added to any bar graph.</p>
+<p><a href='plottable_bar_graph.html#bar_stacked' style='font-weight: 600;'>Stacked Bar Graphs</a> - Bars can be overlapped to give the appearance of stacking.</p>
+<p><a href='plottable_bar_graph.html#bar_values' style='font-weight: 600;'>Values Above Bars</a> - The value of each bar can be displayed above it.</p>
+<p><a href='plottable_bar_graph.html#bar_pattern' style='font-weight: 600;'>Bar Fill Pattern</a> - Bar graph fill pattern can be customized.</p>
+<p><a href='plottable_bar_graph.html#bar_horizontal' style='font-weight: 600;'>Horizontal Bar Graph</a> - Bar graphs are typically displayed as columns, but it's possible to show bars as rows.</p>
+<p><a href='plottable_bar_graph.html#bar_group' style='font-weight: 600;'>Grouped Bar Graphs</a> - By customizing positions of multiple bar plots you can achieve the appearance of grouped bar graphs. The AddBarGroups() method is designed to simplify this process. More advanced grouping and bar plot styling is possible using the Population plot type.</p>
+<p><a href='plottable_bar_graph.html#bar_yoffset' style='font-weight: 600;'>Bars with Y Offsets</a> - By default bar graphs start at 0, but this does not have to be the case. Y offsets can be defined for each bar. When Y offsets are used, values represent the height of the bars (relative to their offsets).</p>
+<p><a href='plottable_bar_graph.html#bar_ynegcolor' style='font-weight: 600;'>Negative Bar Colors</a> - Bars with negative values can be colored differently than positive ones.</p>
+<p><a href='plottable_bar_graph.html#bar_waterfall' style='font-weight: 600;'>Waterfall Bar Graph</a> - Waterfall bar graphs use bars to represent changes in value from the previous level. This style graph can be created by offseting each bar by the sum of all bars preceeding it. This effect is similar to financial plots (OHLC and Candlestick) which are described in another section.</p>
+</div><a href='plottable_bar_graph.html#bar_quickstart'><img src='source/bar_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_bar_graph.html#bar_positions'><img src='source/bar_positions_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_bar_graph.html#bar_error'><img src='source/bar_error_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_bar_graph.html#bar_stacked'><img src='source/bar_stacked_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_bar_graph.html#bar_values'><img src='source/bar_values_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_bar_graph.html#bar_pattern'><img src='source/bar_pattern_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_bar_graph.html#bar_horizontal'><img src='source/bar_horizontal_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_bar_graph.html#bar_group'><img src='source/bar_group_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_bar_graph.html#bar_yoffset'><img src='source/bar_yoffset_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_bar_graph.html#bar_ynegcolor'><img src='source/bar_ynegcolor_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_bar_graph.html#bar_waterfall'><img src='source/bar_waterfall_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_colorbar' name='plottable_colorbar' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Colorbar</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_colorbar.html#colorbar_quickstart' style='font-weight: 600;'>Colorbar</a> - A colorbar displays a colormap beside the data area. Colorbars are typically added to plots containing heatmaps.</p>
+<p><a href='plottable_colorbar.html#colorbar_colormap' style='font-weight: 600;'>Colorbar for Colormap</a> - By default colorbars use the Viridis colormap, but this behavior can be customized and many colormaps are available.</p>
+<p><a href='plottable_colorbar.html#colorbar_ticks' style='font-weight: 600;'>Colorbar Ticks</a> - Tick marks can be added to colorbars. Each tick is described by a position (a fraction of the distance from the bottom to the top) and a string (the tick label).</p>
+</div><a href='plottable_colorbar.html#colorbar_quickstart'><img src='source/colorbar_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_colorbar.html#colorbar_colormap'><img src='source/colorbar_colormap_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_colorbar.html#colorbar_ticks'><img src='source/colorbar_ticks_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_fill' name='plottable_fill' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Fill</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_fill.html#fill_curve' style='font-weight: 600;'>Fill Under Curve</a> - Fill methods help to create semitransparent polygons to fill the area under a curve. This can be used to give the appearance of shading under a scatter plot, even though the plottable created here is a polygon with optional edge color and fill color.</p>
+<p><a href='plottable_fill.html#fill_abovebelow' style='font-weight: 600;'>Fill Above and Below</a> - Sometimes you want to share the area under a curve, but change its color depending on which side of the baseline value it is. There's a helper method to make this easier.</p>
+<p><a href='plottable_fill.html#fill_between' style='font-weight: 600;'>Fill Between Curves</a> - Given two curves, a polygon can be created to give the appearance of shading between them. Here we will display two scatter plots, then create a polygon to fill the region between them.</p>
+</div><a href='plottable_fill.html#fill_curve'><img src='source/fill_curve_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_fill.html#fill_abovebelow'><img src='source/fill_abovebelow_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_fill.html#fill_between'><img src='source/fill_between_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_finance' name='plottable_finance' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Finance</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_finance.html#finance_quickstart' style='font-weight: 600;'>Candlestick Chart</a> - ScottPlot can draw some financial indicators on plots in X/Y space, but users looking to develop robust financial charts should probably look at other libraries designed specifically for financial charting. The biggest limitations are (1) lack of mouse interaction and (2) the horizontal axis is strictly numeric Cartesian space and is not ideal for plotting dates. That said, some financial charting is possible with ScottPlot, and this cookbook demonstrates common use cases.</p>
+<p><a href='plottable_finance.html#finance_ohlc' style='font-weight: 600;'>OHLC Chart</a> - OHLC charts are an alternative to candlestick charts. They show high and low prices as a vertical line, and indicate open and close prices with little ticks to the left and to the right.</p>
+<p><a href='plottable_finance.html#finance_datetimeaxis' style='font-weight: 600;'>Using a DateTime Axis</a> - You probably never want to do this... but OHLCs have an X value you can customize to be a DateTime (converted to a double using DateTime.ToOATime()). The advantage is that you can use the native DateTime axis support on the horizontal axis. The disadvantage is that gaps in time appear as gaps in the candlesticks. Weekends without trading will appear as gaps. The alternative to this method is to plot a series of OHLCs using sequential numbers, then manually define the axis tick labels.</p>
+<p><a href='plottable_finance.html#finance_ticklabels' style='font-weight: 600;'>Candlesticks with Custom Tick Labels</a> - A better way to represent time on the horizontal axis is to use traditional Cartesian coordinates so each candlestick is placed at X positions (0, 1, 2, etc.), then manually define the locations and label text of important positions on the plot. This is clunky, but possible. This inelegance is why financial charting is probably best done with real financial charting libraries, not a scientific charting library like ScottPlot...</p>
+<p><a href='plottable_finance.html#finance_sma' style='font-weight: 600;'>Simple Moving Average (SMA)</a> - A simple moving average (SMA) technical indicator can be calculated and drawn as a scatter plot.</p>
+<p><a href='plottable_finance.html#finance_bollinger' style='font-weight: 600;'>Bollinger Bands</a> - Bollinger bands are a common technical indicator that show the average +/- two times the standard deviation of a given time range preceeding it.</p>
+<p><a href='plottable_finance.html#finance_right' style='font-weight: 600;'>Price on Right</a> - Newer data appears on the ride side of the chart so financial charts are often displayed with the vertical axis label on the right side as well. This is possible by disabling the left vertical axis (YAxis) and enabling the right one (YAxis2)</p>
+</div><a href='plottable_finance.html#finance_quickstart'><img src='source/finance_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_finance.html#finance_ohlc'><img src='source/finance_ohlc_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_finance.html#finance_datetimeaxis'><img src='source/finance_datetimeaxis_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_finance.html#finance_ticklabels'><img src='source/finance_ticklabels_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_finance.html#finance_sma'><img src='source/finance_sma_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_finance.html#finance_bollinger'><img src='source/finance_bollinger_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_finance.html#finance_right'><img src='source/finance_right_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_function' name='plottable_function' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Function</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_function.html#function_quickstart' style='font-weight: 600;'>Function</a> - Function plots are defined by a function (not X/Y data points) so the curve is continuous and can be zoomed in and out infinitely</p>
+</div><a href='plottable_function.html#function_quickstart'><img src='source/function_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_heatmap' name='plottable_heatmap' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Heatmap</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_heatmap.html#heatmap_quickstart' style='font-weight: 600;'>Heatmap Quickstart</a> - Heatmaps display a 2D array using a colormap.</p>
+<p><a href='plottable_heatmap.html#heatmap_colorbar' style='font-weight: 600;'>Heatmap with Colorbar</a> - Colorbars are often added when heatmaps are used.</p>
+<p><a href='plottable_heatmap.html#heatmap_image' style='font-weight: 600;'>Heatmap Image</a> - Image data can be plotted using the heatmap plot type.</p>
+<p><a href='plottable_heatmap.html#heatmap_2dwaveform' style='font-weight: 600;'>2D Waveform</a> - This example demonstrates a heatmap with 1000 tiles</p>
+<p><a href='plottable_heatmap.html#heatmap_colormap' style='font-weight: 600;'>Colormap</a> - Viridis is the default colormap, but several alternatives are available.</p>
+<p><a href='plottable_heatmap.html#heatmap_limitscale' style='font-weight: 600;'>Scale Limits</a> - Heatmap colormap scale can use a defined min/max value.</p>
+<p><a href='plottable_heatmap.html#heatmap_density' style='font-weight: 600;'>Interpolation by Density</a> - Heatmaps can be created from random 2D data points using the count within a square of fixed size.</p>
+<p><a href='plottable_heatmap.html#heatmap_gaussian' style='font-weight: 600;'>Gaussian Interpolation</a> - Heatmaps can be created from 2D data points using bilinear interpolation with Gaussian weighting. This option results in a heatmap with a standard deviation of 4.</p>
+</div><a href='plottable_heatmap.html#heatmap_quickstart'><img src='source/heatmap_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_heatmap.html#heatmap_colorbar'><img src='source/heatmap_colorbar_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_heatmap.html#heatmap_image'><img src='source/heatmap_image_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_heatmap.html#heatmap_2dwaveform'><img src='source/heatmap_2dwaveform_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_heatmap.html#heatmap_colormap'><img src='source/heatmap_colormap_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_heatmap.html#heatmap_limitscale'><img src='source/heatmap_limitscale_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_heatmap.html#heatmap_density'><img src='source/heatmap_density_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_heatmap.html#heatmap_gaussian'><img src='source/heatmap_gaussian_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_image' name='plottable_image' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Image</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_image.html#image_quickstart' style='font-weight: 600;'>Image Quickstart</a> - The Image plottable places a Bitmap at a location in X/Y space.The image's position will move in space as the axes move, but the size of the bitmap will always be the same (matched to the display resolution). </p>
+<p><a href='plottable_image.html#image_alignment' style='font-weight: 600;'>Image Alignment</a> - By default the X/Y coordinates define the upper left position of the image, but alignment can be customized.</p>
+<p><a href='plottable_image.html#image_rotation' style='font-weight: 600;'>Image Rotation</a> - Images can be rotated, but rotation is always relative to the upper left corner.</p>
+<p><a href='plottable_image.html#image_border' style='font-weight: 600;'>Image Border</a> - The borders of images can be customized.</p>
+</div><a href='plottable_image.html#image_quickstart'><img src='source/image_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_image.html#image_alignment'><img src='source/image_alignment_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_image.html#image_rotation'><img src='source/image_rotation_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_image.html#image_border'><img src='source/image_border_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_pie' name='plottable_pie' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Pie</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_pie.html#pie_quickstart' style='font-weight: 600;'>Pie Chart</a> - A pie chart illustrates numerical proportions as slices of a circle.</p>
+<p><a href='plottable_pie.html#pie_exploded' style='font-weight: 600;'>Exploded Pie Chart</a> - Exploded pie charts have a bit of space between their slices.</p>
+<p><a href='plottable_pie.html#pie_donut' style='font-weight: 600;'>Donut Chart</a> - Donut plots are pie charts with a hollow center.</p>
+<p><a href='plottable_pie.html#pie_donuttext' style='font-weight: 600;'>Donut with Text</a> - Custom text can be displayed in the center of a donut chart. Notice too how the colors of each slice are customized in this example.</p>
+<p><a href='plottable_pie.html#pie_showvalues' style='font-weight: 600;'>Slice Values</a> - The value of each slice can be displayed at its center.</p>
+<p><a href='plottable_pie.html#pie_showpercentage' style='font-weight: 600;'>Slice Percentages</a> - The percentage of each slice can be displayed at its center.</p>
+<p><a href='plottable_pie.html#pie_slicelabels' style='font-weight: 600;'>Slice Labels</a> - The label for each slice can be displayed at its center.</p>
+<p><a href='plottable_pie.html#pie_legend' style='font-weight: 600;'>Slices in Legend</a> - Slices can be labeled in the legend.</p>
+<p><a href='plottable_pie.html#pie_showeverything' style='font-weight: 600;'>Label Everything</a> - Slices can labeled with values, percentages, and lables, with a legend.</p>
+<p><a href='plottable_pie.html#pie_customlabels' style='font-weight: 600;'>Custom Slice Labels</a> - Custom slice labels can be used to display values using custom formats</p>
+</div><a href='plottable_pie.html#pie_quickstart'><img src='source/pie_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_pie.html#pie_exploded'><img src='source/pie_exploded_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_pie.html#pie_donut'><img src='source/pie_donut_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_pie.html#pie_donuttext'><img src='source/pie_donuttext_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_pie.html#pie_showvalues'><img src='source/pie_showvalues_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_pie.html#pie_showpercentage'><img src='source/pie_showpercentage_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_pie.html#pie_slicelabels'><img src='source/pie_slicelabels_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_pie.html#pie_legend'><img src='source/pie_legend_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_pie.html#pie_showeverything'><img src='source/pie_showeverything_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_pie.html#pie_customlabels'><img src='source/pie_customlabels_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_point' name='plottable_point' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Point</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_point.html#point_quickstart' style='font-weight: 600;'>Point</a> - You can add a single point to the plot. A point is really a scatter plot with a single X/Y coordinate.</p>
+</div><a href='plottable_point.html#point_quickstart'><img src='source/point_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_polygon' name='plottable_polygon' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Polygon</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_polygon.html#polygon_quickstart' style='font-weight: 600;'>Polygon Quickstart</a> - Polygons are 2D shapes made from pairs of X/Y points. The last point connects back to the first point, forming a closed shape. Polygons can be optionally outlined and optionally filled. Colors with semitransparency are especially useful for polygons.</p>
+<p><a href='plottable_polygon.html#polygon_filledlineplot' style='font-weight: 600;'>Filled Line Plot</a> - Polygons can be used to create 2D shapes resembling filled line plots. When mixed with semitransprent fills, these can be useful for displaying data.</p>
+<p><a href='plottable_polygon.html#polygon_stackedfilledlineplot' style='font-weight: 600;'>Stacked Filled Line Plot</a> - A stacked filled line plot effect can be achieved by overlapping polygons.</p>
+<p><a href='plottable_polygon.html#polygon_polygons' style='font-weight: 600;'>Many Polygons</a> - Special rendering optimizations are available to display a large number of polygons.</p>
+</div><a href='plottable_polygon.html#polygon_quickstart'><img src='source/polygon_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_polygon.html#polygon_filledlineplot'><img src='source/polygon_filledlineplot_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_polygon.html#polygon_stackedfilledlineplot'><img src='source/polygon_stackedfilledlineplot_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_polygon.html#polygon_polygons'><img src='source/polygon_polygons_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_population' name='plottable_population' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Population</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_population.html#population_quickstart' style='font-weight: 600;'>Population Plot</a> - The population plot makes it easy to display populations as bar graphs, box-and-whisker plots, scattered values, or box plots and data points side-by-side. The population plot is different than using a box plot with an error bar in that you pass your original data into the population plot and it determines the standard deviation, standard error, quartiles, mean, median, outliers, etc., and you get to determine how to display these values.</p>
+<p><a href='plottable_population.html#population_multiple' style='font-weight: 600;'>Multiple Populations</a> - Multiple populations can be assembled into an array and plotted as a single group.</p>
+<p><a href='plottable_population.html#population_multiseries' style='font-weight: 600;'>Multiple Series</a> - Multiple series of population groups can be plotted Here each group is clustered on the horizontal axis, and each series is given a different color and appears in the legend.</p>
+<p><a href='plottable_population.html#population_advanced' style='font-weight: 600;'>Advanced Population Styling</a> - Populations can be displayed many different ways. Scatter values can be displayed on either side of the bar or bar. Populations can be shown as bar graphs instead of box plots. Public fields allow many additional customizations.</p>
+</div><a href='plottable_population.html#population_quickstart'><img src='source/population_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_population.html#population_multiple'><img src='source/population_multiple_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_population.html#population_multiseries'><img src='source/population_multiseries_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_population.html#population_advanced'><img src='source/population_advanced_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_radar' name='plottable_radar' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Radar</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_radar.html#radar_quickstart' style='font-weight: 600;'>Radar</a> - A radar chart concisely displays multiple values. Radar plots are also called a spider charts or star charts.</p>
+<p><a href='plottable_radar.html#radar_straightlines' style='font-weight: 600;'>Straight Axis Lines</a> - Change the axis type to polygon to display radar charts with straight lines.</p>
+<p><a href='plottable_radar.html#radar_nolines' style='font-weight: 600;'>No Axis Lines</a> - A radar chart can have no drawn axis as well.</p>
+<p><a href='plottable_radar.html#radar_labelcategory' style='font-weight: 600;'>Labeled Categories</a> - Category labels can be displayed on the radar chart.</p>
+<p><a href='plottable_radar.html#radar_labelvalue' style='font-weight: 600;'>Labeled Values</a> - Labels can be displayed on the arms of the radar chart.</p>
+<p><a href='plottable_radar.html#radar_axisscaling' style='font-weight: 600;'>Independent Axis Scaling</a> - Axis scaling can be independent, allowing values for each category to be displayed using a different scale. When independent axis mode is enabled, axis limits are automatically adjusted to fit the range of the data.</p>
+<p><a href='plottable_radar.html#radar_axislimits' style='font-weight: 600;'>Defined Axis Limits</a> - Radar charts with independent axis limits use scales fitted to the data by default, but scaling can be controlled by defining the maximum value for each axis.</p>
+</div><a href='plottable_radar.html#radar_quickstart'><img src='source/radar_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_radar.html#radar_straightlines'><img src='source/radar_straightlines_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_radar.html#radar_nolines'><img src='source/radar_nolines_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_radar.html#radar_labelcategory'><img src='source/radar_labelcategory_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_radar.html#radar_labelvalue'><img src='source/radar_labelvalue_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_radar.html#radar_axisscaling'><img src='source/radar_axisscaling_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_radar.html#radar_axislimits'><img src='source/radar_axislimits_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_scale_bar' name='plottable_scale_bar' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Scale Bar</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_scale_bar.html#scalebar_quickstart' style='font-weight: 600;'>Scale Bar</a> - An L-shaped scalebar can be added in the corner of any plot. Set the vertical or horizontal sizer to zero and the scale bar will only span one dimension.</p>
+<p><a href='plottable_scale_bar.html#scalebar_horizontal' style='font-weight: 600;'>Horizontal Scale Bar</a> - Set the vertical or horizontal sizer to zero and the scale bar will only span one dimension.</p>
+</div><a href='plottable_scale_bar.html#scalebar_quickstart'><img src='source/scalebar_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_scale_bar.html#scalebar_horizontal'><img src='source/scalebar_horizontal_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_scatter_plot' name='plottable_scatter_plot' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Scatter Plot</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_scatter_plot.html#scatter_quickstart' style='font-weight: 600;'>Scatter Plot Quickstart</a> - Scatter plots are best for small numbers of paired X/Y data points. For evenly-spaced data points Signal is much faster.</p>
+<p><a href='plottable_scatter_plot.html#scatter_markers' style='font-weight: 600;'>Custom markers</a> - Markers can be customized using optional arguments and public fields.</p>
+<p><a href='plottable_scatter_plot.html#scatter_markershape' style='font-weight: 600;'>All marker shapes</a> - Legend indicates names of all available marker shapes</p>
+<p><a href='plottable_scatter_plot.html#scatter_linestyle' style='font-weight: 600;'>Custom lines</a> - Line color, size, and style can be customized. Setting markerSize to 0 prevents markers from being rendered.</p>
+<p><a href='plottable_scatter_plot.html#scatter_random' style='font-weight: 600;'>Random X/Y Points</a> - X data for scatter plots does not have to be evenly spaced, making scatter plots are ideal for displaying random data like this.</p>
+<p><a href='plottable_scatter_plot.html#scatter_errorbar' style='font-weight: 600;'>Scatter Plot with Errorbars</a> - An array of values can be supplied for error bars and redering options can be customized as desired</p>
+</div><a href='plottable_scatter_plot.html#scatter_quickstart'><img src='source/scatter_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_scatter_plot.html#scatter_markers'><img src='source/scatter_markers_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_scatter_plot.html#scatter_markershape'><img src='source/scatter_markershape_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_scatter_plot.html#scatter_linestyle'><img src='source/scatter_linestyle_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_scatter_plot.html#scatter_random'><img src='source/scatter_random_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_scatter_plot.html#scatter_errorbar'><img src='source/scatter_errorbar_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_signal_plot' name='plottable_signal_plot' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Signal Plot</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_signal_plot.html#signal_quickstart' style='font-weight: 600;'>Signal Plot Quickstart</a> - Signal plots are ideal for evenly-spaced data with thousands or millions of points.</p>
+<p><a href='plottable_signal_plot.html#signal_advantage' style='font-weight: 600;'>Speed Test</a> - Compare the speed to the same data plotted as a scatter plot.</p>
+<p><a href='plottable_signal_plot.html#signal_styled' style='font-weight: 600;'>Styled Signal Plot</a> - Signal plots can be styled using public fields. Signal plots can also be offset by a defined X or Y amount.</p>
+<p><a href='plottable_signal_plot.html#signal_5millionpoints' style='font-weight: 600;'>5 Million Points</a> - Signal plots with millions of points can be interacted with in real time.</p>
+<p><a href='plottable_signal_plot.html#signal_density' style='font-weight: 600;'>Display data density</a> - When plotting extremely high density data, you can't always see the trends underneath all those overlapping data points. If you send an array of colors to PlotSignal(), it will use those colors to display density.</p>
+<p><a href='plottable_signal_plot.html#signal_firstnpoints' style='font-weight: 600;'>Display first N points</a> - When plotting live data it is useful to allocate a large array in memory then fill it with values as they come in. By setting the maxRenderIndex property of a scatter plot to can prevent rendering the end of the array (which is probably filled with zeros).</p>
+<p><a href='plottable_signal_plot.html#signal_range' style='font-weight: 600;'>Plot a Range of Points</a> - It is sometimes useful to only display values within a range of the source data array.</p>
+<p><a href='plottable_signal_plot.html#signal_fillbelow' style='font-weight: 600;'>Fill Below</a> - Signal plots can be filled below with a solid color.</p>
+<p><a href='plottable_signal_plot.html#signal_fillbelowgradient' style='font-weight: 600;'>Gradient Fill Below</a> - Signal plots can be filled below using a color gradient.</p>
+<p><a href='plottable_signal_plot.html#signal_fillabove' style='font-weight: 600;'>Gradient Fill Above</a> - Signal plots can be filled above using a color gradient.</p>
+<p><a href='plottable_signal_plot.html#signal_fillaboveandbelow' style='font-weight: 600;'>Fill Above and Below</a> - Signal plots can be filled above and below</p>
+<p><a href='plottable_signal_plot.html#signal_gradientaboveandbelowgradient' style='font-weight: 600;'>Gradient Fill Above and Below</a> - Gradients can be used to fill above and below.</p>
+</div><a href='plottable_signal_plot.html#signal_quickstart'><img src='source/signal_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_signal_plot.html#signal_advantage'><img src='source/signal_advantage_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_signal_plot.html#signal_styled'><img src='source/signal_styled_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_signal_plot.html#signal_5millionpoints'><img src='source/signal_5millionpoints_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_signal_plot.html#signal_density'><img src='source/signal_density_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_signal_plot.html#signal_firstnpoints'><img src='source/signal_firstnpoints_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_signal_plot.html#signal_range'><img src='source/signal_range_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_signal_plot.html#signal_fillbelow'><img src='source/signal_fillbelow_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_signal_plot.html#signal_fillbelowgradient'><img src='source/signal_fillbelowgradient_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_signal_plot.html#signal_fillabove'><img src='source/signal_fillabove_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_signal_plot.html#signal_fillaboveandbelow'><img src='source/signal_fillaboveandbelow_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_signal_plot.html#signal_gradientaboveandbelowgradient'><img src='source/signal_gradientaboveandbelowgradient_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_signalconst' name='plottable_signalconst' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: SignalConst</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_signalconst.html#signalconst_quickstart' style='font-weight: 600;'>SignalConst Quickstart</a> - SignalConst plots pre-processes data to render much faster than Signal plots. Pre-processing takes a little time up-front and requires 4x the memory of Signal.</p>
+</div><a href='plottable_signalconst.html#signalconst_quickstart'><img src='source/signalconst_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_signalxy' name='plottable_signalxy' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: SignalXY</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_signalxy.html#signalxy_quickstart' style='font-weight: 600;'>SignalXY Quickstart</a> - SignalXY is a speed-optimized plot for displaying vaues (Ys) with unevenly-spaced positions (Xs) that are in ascending order. If your data is evenly-spaced, Signal and SignalConst is faster.</p>
+<p><a href='plottable_signalxy.html#signalxy_gaps' style='font-weight: 600;'>Signal Data with Gaps</a> - Signal with defined Xs that contain gaps</p>
+<p><a href='plottable_signalxy.html#signalxy_density' style='font-weight: 600;'>Different Densities</a> - Signal with mised low and high density data</p>
+</div><a href='plottable_signalxy.html#signalxy_quickstart'><img src='source/signalxy_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_signalxy.html#signalxy_gaps'><img src='source/signalxy_gaps_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_signalxy.html#signalxy_density'><img src='source/signalxy_density_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_signalxyconst' name='plottable_signalxyconst' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: SignalXYConst</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_signalxyconst.html#signalxyconst_quickstart' style='font-weight: 600;'>SignalConst with X and Y data</a> - SignalXYConst is a speed-optimized plot for displaying vaues (Ys) with unevenly-spaced positions (Xs) that are in ascending order. If your data is evenly-spaced, Signal and SignalConst is faster.</p>
+<p><a href='plottable_signalxyconst.html#signalxyconst_types' style='font-weight: 600;'>Different data types for xs and ys</a> - SignalXYConst with (int)Xs and (float)Ys arrays</p>
+</div><a href='plottable_signalxyconst.html#signalxyconst_quickstart'><img src='source/signalxyconst_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_signalxyconst.html#signalxyconst_types'><img src='source/signalxyconst_types_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_text' name='plottable_text' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Text</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_text.html#text_quickstart' style='font-weight: 600;'>Text</a> - The Text plottable displays a string at an X/Y coordinate in unit space. Unlike the Annotation plottable, text moves when the axes are adjusted.</p>
+<p><a href='plottable_text.html#text_alignment' style='font-weight: 600;'>Text Alignment and Rotation</a> - Advanced options are available to customize rotation and alignment. Note that if rotation is used, alignment is ignored.</p>
+<p><a href='plottable_text.html#text_fonts' style='font-weight: 600;'>Custom Fonts</a> - You can pass in a Font to further customize font options</p>
+</div><a href='plottable_text.html#text_quickstart'><img src='source/text_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_text.html#text_alignment'><img src='source/text_alignment_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_text.html#text_fonts'><img src='source/text_fonts_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_tooltip' name='plottable_tooltip' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Tooltip</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_tooltip.html#tooltip_quickstart' style='font-weight: 600;'>Tooltip Quickstart</a> - Tooltips are annotations that point to an X/Y coordinate on the plot</p>
+<p><a href='plottable_tooltip.html#tooltip_font' style='font-weight: 600;'>Tooltip Font</a> - Tooltips fonts can be customized</p>
+<p><a href='plottable_tooltip.html#tooltip_colors' style='font-weight: 600;'>Tooltip Colors</a> - Tooltips border and fill styles can be customized</p>
+</div><a href='plottable_tooltip.html#tooltip_quickstart'><img src='source/tooltip_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_tooltip.html#tooltip_font'><img src='source/tooltip_font_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_tooltip.html#tooltip_colors'><img src='source/tooltip_colors_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#plottable_vector_field' name='plottable_vector_field' style='color: black; text-decoration: none; font-weight: 600;'>Plottable: Vector Field</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='plottable_vector_field.html#vectorfield_quickstart' style='font-weight: 600;'>Quickstart</a> - A vector field can be useful to show data explained by differential equations</p>
+<p><a href='plottable_vector_field.html#vectorfield_anglemag' style='font-weight: 600;'>Angle and Magnitude</a> - This example demonstrates how to define vectors according to a given angle and magnitude.</p>
+<p><a href='plottable_vector_field.html#vectorfield_colormap' style='font-weight: 600;'>Custom Colormap</a> - A colormap can be supplied to color arrows according to their magnitude</p>
+<p><a href='plottable_vector_field.html#vectorfield_scalefactor' style='font-weight: 600;'>Custom Scale Factor</a> - A custom scale factor can adjust the length of the arrows.</p>
+</div><a href='plottable_vector_field.html#vectorfield_quickstart'><img src='source/vectorfield_quickstart_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_vector_field.html#vectorfield_anglemag'><img src='source/vectorfield_anglemag_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_vector_field.html#vectorfield_colormap'><img src='source/vectorfield_colormap_thumb.jpg' style='padding: 10px;'/></a>
+<a href='plottable_vector_field.html#vectorfield_scalefactor'><img src='source/vectorfield_scalefactor_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#style' name='style' style='color: black; text-decoration: none; font-weight: 600;'>Style</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='style.html#style_default' style='font-weight: 600;'>Default</a> - Customize many plot features using style presets</p>
+<p><a href='style.html#style_control' style='font-weight: 600;'>Control</a> - Customize many plot features using style presets</p>
+<p><a href='style.html#style_blue1' style='font-weight: 600;'>Blue1</a> - Customize many plot features using style presets</p>
+<p><a href='style.html#style_blue2' style='font-weight: 600;'>Blue2</a> - Customize many plot features using style presets</p>
+<p><a href='style.html#style_blue3' style='font-weight: 600;'>Blue3</a> - Customize many plot features using style presets</p>
+<p><a href='style.html#style_light1' style='font-weight: 600;'>Light1</a> - Customize many plot features using style presets</p>
+<p><a href='style.html#style_light2' style='font-weight: 600;'>Light2</a> - Customize many plot features using style presets</p>
+<p><a href='style.html#style_gray1' style='font-weight: 600;'>Gray1</a> - Customize many plot features using style presets</p>
+<p><a href='style.html#style_gray2' style='font-weight: 600;'>Gray2</a> - Customize many plot features using style presets</p>
+<p><a href='style.html#style_black' style='font-weight: 600;'>Black</a> - Customize many plot features using style presets</p>
+<p><a href='style.html#style_seaborn' style='font-weight: 600;'>Seaborn</a> - Customize many plot features using style presets</p>
+</div><a href='style.html#style_default'><img src='source/style_default_thumb.jpg' style='padding: 10px;'/></a>
+<a href='style.html#style_control'><img src='source/style_control_thumb.jpg' style='padding: 10px;'/></a>
+<a href='style.html#style_blue1'><img src='source/style_blue1_thumb.jpg' style='padding: 10px;'/></a>
+<a href='style.html#style_blue2'><img src='source/style_blue2_thumb.jpg' style='padding: 10px;'/></a>
+<a href='style.html#style_blue3'><img src='source/style_blue3_thumb.jpg' style='padding: 10px;'/></a>
+<a href='style.html#style_light1'><img src='source/style_light1_thumb.jpg' style='padding: 10px;'/></a>
+<a href='style.html#style_light2'><img src='source/style_light2_thumb.jpg' style='padding: 10px;'/></a>
+<a href='style.html#style_gray1'><img src='source/style_gray1_thumb.jpg' style='padding: 10px;'/></a>
+<a href='style.html#style_gray2'><img src='source/style_gray2_thumb.jpg' style='padding: 10px;'/></a>
+<a href='style.html#style_black'><img src='source/style_black_thumb.jpg' style='padding: 10px;'/></a>
+<a href='style.html#style_seaborn'><img src='source/style_seaborn_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#misc' name='misc' style='color: black; text-decoration: none; font-weight: 600;'>Misc</a>
+</h2>
+<div style='margin-left: 1em;'><p><a href='misc.html#misc_interpolation' style='font-weight: 600;'>Spline Interpolation</a> - Interpolated splines create curves with many X/Y points to smoothly connect a limited number of input points.</p>
+<p><a href='misc.html#misc_ap' style='font-weight: 600;'>Action Potential</a> - The raw trace (voltage) and first derivative (voltage change / time) of a mammalian action potential.</p>
+</div><a href='misc.html#misc_interpolation'><img src='source/misc_interpolation_thumb.jpg' style='padding: 10px;'/></a>
+<a href='misc.html#misc_ap'><img src='source/misc_ap_thumb.jpg' style='padding: 10px;'/></a>
+</div>
+<div class='categorySection'>
+<h2 style='margin-top: 1em;'>
+<a href='#miscellaneous' name='miscellaneous' style='color: black; text-decoration: none; font-weight: 600;'>Miscellaneous</a>
+</h2>
+<div style='margin-left: 1em;'><a href='all_recipes.html'>Single page with all recipes</a></div>
+</div>
+
+            </div>
+        </article>
+
+        <div id="lowerNavBar">&nbsp;</div>
+
+        <footer>
+            <div id="footerBlock">
+                <div>This page was generated for <code>ScottPlot 4.1.4-beta</code> on January 24, 2021</div>
+                <div>
+                    Additional documentation and resources can be found on the
+                    <a href="https://swharden.com/scottplot">ScottPlot Website</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

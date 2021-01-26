@@ -1,0 +1,218 @@
+<html>
+
+<head>
+    <title>ScottPlot 4.1.4-beta Cookbook: Plottable: Radar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script async src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'></script>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-560719-1'></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-560719-1');
+    </script>
+</head>
+
+<body>
+
+    <div id="backsplash" style="background-color: #144371;">&nbsp;</div>
+
+    <div id="content">
+
+        <div id="pageAboveArticle">
+            <div id="headerBlock">
+
+                <div id="headerMenu">
+                    <div class='menuButton'><a href='https://swharden.com/scottplot'>ScottPlot Website</a></div>
+                    <div class='menuButton'><a href='https://swharden.com/scottplot/cookbook'>Latest Cookbook</a></div>
+                </div>
+
+                <div class='title'>
+                    <a href="https://swharden.com/scottplot">ScottPlot</a>
+                    <span style='opacity: .2;'>Cookbook</span>
+                </div>
+
+                <div class='subtitle'>free and open-source plotting library for .NET</div>
+                <div id="githubButtonWrapper">
+                    <a class="github-button" href="https://github.com/swharden/scottplot" data-size="large"
+                       data-show-count="true" aria-label="Star on GitHub" data-text="Star on GitHub"></a>
+                </div>
+            </div>
+        </div>
+
+        <article>
+            <div id="md2html">
+                <h1><a href='./index.html' style='color: black;'>ScottPlot Cookbook</a>: <i><a href='plottable_radar.html' style='color: black;'>Plottable - Radar</a></i></h1>
+<blockquote><b>&#9888;&#65039;</b> <strong>Documentation is version-specific:</strong> This page was generated for <code>ScottPlot 4.1.4-beta</code><br> Additional documentation and more version-specific cookbooks are on the <a href='https://swharden.com/scottplot' style='font-weight: 600;'>ScottPlot Website</a></blockquote>
+<h2><a href='#radar_quickstart' name='radar_quickstart' style='color: black;'>Radar</a></h2>
+A radar chart concisely displays multiple values. Radar plots are also called a spider charts or star charts.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[,] values = {
+    { 78,  83, 84, 76, 43 },
+    { 100, 50, 70, 60, 90 }
+};
+
+plt.AddRadar(values);
+
+// improve plot styling
+plt.Frameless();
+plt.Grid(enable: false);
+
+plt.SaveFig("radar_quickstart.png");</pre>
+<div class='center'><img src='source/radar_quickstart.png' /></div>
+<h2><a href='#radar_straightlines' name='radar_straightlines' style='color: black;'>Straight Axis Lines</a></h2>
+Change the axis type to polygon to display radar charts with straight lines.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[,] values = {
+        { 78, 83, 84, 76, 43 },
+        { 100, 50, 70, 60, 90 }
+    };
+
+var radarPlot = plt.AddRadar(values);
+radarPlot.AxisType = RadarAxis.Polygon;
+
+plt.SaveFig("radar_straightLines.png");</pre>
+<div class='center'><img src='source/radar_straightlines.png' /></div>
+<h2><a href='#radar_nolines' name='radar_nolines' style='color: black;'>No Axis Lines</a></h2>
+A radar chart can have no drawn axis as well.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[,] values = {
+        { 78, 83, 84, 76, 43 },
+        { 100, 50, 70, 60, 90 }
+    };
+
+var radarPlot = plt.AddRadar(values);
+radarPlot.AxisType = RadarAxis.None;
+radarPlot.ShowAxisValues = false;
+
+plt.SaveFig("radar_noLines.png");</pre>
+<div class='center'><img src='source/radar_nolines.png' /></div>
+<h2><a href='#radar_labelcategory' name='radar_labelcategory' style='color: black;'>Labeled Categories</a></h2>
+Category labels can be displayed on the radar chart.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[,] values = {
+    { 5, 3, 10, 15, 3, 2, 256 },
+    { 5, 2, 10, 10, 1, 4, 252 },
+};
+
+var radar = plt.AddRadar(values, independentAxes: true);
+radar.CategoryLabels = new string[] { "Wins", "Poles", "Podiums", "Points Finishes", "DNFs", "Fastest Laps", "Points" };
+radar.GroupLabels = new[] { "Sebastian Vettel", "Fernando Alonso" };
+radar.ShowAxisValues = false;
+
+// customize the plot
+plt.Title("2010 Formula One World Championship");
+plt.Legend();
+
+/* Data represents the 2010 Formula One World Championship
+ * https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship
+ * Note: Alonso did not finish (DNF) in the Malaysian GP, but was included 
+ * here because he completed >90% of the race distance.
+ */
+
+plt.SaveFig("radar_labelCategory.png");</pre>
+<div class='center'><img src='source/radar_labelcategory.png' /></div>
+<h2><a href='#radar_labelvalue' name='radar_labelvalue' style='color: black;'>Labeled Values</a></h2>
+Labels can be displayed on the arms of the radar chart.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[,] values = {
+    { 5, 3, 10, 15, 3, 2 },
+    { 5, 2, 10, 10, 1, 4 },
+};
+
+var radar = plt.AddRadar(values);
+radar.CategoryLabels = new string[] { "Wins", "Poles", "Podiums", "Points Finishes", "DNFs", "Fastest Laps" };
+radar.GroupLabels = new string[] { "Sebastian Vettel", "Fernando Alonso" };
+
+// customize the plot
+plt.Title("2010 Formula One World Championship");
+plt.Legend();
+
+/* Data represents the 2010 Formula One World Championship
+ * https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship
+ * Note: Alonso did not finish (DNF) in the Malaysian GP, but was included 
+ * here because he completed >90% of the race distance.
+ */
+
+plt.SaveFig("radar_labelValue.png");</pre>
+<div class='center'><img src='source/radar_labelvalue.png' /></div>
+<h2><a href='#radar_axisscaling' name='radar_axisscaling' style='color: black;'>Independent Axis Scaling</a></h2>
+Axis scaling can be independent, allowing values for each category to be displayed using a different scale. When independent axis mode is enabled, axis limits are automatically adjusted to fit the range of the data.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[,] values = { { 5, 3, 10, 15, 3, 2, 256 }, { 5, 2, 10, 10, 1, 4, 252 }, };
+
+var radar = plt.AddRadar(values, independentAxes: true);
+radar.CategoryLabels = new string[] { "Wins", "Poles", "Podiums", "Points Finishes", "DNFs", "Fastest Laps", "Points" };
+radar.GroupLabels = new string[] { "Sebastian Vettel", "Fernando Alonso" };
+
+// customize the plot
+plt.Title("2010 Formula One World Championship");
+plt.Legend();
+
+/* Data represents the 2010 Formula One World Championship
+ * https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship
+ * Note: Alonso did not finish (DNF) in the Malaysian GP, but was included 
+ * here because he completed >90% of the race distance.
+ */
+
+plt.SaveFig("radar_axisScaling.png");</pre>
+<div class='center'><img src='source/radar_axisscaling.png' /></div>
+<h2><a href='#radar_axislimits' name='radar_axislimits' style='color: black;'>Defined Axis Limits</a></h2>
+Radar charts with independent axis limits use scales fitted to the data by default, but scaling can be controlled by defining the maximum value for each axis.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[,] values = {
+    { 5, 3, 10, 15, 3, 2, 256 },
+    { 5, 2, 10, 10, 1, 4, 252 },
+};
+
+double[] maxValues = { 13, 15, 17, 15, 10, 10, 413 };
+
+var radar = plt.AddRadar(values, independentAxes: true, maxValues: maxValues);
+radar.CategoryLabels = new string[] { "Wins", "Poles", "Podiums", "Points Finishes", "DNFs", "Fastest Laps", "Points" };
+radar.GroupLabels = new string[] { "Sebastian Vettel", "Fernando Alonso" };
+
+// customize the plot
+plt.Title("2010 Formula One World Championship");
+plt.Legend();
+
+/* Data represents the 2010 Formula One World Championship
+ * https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship
+ * Note: Alonso did not finish (DNF) in the Malaysian GP, but was included 
+ * here because he completed >90% of the race distance.
+ *
+ * Max values are based on https://en.wikipedia.org/wiki/List_of_Formula_One_World_Drivers%27_Champions.
+ */
+
+plt.SaveFig("radar_axisLimits.png");</pre>
+<div class='center'><img src='source/radar_axislimits.png' /></div>
+
+            </div>
+        </article>
+
+        <div id="lowerNavBar">&nbsp;</div>
+
+        <footer>
+            <div id="footerBlock">
+                <div>This page was generated for <code>ScottPlot 4.1.4-beta</code> on January 24, 2021</div>
+                <div>
+                    Additional documentation and resources can be found on the
+                    <a href="https://swharden.com/scottplot">ScottPlot Website</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

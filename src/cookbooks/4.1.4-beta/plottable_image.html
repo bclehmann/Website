@@ -1,0 +1,149 @@
+<html>
+
+<head>
+    <title>ScottPlot 4.1.4-beta Cookbook: Plottable: Image</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script async src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'></script>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-560719-1'></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-560719-1');
+    </script>
+</head>
+
+<body>
+
+    <div id="backsplash" style="background-color: #144371;">&nbsp;</div>
+
+    <div id="content">
+
+        <div id="pageAboveArticle">
+            <div id="headerBlock">
+
+                <div id="headerMenu">
+                    <div class='menuButton'><a href='https://swharden.com/scottplot'>ScottPlot Website</a></div>
+                    <div class='menuButton'><a href='https://swharden.com/scottplot/cookbook'>Latest Cookbook</a></div>
+                </div>
+
+                <div class='title'>
+                    <a href="https://swharden.com/scottplot">ScottPlot</a>
+                    <span style='opacity: .2;'>Cookbook</span>
+                </div>
+
+                <div class='subtitle'>free and open-source plotting library for .NET</div>
+                <div id="githubButtonWrapper">
+                    <a class="github-button" href="https://github.com/swharden/scottplot" data-size="large"
+                       data-show-count="true" aria-label="Star on GitHub" data-text="Star on GitHub"></a>
+                </div>
+            </div>
+        </div>
+
+        <article>
+            <div id="md2html">
+                <h1><a href='./index.html' style='color: black;'>ScottPlot Cookbook</a>: <i><a href='plottable_image.html' style='color: black;'>Plottable - Image</a></i></h1>
+<blockquote><b>&#9888;&#65039;</b> <strong>Documentation is version-specific:</strong> This page was generated for <code>ScottPlot 4.1.4-beta</code><br> Additional documentation and more version-specific cookbooks are on the <a href='https://swharden.com/scottplot' style='font-weight: 600;'>ScottPlot Website</a></blockquote>
+<h2><a href='#image_quickstart' name='image_quickstart' style='color: black;'>Image Quickstart</a></h2>
+The Image plottable places a Bitmap at a location in X/Y space.The image's position will move in space as the axes move, but the size of the bitmap will always be the same (matched to the display resolution). 
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// display some sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// create the bitmap we want to display
+Bitmap monaLisa = DataGen.SampleImage();
+
+// create the image plottable and add it to the plot
+var imagePlot = new ScottPlot.Plottable.Image() { Bitmap = monaLisa, X = 10, Y = .5 };
+
+plt.Add(imagePlot);
+
+plt.SaveFig("image_quickstart.png");</pre>
+<div class='center'><img src='source/image_quickstart.png' /></div>
+<h2><a href='#image_alignment' name='image_alignment' style='color: black;'>Image Alignment</a></h2>
+By default the X/Y coordinates define the upper left position of the image, but alignment can be customized.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// display some sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// display an image with 3 different alignments
+Bitmap monaLisa = DataGen.SampleImage();
+var ip1 = new ScottPlot.Plottable.Image() { Bitmap = monaLisa, X = 10 };
+var ip2 = new ScottPlot.Plottable.Image() { Bitmap = monaLisa, X = 25, Alignment = Alignment.MiddleCenter };
+var ip3 = new ScottPlot.Plottable.Image() { Bitmap = monaLisa, X = 40, Alignment = Alignment.LowerRight };
+
+plt.Add(ip1);
+plt.Add(ip2);
+plt.Add(ip3);
+
+plt.AddPoint(ip1.X, ip1.Y, Color.Magenta, size: 20);
+plt.AddPoint(ip2.X, ip2.Y, Color.Magenta, size: 20);
+plt.AddPoint(ip3.X, ip3.Y, Color.Magenta, size: 20);
+
+plt.SaveFig("image_alignment.png");</pre>
+<div class='center'><img src='source/image_alignment.png' /></div>
+<h2><a href='#image_rotation' name='image_rotation' style='color: black;'>Image Rotation</a></h2>
+Images can be rotated, but rotation is always relative to the upper left corner.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// display some sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// place a rotated image on the plot
+Bitmap monaLisa = DataGen.SampleImage();
+var ip1 = new ScottPlot.Plottable.Image() { Bitmap = monaLisa, X = 10, Y = .5, Rotation = 30 };
+plt.Add(ip1);
+plt.AddPoint(ip1.X, ip1.Y, color: Color.Magenta, size: 20);
+
+plt.SaveFig("image_rotation.png");</pre>
+<div class='center'><img src='source/image_rotation.png' /></div>
+<h2><a href='#image_border' name='image_border' style='color: black;'>Image Border</a></h2>
+The borders of images can be customized.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// display some sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// place an image on the plot
+plt.Add(new ScottPlot.Plottable.Image()
+{
+    Bitmap = DataGen.SampleImage(),
+    X = 10,
+    Y = .5,
+    Rotation = 30,
+    BorderColor = Color.Magenta,
+    BorderSize = 5,
+});
+
+plt.SaveFig("image_border.png");</pre>
+<div class='center'><img src='source/image_border.png' /></div>
+
+            </div>
+        </article>
+
+        <div id="lowerNavBar">&nbsp;</div>
+
+        <footer>
+            <div id="footerBlock">
+                <div>This page was generated for <code>ScottPlot 4.1.4-beta</code> on January 24, 2021</div>
+                <div>
+                    Additional documentation and resources can be found on the
+                    <a href="https://swharden.com/scottplot">ScottPlot Website</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

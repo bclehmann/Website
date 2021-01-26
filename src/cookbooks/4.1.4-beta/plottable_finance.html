@@ -1,0 +1,170 @@
+<html>
+
+<head>
+    <title>ScottPlot 4.1.4-beta Cookbook: Plottable: Finance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script async src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'></script>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-560719-1'></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-560719-1');
+    </script>
+</head>
+
+<body>
+
+    <div id="backsplash" style="background-color: #144371;">&nbsp;</div>
+
+    <div id="content">
+
+        <div id="pageAboveArticle">
+            <div id="headerBlock">
+
+                <div id="headerMenu">
+                    <div class='menuButton'><a href='https://swharden.com/scottplot'>ScottPlot Website</a></div>
+                    <div class='menuButton'><a href='https://swharden.com/scottplot/cookbook'>Latest Cookbook</a></div>
+                </div>
+
+                <div class='title'>
+                    <a href="https://swharden.com/scottplot">ScottPlot</a>
+                    <span style='opacity: .2;'>Cookbook</span>
+                </div>
+
+                <div class='subtitle'>free and open-source plotting library for .NET</div>
+                <div id="githubButtonWrapper">
+                    <a class="github-button" href="https://github.com/swharden/scottplot" data-size="large"
+                       data-show-count="true" aria-label="Star on GitHub" data-text="Star on GitHub"></a>
+                </div>
+            </div>
+        </div>
+
+        <article>
+            <div id="md2html">
+                <h1><a href='./index.html' style='color: black;'>ScottPlot Cookbook</a>: <i><a href='plottable_finance.html' style='color: black;'>Plottable - Finance</a></i></h1>
+<blockquote><b>&#9888;&#65039;</b> <strong>Documentation is version-specific:</strong> This page was generated for <code>ScottPlot 4.1.4-beta</code><br> Additional documentation and more version-specific cookbooks are on the <a href='https://swharden.com/scottplot' style='font-weight: 600;'>ScottPlot Website</a></blockquote>
+<h2><a href='#finance_quickstart' name='finance_quickstart' style='color: black;'>Candlestick Chart</a></h2>
+ScottPlot can draw some financial indicators on plots in X/Y space, but users looking to develop robust financial charts should probably look at other libraries designed specifically for financial charting. The biggest limitations are (1) lack of mouse interaction and (2) the horizontal axis is strictly numeric Cartesian space and is not ideal for plotting dates. That said, some financial charting is possible with ScottPlot, and this cookbook demonstrates common use cases.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// OHLCs are open, high, low, and closing prices for a time range.
+OHLC[] prices = DataGen.RandomStockPrices(null, 60);
+plt.AddCandlesticks(prices);
+
+plt.SaveFig("finance_quickstart.png");</pre>
+<div class='center'><img src='source/finance_quickstart.png' /></div>
+<h2><a href='#finance_ohlc' name='finance_ohlc' style='color: black;'>OHLC Chart</a></h2>
+OHLC charts are an alternative to candlestick charts. They show high and low prices as a vertical line, and indicate open and close prices with little ticks to the left and to the right.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+OHLC[] prices = DataGen.RandomStockPrices(null, 60);
+plt.AddOHLCs(prices);
+
+plt.SaveFig("finance_ohlc.png");</pre>
+<div class='center'><img src='source/finance_ohlc.png' /></div>
+<h2><a href='#finance_datetimeaxis' name='finance_datetimeaxis' style='color: black;'>Using a DateTime Axis</a></h2>
+You probably never want to do this... but OHLCs have an X value you can customize to be a DateTime (converted to a double using DateTime.ToOATime()). The advantage is that you can use the native DateTime axis support on the horizontal axis. The disadvantage is that gaps in time appear as gaps in the candlesticks. Weekends without trading will appear as gaps. The alternative to this method is to plot a series of OHLCs using sequential numbers, then manually define the axis tick labels.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+OHLC[] prices = DataGen.RandomStockPrices(null, 60, TimeSpan.FromDays(1));
+
+// add the OHLCs to the plot and the horizontal axis to display DateTime tick labels
+plt.AddCandlesticks(prices);
+plt.XAxis.DateTimeFormat(true);
+
+plt.SaveFig("finance_dateTimeAxis.png");</pre>
+<div class='center'><img src='source/finance_datetimeaxis.png' /></div>
+<h2><a href='#finance_ticklabels' name='finance_ticklabels' style='color: black;'>Candlesticks with Custom Tick Labels</a></h2>
+A better way to represent time on the horizontal axis is to use traditional Cartesian coordinates so each candlestick is placed at X positions (0, 1, 2, etc.), then manually define the locations and label text of important positions on the plot. This is clunky, but possible. This inelegance is why financial charting is probably best done with real financial charting libraries, not a scientific charting library like ScottPlot...
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+OHLC[] prices = DataGen.RandomStockPrices(null, 30);
+plt.AddCandlesticks(prices);
+
+// manually indicate where axis ticks should be and what their labels should say
+double[] tickPositions = { 0, 6, 13, 20, 27 };
+string[] tickLabels = { "Sep 23", "Sep 30", "Oct 7", "Oct 14", "Oct 21" };
+plt.XTicks(tickPositions, tickLabels);
+
+plt.SaveFig("finance_tickLabels.png");</pre>
+<div class='center'><img src='source/finance_ticklabels.png' /></div>
+<h2><a href='#finance_sma' name='finance_sma' style='color: black;'>Simple Moving Average (SMA)</a></h2>
+A simple moving average (SMA) technical indicator can be calculated and drawn as a scatter plot.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// generate sample stock prices
+OHLC[] ohlcs = DataGen.RandomStockPrices(null, 75);
+double[] xs = DataGen.Consecutive(ohlcs.Length);
+
+// calculate SMAs of different durations using helper methods
+double[] sma8xs = xs.Skip(8).ToArray();
+double[] sma8ys = Statistics.Finance.SMA(ohlcs, 8);
+double[] sma20xs = xs.Skip(20).ToArray();
+double[] sma20ys = Statistics.Finance.SMA(ohlcs, 20);
+
+// plot technical indicators as scatter plots above the financial chart
+plt.AddCandlesticks(ohlcs);
+plt.AddScatter(sma8xs, sma8ys, markerSize: 0, color: Color.Blue, lineWidth: 2);
+plt.AddScatter(sma20xs, sma20ys, markerSize: 0, color: Color.Navy, lineWidth: 2);
+
+plt.SaveFig("finance_sma.png");</pre>
+<div class='center'><img src='source/finance_sma.png' /></div>
+<h2><a href='#finance_bollinger' name='finance_bollinger' style='color: black;'>Bollinger Bands</a></h2>
+Bollinger bands are a common technical indicator that show the average +/- two times the standard deviation of a given time range preceeding it.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// generate sample stock prices
+OHLC[] ohlcs = DataGen.RandomStockPrices(null, 100);
+double[] xs = DataGen.Consecutive(ohlcs.Length);
+
+// calculate the bands and the time range they cover
+double[] xs2 = xs.Skip(20).ToArray();
+(var sma, var bolL, var bolU) = Statistics.Finance.Bollinger(ohlcs, 20);
+
+// plot technical indicators as scatter plots above the financial chart
+plt.AddCandlesticks(ohlcs);
+plt.AddScatter(xs2, sma, markerSize: 0, color: Color.Blue);
+plt.AddScatter(xs2, bolL, markerSize: 0, color: Color.Blue, lineStyle: LineStyle.Dash);
+plt.AddScatter(xs2, bolU, markerSize: 0, color: Color.Blue, lineStyle: LineStyle.Dash);
+
+plt.SaveFig("finance_bollinger.png");</pre>
+<div class='center'><img src='source/finance_bollinger.png' /></div>
+<h2><a href='#finance_right' name='finance_right' style='color: black;'>Price on Right</a></h2>
+Newer data appears on the ride side of the chart so financial charts are often displayed with the vertical axis label on the right side as well. This is possible by disabling the left vertical axis (YAxis) and enabling the right one (YAxis2)
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+OHLC[] prices = DataGen.RandomStockPrices(null, 30, TimeSpan.FromMinutes(5));
+plt.AddCandlesticks(prices);
+plt.XAxis.DateTimeFormat(true);
+
+plt.YAxis.Ticks(false);
+plt.YAxis2.Ticks(true);
+plt.YAxis2.Label("Price (USD)");
+
+plt.SaveFig("finance_right.png");</pre>
+<div class='center'><img src='source/finance_right.png' /></div>
+
+            </div>
+        </article>
+
+        <div id="lowerNavBar">&nbsp;</div>
+
+        <footer>
+            <div id="footerBlock">
+                <div>This page was generated for <code>ScottPlot 4.1.4-beta</code> on January 24, 2021</div>
+                <div>
+                    Additional documentation and resources can be found on the
+                    <a href="https://swharden.com/scottplot">ScottPlot Website</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

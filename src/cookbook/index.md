@@ -28,6 +28,6 @@
 <div class="m-5 text-center">
 
 Using an older version of ScottPlot?
-[Older cookbooks](https://swharden.com/scottplot/cookbooks) are available.
+[Older cookbooks](../cookbooks) are available.
 
 </div>

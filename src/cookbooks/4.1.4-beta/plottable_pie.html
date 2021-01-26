@@ -1,0 +1,195 @@
+<html>
+
+<head>
+    <title>ScottPlot 4.1.4-beta Cookbook: Plottable: Pie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script async src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'></script>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-560719-1'></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-560719-1');
+    </script>
+</head>
+
+<body>
+
+    <div id="backsplash" style="background-color: #144371;">&nbsp;</div>
+
+    <div id="content">
+
+        <div id="pageAboveArticle">
+            <div id="headerBlock">
+
+                <div id="headerMenu">
+                    <div class='menuButton'><a href='https://swharden.com/scottplot'>ScottPlot Website</a></div>
+                    <div class='menuButton'><a href='https://swharden.com/scottplot/cookbook'>Latest Cookbook</a></div>
+                </div>
+
+                <div class='title'>
+                    <a href="https://swharden.com/scottplot">ScottPlot</a>
+                    <span style='opacity: .2;'>Cookbook</span>
+                </div>
+
+                <div class='subtitle'>free and open-source plotting library for .NET</div>
+                <div id="githubButtonWrapper">
+                    <a class="github-button" href="https://github.com/swharden/scottplot" data-size="large"
+                       data-show-count="true" aria-label="Star on GitHub" data-text="Star on GitHub"></a>
+                </div>
+            </div>
+        </div>
+
+        <article>
+            <div id="md2html">
+                <h1><a href='./index.html' style='color: black;'>ScottPlot Cookbook</a>: <i><a href='plottable_pie.html' style='color: black;'>Plottable - Pie</a></i></h1>
+<blockquote><b>&#9888;&#65039;</b> <strong>Documentation is version-specific:</strong> This page was generated for <code>ScottPlot 4.1.4-beta</code><br> Additional documentation and more version-specific cookbooks are on the <a href='https://swharden.com/scottplot' style='font-weight: 600;'>ScottPlot Website</a></blockquote>
+<h2><a href='#pie_quickstart' name='pie_quickstart' style='color: black;'>Pie Chart</a></h2>
+A pie chart illustrates numerical proportions as slices of a circle.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[] values = { 778, 283, 184, 76, 43 };
+plt.AddPie(values);
+
+plt.SaveFig("pie_quickstart.png");</pre>
+<div class='center'><img src='source/pie_quickstart.png' /></div>
+<h2><a href='#pie_exploded' name='pie_exploded' style='color: black;'>Exploded Pie Chart</a></h2>
+Exploded pie charts have a bit of space between their slices.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[] values = { 778, 283, 184, 76, 43 };
+var pie = plt.AddPie(values);
+pie.Explode = true;
+
+plt.SaveFig("pie_exploded.png");</pre>
+<div class='center'><img src='source/pie_exploded.png' /></div>
+<h2><a href='#pie_donut' name='pie_donut' style='color: black;'>Donut Chart</a></h2>
+Donut plots are pie charts with a hollow center.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[] values = { 778, 283, 184, 76, 43 };
+var pie = plt.AddPie(values);
+pie.Explode = true;
+pie.DonutSize = .6;
+
+plt.SaveFig("pie_donut.png");</pre>
+<div class='center'><img src='source/pie_donut.png' /></div>
+<h2><a href='#pie_donuttext' name='pie_donuttext' style='color: black;'>Donut with Text</a></h2>
+Custom text can be displayed in the center of a donut chart. Notice too how the colors of each slice are customized in this example.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[] values = { 779, 586 };
+string centerText = $"{values[0] / values.Sum() * 100:00.0}%";
+Color color1 = Color.FromArgb(255, 0, 150, 200);
+Color color2 = Color.FromArgb(100, 0, 150, 200);
+
+var pie = plt.AddPie(values);
+pie.DonutSize = .6;
+pie.DonutLabel = centerText;
+pie.CenterFont.Color = color1;
+pie.OutlineSize = 2;
+pie.SliceFillColors = new Color[] { color1, color2 };
+
+plt.SaveFig("pie_donutText.png");</pre>
+<div class='center'><img src='source/pie_donuttext.png' /></div>
+<h2><a href='#pie_showvalues' name='pie_showvalues' style='color: black;'>Slice Values</a></h2>
+The value of each slice can be displayed at its center.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[] values = { 778, 43, 283, 76, 184 };
+var pie = plt.AddPie(values);
+pie.ShowValues = true;
+
+plt.SaveFig("pie_showValues.png");</pre>
+<div class='center'><img src='source/pie_showvalues.png' /></div>
+<h2><a href='#pie_showpercentage' name='pie_showpercentage' style='color: black;'>Slice Percentages</a></h2>
+The percentage of each slice can be displayed at its center.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[] values = { 778, 43, 283, 76, 184 };
+var pie = plt.AddPie(values);
+pie.ShowPercentages = true;
+
+plt.SaveFig("pie_showPercentage.png");</pre>
+<div class='center'><img src='source/pie_showpercentage.png' /></div>
+<h2><a href='#pie_slicelabels' name='pie_slicelabels' style='color: black;'>Slice Labels</a></h2>
+The label for each slice can be displayed at its center.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[] values = { 778, 43, 283, 76, 184 };
+string[] labels = { "C#", "JAVA", "Python", "F#", "PHP" };
+var pie = plt.AddPie(values);
+pie.GroupNames = labels;
+pie.ShowLabels = true;
+
+plt.SaveFig("pie_sliceLabels.png");</pre>
+<div class='center'><img src='source/pie_slicelabels.png' /></div>
+<h2><a href='#pie_legend' name='pie_legend' style='color: black;'>Slices in Legend</a></h2>
+Slices can be labeled in the legend.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[] values = { 778, 43, 283, 76, 184 };
+string[] labels = { "C#", "JAVA", "Python", "F#", "PHP" };
+var pie = plt.AddPie(values);
+pie.GroupNames = labels;
+plt.Legend();
+
+plt.SaveFig("pie_legend.png");</pre>
+<div class='center'><img src='source/pie_legend.png' /></div>
+<h2><a href='#pie_showeverything' name='pie_showeverything' style='color: black;'>Label Everything</a></h2>
+Slices can labeled with values, percentages, and lables, with a legend.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[] values = { 778, 43, 283, 76, 184 };
+string[] labels = { "C#", "JAVA", "Python", "F#", "PHP" };
+var pie = plt.AddPie(values);
+pie.GroupNames = labels;
+pie.ShowPercentages = true;
+pie.ShowValues = true;
+pie.ShowLabels = true;
+plt.Legend();
+
+plt.SaveFig("pie_showEverything.png");</pre>
+<div class='center'><img src='source/pie_showeverything.png' /></div>
+<h2><a href='#pie_customlabels' name='pie_customlabels' style='color: black;'>Custom Slice Labels</a></h2>
+Custom slice labels can be used to display values using custom formats
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[] values = { 778, 43, 283, 76, 184 };
+string[] labels = { "C#", "JAVA", "Python", "F#", "PHP" };
+
+// modify labels to include a custom formatted value
+labels = Enumerable.Range(0, values.Length)
+       .Select(i => $"{labels[i]}\n({values[i]})")
+       .ToArray();
+
+var pie = plt.AddPie(values);
+pie.GroupNames = labels;
+pie.ShowLabels = true;
+
+plt.SaveFig("pie_customLabels.png");</pre>
+<div class='center'><img src='source/pie_customlabels.png' /></div>
+
+            </div>
+        </article>
+
+        <div id="lowerNavBar">&nbsp;</div>
+
+        <footer>
+            <div id="footerBlock">
+                <div>This page was generated for <code>ScottPlot 4.1.4-beta</code> on January 24, 2021</div>
+                <div>
+                    Additional documentation and resources can be found on the
+                    <a href="https://swharden.com/scottplot">ScottPlot Website</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

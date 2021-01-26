@@ -1,0 +1,157 @@
+<html>
+
+<head>
+    <title>ScottPlot 4.1.4-beta Cookbook: Plottable: Text</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script async src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'></script>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-560719-1'></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-560719-1');
+    </script>
+</head>
+
+<body>
+
+    <div id="backsplash" style="background-color: #144371;">&nbsp;</div>
+
+    <div id="content">
+
+        <div id="pageAboveArticle">
+            <div id="headerBlock">
+
+                <div id="headerMenu">
+                    <div class='menuButton'><a href='https://swharden.com/scottplot'>ScottPlot Website</a></div>
+                    <div class='menuButton'><a href='https://swharden.com/scottplot/cookbook'>Latest Cookbook</a></div>
+                </div>
+
+                <div class='title'>
+                    <a href="https://swharden.com/scottplot">ScottPlot</a>
+                    <span style='opacity: .2;'>Cookbook</span>
+                </div>
+
+                <div class='subtitle'>free and open-source plotting library for .NET</div>
+                <div id="githubButtonWrapper">
+                    <a class="github-button" href="https://github.com/swharden/scottplot" data-size="large"
+                       data-show-count="true" aria-label="Star on GitHub" data-text="Star on GitHub"></a>
+                </div>
+            </div>
+        </div>
+
+        <article>
+            <div id="md2html">
+                <h1><a href='./index.html' style='color: black;'>ScottPlot Cookbook</a>: <i><a href='plottable_text.html' style='color: black;'>Plottable - Text</a></i></h1>
+<blockquote><b>&#9888;&#65039;</b> <strong>Documentation is version-specific:</strong> This page was generated for <code>ScottPlot 4.1.4-beta</code><br> Additional documentation and more version-specific cookbooks are on the <a href='https://swharden.com/scottplot' style='font-weight: 600;'>ScottPlot Website</a></blockquote>
+<h2><a href='#text_quickstart' name='text_quickstart' style='color: black;'>Text</a></h2>
+The Text plottable displays a string at an X/Y coordinate in unit space. Unlike the Annotation plottable, text moves when the axes are adjusted.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+int pointCount = 51;
+double[] x = DataGen.Consecutive(pointCount);
+double[] sin = DataGen.Sin(pointCount);
+double[] cos = DataGen.Cos(pointCount);
+
+plt.AddScatter(x, sin);
+plt.AddScatter(x, cos);
+
+plt.AddText("sample text", 10, .5, size: 16, color: Color.Blue);
+
+plt.SaveFig("text_quickstart.png");</pre>
+<div class='center'><img src='source/text_quickstart.png' /></div>
+<h2><a href='#text_alignment' name='text_alignment' style='color: black;'>Text Alignment and Rotation</a></h2>
+Advanced options are available to customize rotation and alignment. Note that if rotation is used, alignment is ignored.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+int pointCount = 51;
+double[] x = DataGen.Consecutive(pointCount);
+double[] sin = DataGen.Sin(pointCount);
+double[] cos = DataGen.Cos(pointCount);
+
+plt.AddScatter(x, sin);
+plt.AddScatter(x, cos);
+
+plt.AddPoint(25, 0.8, color: Color.Green);
+var t1 = plt.AddText(" Important Point (1)", 25, 0.8, 16, Color.Green);
+
+plt.AddPoint(30, 0.3, color: Color.Black, size: 15);
+var t2 = plt.AddText(" Default alignment (2)", 30, 0.3, 16);
+
+plt.AddPoint(30, 0, color: Color.Black, size: 15);
+var t3 = plt.AddText("Middle center (3)", 30, 0, 16);
+t3.Alignment = Alignment.MiddleCenter;
+
+plt.AddPoint(30, -0.3, color: Color.Black, size: 15);
+var t4 = plt.AddText("Upper left (4)", 30, -0.3, 16);
+t4.Alignment = Alignment.UpperLeft;
+
+plt.AddPoint(5, -.5, color: Color.Blue, size: 15);
+var t5 = plt.AddText(" Rotated Text (5)", 5, -.5, 16);
+t5.Rotation = -30;
+
+var t6 = plt.AddText(" Filled Background (6)", 15, -.6, 16);
+t6.Color = Color.Red;
+t6.FontBold = true;
+t6.BackgroundFill = true;
+t6.BackgroundColor = Color.LightBlue;
+
+plt.SaveFig("text_alignment.png");</pre>
+<div class='center'><img src='source/text_alignment.png' /></div>
+<h2><a href='#text_fonts' name='text_fonts' style='color: black;'>Custom Fonts</a></h2>
+You can pass in a Font to further customize font options
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// display some interesting data in the background
+plt.AddSignal(DataGen.Sin(51), label: "sin");
+plt.AddSignal(DataGen.Cos(51), label: "cos");
+
+// add text with custom fonts
+plt.AddText("very graph", 25, .8, new Drawing.Font() { Name = "comic sans ms", Size = 24, Color = Color.Blue, Bold = true });
+plt.AddText("so data", 0, 0, new Drawing.Font() { Name = "comic sans ms", Size = 42, Color = Color.Magenta, Bold = true });
+plt.AddText("many documentation", 3, -.6, new Drawing.Font() { Name = "comic sans ms", Size = 18, Color = Color.DarkBlue, Bold = true });
+plt.AddText("wow.", 10, .6, new Drawing.Font() { Name = "comic sans ms", Size = 36, Color = Color.Green, Bold = true });
+plt.AddText("NuGet", 32, 0, new Drawing.Font() { Name = "comic sans ms", Size = 24, Color = Color.Gold, Bold = true });
+
+// configure axis labels
+plt.YAxis.Label(label: "vertical units", fontName: "impact", size: 24, color: Color.Red, bold: true);
+plt.XAxis.Label(label: "horizontal units", fontName: "georgia", size: 24, color: Color.Blue, bold: true);
+plt.XAxis2.Label(label: "Impressive Graph", size: 24, color: Color.Purple, bold: true);
+
+// configure tick labels
+plt.XAxis.TickLabelStyle(color: Color.DarkBlue, fontName: "comic sans ms", fontSize: 16);
+plt.YAxis.TickLabelStyle(color: Color.DarkGreen, fontName: "comic sans ms", fontSize: 16);
+
+// add a legend to the corner
+var legend = plt.Legend();
+legend.FontName = "comic sans ms";
+legend.FontSize = 18;
+legend.FontBold = true;
+legend.FontColor = Color.DarkBlue;
+
+plt.SaveFig("text_fonts.png");</pre>
+<div class='center'><img src='source/text_fonts.png' /></div>
+
+            </div>
+        </article>
+
+        <div id="lowerNavBar">&nbsp;</div>
+
+        <footer>
+            <div id="footerBlock">
+                <div>This page was generated for <code>ScottPlot 4.1.4-beta</code> on January 24, 2021</div>
+                <div>
+                    Additional documentation and resources can be found on the
+                    <a href="https://swharden.com/scottplot">ScottPlot Website</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

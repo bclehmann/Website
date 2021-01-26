@@ -1,0 +1,146 @@
+<html>
+
+<head>
+    <title>ScottPlot 4.1.4-beta Cookbook: Plottable: Axis Line and Span</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script async src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'></script>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-560719-1'></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-560719-1');
+    </script>
+</head>
+
+<body>
+
+    <div id="backsplash" style="background-color: #144371;">&nbsp;</div>
+
+    <div id="content">
+
+        <div id="pageAboveArticle">
+            <div id="headerBlock">
+
+                <div id="headerMenu">
+                    <div class='menuButton'><a href='https://swharden.com/scottplot'>ScottPlot Website</a></div>
+                    <div class='menuButton'><a href='https://swharden.com/scottplot/cookbook'>Latest Cookbook</a></div>
+                </div>
+
+                <div class='title'>
+                    <a href="https://swharden.com/scottplot">ScottPlot</a>
+                    <span style='opacity: .2;'>Cookbook</span>
+                </div>
+
+                <div class='subtitle'>free and open-source plotting library for .NET</div>
+                <div id="githubButtonWrapper">
+                    <a class="github-button" href="https://github.com/swharden/scottplot" data-size="large"
+                       data-show-count="true" aria-label="Star on GitHub" data-text="Star on GitHub"></a>
+                </div>
+            </div>
+        </div>
+
+        <article>
+            <div id="md2html">
+                <h1><a href='./index.html' style='color: black;'>ScottPlot Cookbook</a>: <i><a href='plottable_axis_line_and_span.html' style='color: black;'>Plottable - Axis Line and Span</a></i></h1>
+<blockquote><b>&#9888;&#65039;</b> <strong>Documentation is version-specific:</strong> This page was generated for <code>ScottPlot 4.1.4-beta</code><br> Additional documentation and more version-specific cookbooks are on the <a href='https://swharden.com/scottplot' style='font-weight: 600;'>ScottPlot Website</a></blockquote>
+<h2><a href='#axisline_basics' name='axisline_basics' style='color: black;'>Axis Line</a></h2>
+An axis line marks a position on an axis. Axis lines extend to positive and negative infinity on the other axis.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// add axis lines
+plt.AddHorizontalLine(.85);
+plt.AddVerticalLine(23);
+
+// customize axis lines with optional arguments
+plt.AddVerticalLine(x: 33, color: Color.Magenta, width: 3, style: LineStyle.Dot);
+
+plt.SaveFig("axisLine_basics.png");</pre>
+<div class='center'><img src='source/axisline_basics.png' /></div>
+<h2><a href='#axisline_draggable' name='axisline_draggable' style='color: black;'>Draggable Axis Lines</a></h2>
+In GUI environments, axis lines can be draggable and moved with the mouse. Drag limits define the boundaries the lines can be dragged.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// add axis lines and configure their drag settings
+var hLine = plt.AddHorizontalLine(.85);
+hLine.DragEnabled = true;
+hLine.DragLimitMin = -1;
+hLine.DragLimitMax = 1;
+
+var vLine = plt.AddVerticalLine(23);
+vLine.DragEnabled = true;
+vLine.DragLimitMin = 0;
+vLine.DragLimitMax = 50;
+
+// you can access the position of an axis line at any time
+Debug.WriteLine($"Vertical line is at X={vLine.X}");
+
+plt.SaveFig("axisLine_draggable.png");</pre>
+<div class='center'><img src='source/axisline_draggable.png' /></div>
+<h2><a href='#axisspan_quickstart' name='axisspan_quickstart' style='color: black;'>Axis Span</a></h2>
+Axis spans shade a portion of one axis. Axis spans extend to negative and positive infinity on the other axis.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// add axis spans
+plt.AddVerticalSpan(.15, .85);
+plt.AddHorizontalSpan(10, 25);
+
+plt.SaveFig("axisSpan_quickstart.png");</pre>
+<div class='center'><img src='source/axisspan_quickstart.png' /></div>
+<h2><a href='#axisspan_draggable' name='axisspan_draggable' style='color: black;'>Draggable Axis Span</a></h2>
+Axis spans can be dragged using the mouse. Drag limits are boundaries over which the edges of spans cannot cross.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// dragging can be enabled and optionally limited to a range
+var vSpan = plt.AddVerticalSpan(.15, .85);
+vSpan.DragEnabled = true;
+vSpan.DragLimitMin = -1;
+vSpan.DragLimitMax = 1;
+
+// spans can be configured to allow dragging but disallow resizing
+var hSpan = plt.AddHorizontalSpan(10, 25);
+hSpan.DragEnabled = true;
+hSpan.DragFixedSize = true;
+
+plt.SaveFig("axisSpan_draggable.png");</pre>
+<div class='center'><img src='source/axisspan_draggable.png' /></div>
+
+            </div>
+        </article>
+
+        <div id="lowerNavBar">&nbsp;</div>
+
+        <footer>
+            <div id="footerBlock">
+                <div>This page was generated for <code>ScottPlot 4.1.4-beta</code> on January 24, 2021</div>
+                <div>
+                    Additional documentation and resources can be found on the
+                    <a href="https://swharden.com/scottplot">ScottPlot Website</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

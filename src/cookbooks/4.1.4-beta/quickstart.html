@@ -1,0 +1,152 @@
+<html>
+
+<head>
+    <title>ScottPlot 4.1.4-beta Cookbook: Quickstart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script async src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'></script>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-560719-1'></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-560719-1');
+    </script>
+</head>
+
+<body>
+
+    <div id="backsplash" style="background-color: #144371;">&nbsp;</div>
+
+    <div id="content">
+
+        <div id="pageAboveArticle">
+            <div id="headerBlock">
+
+                <div id="headerMenu">
+                    <div class='menuButton'><a href='https://swharden.com/scottplot'>ScottPlot Website</a></div>
+                    <div class='menuButton'><a href='https://swharden.com/scottplot/cookbook'>Latest Cookbook</a></div>
+                </div>
+
+                <div class='title'>
+                    <a href="https://swharden.com/scottplot">ScottPlot</a>
+                    <span style='opacity: .2;'>Cookbook</span>
+                </div>
+
+                <div class='subtitle'>free and open-source plotting library for .NET</div>
+                <div id="githubButtonWrapper">
+                    <a class="github-button" href="https://github.com/swharden/scottplot" data-size="large"
+                       data-show-count="true" aria-label="Star on GitHub" data-text="Star on GitHub"></a>
+                </div>
+            </div>
+        </div>
+
+        <article>
+            <div id="md2html">
+                <h1><a href='./index.html' style='color: black;'>ScottPlot Cookbook</a>: <i><a href='quickstart.html' style='color: black;'>Quickstart</a></i></h1>
+<blockquote><b>&#9888;&#65039;</b> <strong>Documentation is version-specific:</strong> This page was generated for <code>ScottPlot 4.1.4-beta</code><br> Additional documentation and more version-specific cookbooks are on the <a href='https://swharden.com/scottplot' style='font-weight: 600;'>ScottPlot Website</a></blockquote>
+<h2><a href='#quickstart_scatter' name='quickstart_scatter' style='color: black;'>Scatter Plot</a></h2>
+Scatter plots have paired X/Y points.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// sample data
+double[] xs = DataGen.Consecutive(51);
+double[] sin = DataGen.Sin(51);
+double[] cos = DataGen.Cos(51);
+
+// plot the data
+plt.AddScatter(xs, sin);
+plt.AddScatter(xs, cos);
+
+// customize the axis labels
+plt.Title("ScottPlot Quickstart");
+plt.XLabel("Horizontal Axis");
+plt.YLabel("Vertical Axis");
+
+plt.SaveFig("quickstart_scatter.png");</pre>
+<div class='center'><img src='source/quickstart_scatter.png' /></div>
+<h2><a href='#quickstart_signal' name='quickstart_signal' style='color: black;'>Signal Plot</a></h2>
+Signal plots have evenly spaced Y points. Signal plots are very fast and can interactively display millions of data points. There are many different types of plottable objects, each serving a different purpose.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[] values = DataGen.RandomWalk(1_000_000);
+plt.AddSignal(values, sampleRate: 48_000);
+plt.Title("One Million Points");
+
+plt.SaveFig("quickstart_signal.png");</pre>
+<div class='center'><img src='source/quickstart_signal.png' /></div>
+<h2><a href='#quickstart_axis' name='quickstart_axis' style='color: black;'>Axis Labels and Limits</a></h2>
+Axis labels and limits can be customized
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[] time = DataGen.Consecutive(51);
+double[] voltage = DataGen.Sin(51);
+plt.AddScatter(time, voltage);
+
+// Axes can be customized
+plt.XAxis.Label("Time (milliseconds)");
+plt.YAxis.Label("Voltage (mV)");
+plt.XAxis2.Label("Important Experiment");
+
+// Set axis limits to control the view
+plt.SetAxisLimits(-20, 80, -2, 2);
+
+plt.SaveFig("quickstart_axis.png");</pre>
+<div class='center'><img src='source/quickstart_axis.png' /></div>
+<h2><a href='#quickstart_add' name='quickstart_add' style='color: black;'>Manually Add a Plottable</a></h2>
+You can create a plot manually, then add it to the plot with Add(). This allows you to create custom plot types and add them to the plot.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[] xs = DataGen.Consecutive(51);
+double[] sin = DataGen.Sin(51);
+
+// instantiate a plottable
+var splt = new ScottPlot.Plottable.ScatterPlot(xs, sin);
+
+// customize its style or change its data as desired
+splt.Color = Color.Navy;
+splt.MarkerSize = 10;
+splt.MarkerShape = MarkerShape.filledDiamond;
+
+// add it to the plot
+plt.Add(splt);
+
+plt.SaveFig("quickstart_add.png");</pre>
+<div class='center'><img src='source/quickstart_add.png' /></div>
+<h2><a href='#quickstart_clear' name='quickstart_clear' style='color: black;'>Clear plottables</a></h2>
+Call Clear() to remove all plottables from the plot. Overloads of Clear() allow you to remote one type of plottable, or a specific plottable.
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+double[] xs = DataGen.Consecutive(51);
+double[] sin = DataGen.Sin(51);
+double[] cos = DataGen.Sin(51);
+
+plt.AddScatter(xs, sin, color: Color.Red);
+plt.Clear();
+plt.AddScatter(xs, cos, color: Color.Blue);
+
+plt.SaveFig("quickstart_clear.png");</pre>
+<div class='center'><img src='source/quickstart_clear.png' /></div>
+
+            </div>
+        </article>
+
+        <div id="lowerNavBar">&nbsp;</div>
+
+        <footer>
+            <div id="footerBlock">
+                <div>This page was generated for <code>ScottPlot 4.1.4-beta</code> on January 24, 2021</div>
+                <div>
+                    Additional documentation and resources can be found on the
+                    <a href="https://swharden.com/scottplot">ScottPlot Website</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+<html>
+
+<head>
+    <title>ScottPlot 4.1.4-beta Cookbook: Style</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script async src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'></script>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-560719-1'></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-560719-1');
+    </script>
+</head>
+
+<body>
+
+    <div id="backsplash" style="background-color: #144371;">&nbsp;</div>
+
+    <div id="content">
+
+        <div id="pageAboveArticle">
+            <div id="headerBlock">
+
+                <div id="headerMenu">
+                    <div class='menuButton'><a href='https://swharden.com/scottplot'>ScottPlot Website</a></div>
+                    <div class='menuButton'><a href='https://swharden.com/scottplot/cookbook'>Latest Cookbook</a></div>
+                </div>
+
+                <div class='title'>
+                    <a href="https://swharden.com/scottplot">ScottPlot</a>
+                    <span style='opacity: .2;'>Cookbook</span>
+                </div>
+
+                <div class='subtitle'>free and open-source plotting library for .NET</div>
+                <div id="githubButtonWrapper">
+                    <a class="github-button" href="https://github.com/swharden/scottplot" data-size="large"
+                       data-show-count="true" aria-label="Star on GitHub" data-text="Star on GitHub"></a>
+                </div>
+            </div>
+        </div>
+
+        <article>
+            <div id="md2html">
+                <h1><a href='./index.html' style='color: black;'>ScottPlot Cookbook</a>: <i><a href='style.html' style='color: black;'>Style</a></i></h1>
+<blockquote><b>&#9888;&#65039;</b> <strong>Documentation is version-specific:</strong> This page was generated for <code>ScottPlot 4.1.4-beta</code><br> Additional documentation and more version-specific cookbooks are on the <a href='https://swharden.com/scottplot' style='font-weight: 600;'>ScottPlot Website</a></blockquote>
+<h2><a href='#style_default' name='style_default' style='color: black;'>Default</a></h2>
+Customize many plot features using style presets
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// customize the plot style
+plt.Style(Style.Default);
+
+plt.SaveFig("style_Default.png");</pre>
+<div class='center'><img src='source/style_default.png' /></div>
+<h2><a href='#style_control' name='style_control' style='color: black;'>Control</a></h2>
+Customize many plot features using style presets
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// customize the plot style
+plt.Style(Style.Control);
+
+plt.SaveFig("style_Control.png");</pre>
+<div class='center'><img src='source/style_control.png' /></div>
+<h2><a href='#style_blue1' name='style_blue1' style='color: black;'>Blue1</a></h2>
+Customize many plot features using style presets
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// customize the plot style
+plt.Style(Style.Blue1);
+
+plt.SaveFig("style_blue1.png");</pre>
+<div class='center'><img src='source/style_blue1.png' /></div>
+<h2><a href='#style_blue2' name='style_blue2' style='color: black;'>Blue2</a></h2>
+Customize many plot features using style presets
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// customize the plot style
+plt.Style(Style.Blue2);
+
+plt.SaveFig("style_blue2.png");</pre>
+<div class='center'><img src='source/style_blue2.png' /></div>
+<h2><a href='#style_blue3' name='style_blue3' style='color: black;'>Blue3</a></h2>
+Customize many plot features using style presets
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// customize the plot style
+plt.Style(Style.Blue3);
+
+plt.SaveFig("style_blue3.png");</pre>
+<div class='center'><img src='source/style_blue3.png' /></div>
+<h2><a href='#style_light1' name='style_light1' style='color: black;'>Light1</a></h2>
+Customize many plot features using style presets
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// customize the plot style
+plt.Style(Style.Light1);
+
+plt.SaveFig("style_light1.png");</pre>
+<div class='center'><img src='source/style_light1.png' /></div>
+<h2><a href='#style_light2' name='style_light2' style='color: black;'>Light2</a></h2>
+Customize many plot features using style presets
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// customize the plot style
+plt.Style(Style.Light2);
+
+plt.SaveFig("style_light2.png");</pre>
+<div class='center'><img src='source/style_light2.png' /></div>
+<h2><a href='#style_gray1' name='style_gray1' style='color: black;'>Gray1</a></h2>
+Customize many plot features using style presets
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// customize the plot style
+plt.Style(Style.Gray1);
+
+plt.SaveFig("style_Gray1.png");</pre>
+<div class='center'><img src='source/style_gray1.png' /></div>
+<h2><a href='#style_gray2' name='style_gray2' style='color: black;'>Gray2</a></h2>
+Customize many plot features using style presets
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// customize the plot style
+plt.Style(Style.Gray2);
+
+plt.SaveFig("style_Gray2.png");</pre>
+<div class='center'><img src='source/style_gray2.png' /></div>
+<h2><a href='#style_black' name='style_black' style='color: black;'>Black</a></h2>
+Customize many plot features using style presets
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// customize the plot style
+plt.Style(Style.Black);
+
+plt.SaveFig("style_Black.png");</pre>
+<div class='center'><img src='source/style_black.png' /></div>
+<h2><a href='#style_seaborn' name='style_seaborn' style='color: black;'>Seaborn</a></h2>
+Customize many plot features using style presets
+<pre class='prettyprint cs'>var plt = new ScottPlot.Plot(600, 400);
+
+// plot sample data
+plt.AddSignal(DataGen.Sin(51));
+plt.AddSignal(DataGen.Cos(51));
+
+// customize the plot style
+plt.Style(Style.Seaborn);
+
+plt.SaveFig("style_Seaborn.png");</pre>
+<div class='center'><img src='source/style_seaborn.png' /></div>
+
+            </div>
+        </article>
+
+        <div id="lowerNavBar">&nbsp;</div>
+
+        <footer>
+            <div id="footerBlock">
+                <div>This page was generated for <code>ScottPlot 4.1.4-beta</code> on January 24, 2021</div>
+                <div>
+                    Additional documentation and resources can be found on the
+                    <a href="https://swharden.com/scottplot">ScottPlot Website</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
