@@ -2,12 +2,16 @@
 
 This repository tracks source code for content displayed on http://swharden.com/scottplot
 
-## Deployment 
-* For now http://swharden.com/scottplot/deploy
-* TODO: Automate with GitHub actions and use a security key
+## Develop in Docker
 
-### Develop in Docker
+The website in repository is ready to run in Docker!
 
-This repository has a ready-to-run demo site. 
+Run `docker-compose up -d` then visit http://localhost:8083
 
-Run `docker-compose up -d` and go to http://localhost:8083
+## Deploy with GitHub Actions
+
+* Clone this repo in a folder outside the web root
+* Symbolically link `src` to a web-accessible path
+* Create a secret `API_KEY` in the GitHub project
+* Store the key in `api.key`
+* Configure GitHub Actions to HTTP request `/deploy` when new commits are pushed, using the `API_KEY` as a bearer token (see [main.yml](github\workflows\main.yml))
