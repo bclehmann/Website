@@ -2,12 +2,12 @@ Options +Indexes
 
 RewriteEngine On
 
-# if the request is a folder with a markdown index, serve it
-RewriteCond %{REQUEST_FILENAME} -d 
-RewriteCond %{REQUEST_FILENAME}/index.md -f
-RewriteRule ^(.*)$ md2html/route.php [L]
-
 # redirect old URLs to new folders
 RewriteRule ^(readme.md.html)$ /scottplot [R=301,NC,L]
 RewriteRule ^(demo.md.html)$ /scottplot/demo [R=301,NC,L]
 RewriteRule ^(quickstart.md.html)$ /scottplot/quickstart [R=301,NC,L]
+
+# if the request is a folder with a markdown index, serve it
+RewriteCond %{REQUEST_FILENAME} -d 
+RewriteCond %{REQUEST_FILENAME}/index.md -f
+RewriteRule ^(.*)$ md2html/serveIndex.php [L]
