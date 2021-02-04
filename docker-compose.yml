@@ -8,3 +8,4 @@ services:
       - "8083:80"
     volumes:
       - ./src:/var/www/html
+      - ../md2html-php:/home/customer/www/swharden.com/gitRepos/md2html-php
