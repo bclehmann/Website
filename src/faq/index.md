@@ -11,23 +11,6 @@ Answers to common questions and notes about edge cases.
   This documentation is specific to <strong>ScottPlot 4.1</strong> which is currently available as a pre-release package on NuGet
 </div>
 
-**Table of Contents:**
+## FAQ Topics
 
-![](TOC)
-
-# Topics Requiring Documentation
-
-## Working with DateTime data
-## Adjust figure padding
-## Render Quality (Anti-Aliasing)
-## Frameless plot
-## Multiplot
-## Data containing `double.NaN`
-## Line plots with gaps
-## Additional Axes
-## Low Quality While Dragging
-## Multi-Threaded Plotting
-## Custom Right-Click Menu
-## Get Position Under Mouse
-## Print Plots
-## MVVM Pattern
+* [**Plot Data using a DateTime Axis**](datetime)
