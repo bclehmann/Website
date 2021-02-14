@@ -19,19 +19,21 @@ Description: These simple examples demonstrate how to use ScottPlot in the conso
 
 ## Console Quickstart
 
-**Step 1:** Install ScottPlot [using NuGet](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio)
+**Step 1:** Install the [`ScottPlot`](https://www.nuget.org/packages/ScottPlot) NuGet package
 
 **Step 2:** Add the following to your start-up sequence:
 
 ```cs
-double[] dataX = new double[] {1, 2, 3, 4, 5};
-double[] dataY = new double[] {1, 4, 9, 16, 25};
+double[] dataX = new double[] { 1, 2, 3, 4, 5 };
+double[] dataY = new double[] { 1, 4, 9, 16, 25 };
 var plt = new ScottPlot.Plot(400, 300);
 plt.AddScatter(dataX, dataY);
 plt.SaveFig("quickstart.png");
 ```
 
-![](scottplot-quickstart-console.png)
+![](src/console-quickstart/screenshot.png)
+
+_Source code for this application is [available on GitHub](https://github.com/ScottPlot/Website/tree/main/src/quickstart/src/quickstart-console)_
 
 ## Windows Forms Quickstart
 
