@@ -1,6 +1,20 @@
+---
+Title: ScottPlot Overview
+Description: This page summarizes the main concepts behind ScottPlot and is intended to help familiarize new users to its API.
+---
+
 # ScottPlot Overview
 
-This page covers basic usage patterns to help you get started with ScottPlot.
+This page summarizes the main concepts behind ScottPlot and is intended to help familiarize new users to its API.
+
+<div class="alert alert-warning" role="alert">
+  <h4 class="alert-heading">⚠️ Pre-Release Documentation</h4>
+  This documentation is specific to <strong>ScottPlot 4.1</strong> which is currently available as a pre-release package on NuGet
+</div>
+
+**Table of Contents:**
+
+![](TOC)
 
 ## Plottable Objects
 
@@ -22,7 +36,7 @@ plt.PlotScatter(xs, ys, color: Color.Red, lineWidth: 2);
 plt.SaveFig("example.png");
 ```
 
-![](images/create-plottable-red.png)
+![](create-plottable-red.png)
 
 ### Plottables can be Modified After Creation
 
@@ -38,7 +52,7 @@ scatter.lineWidth = 2;
 plt.SaveFig("example.png");
 ```
 
-![](images/create-plottable-blue.png)
+![](create-plottable-blue.png)
 
 ### Create Plottables Manually
 
@@ -52,7 +66,7 @@ scatter.lineWidth = 2;
 plt.SaveFig("example.png");
 ```
 
-![](images/create-plottable-green.png)
+![](create-plottable-green.png)
 
 ## Favor Signal Plot over Scatter Plot
 
@@ -75,14 +89,14 @@ var scatter = plt.PlotScatter(xs, ys);
 plt.SaveFig("example.png");
 ```
 
-![](images/modify-plottable-before.png)
+![](modify-plottable-before.png)
 
 ```cs
 ys[2] = 23; // modify values inside an array
 plt.SaveFig("example2.png"); // request a new render
 ```
 
-![](images/modify-plottable-after.png)
+![](modify-plottable-after.png)
 
 * In this example the array is not changed (just the values inside the array). Different plot types have different fields and methods to facilitate updating data.
 
