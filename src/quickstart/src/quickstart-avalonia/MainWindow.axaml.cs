@@ -5,7 +5,7 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using ScottPlot.Avalonia;
 
-namespace ScottPlot.Demo.Avalonia
+namespace QuickstartAvalonia
 {
     public class MainWindow : Window
     {
