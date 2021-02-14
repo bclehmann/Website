@@ -13,7 +13,7 @@ Answers to common questions and notes about edge cases.
 
 <div class="alert alert-primary" role="alert">
   <h4 class="alert-heading">⚠️ This page is in development</h4>
-  This page is being actively worked on in February, 2020. See https://github.com/ScottPlot/Website/issues/6 for progress details.
+  This page is being actively worked on in February, 2020. See [this GitHub issue](https://github.com/ScottPlot/Website/issues/6) for progress details.
 </div>
 
 
