@@ -11,6 +11,12 @@ Answers to common questions and notes about edge cases.
   This documentation is specific to <strong>ScottPlot 4.1</strong> which is currently available as a pre-release package on NuGet
 </div>
 
+<div class="alert alert-primary" role="alert">
+  <h4 class="alert-heading">⚠️ This page is in development</h4>
+  This page is being actively worked on in February, 2020. See https://github.com/ScottPlot/Website/issues/6 for progress details.
+</div>
+
+
 ## FAQ Topics
 
 * [**Plot Data using a DateTime Axis**](datetime)
