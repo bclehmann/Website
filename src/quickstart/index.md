@@ -31,7 +31,7 @@ plt.AddScatter(dataX, dataY);
 plt.SaveFig("quickstart.png");
 ```
 
-![](src/console-quickstart/screenshot.png)
+![](src/quickstart-console/screenshot.png)
 
 _Source code for this application is [available on GitHub](https://github.com/ScottPlot/Website/tree/main/src/quickstart/src/quickstart-console)_
 
