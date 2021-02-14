@@ -7,6 +7,12 @@ Description: A click-to-run application designed to make it easy to assess the c
 
 **The ScottPlot Demo is a click-to-run application designed to make it easy to assess the capabilities of ScottPlot.** The demo application displays all **[ScottPlot Cookbook](../cookbook)** figures and also demonstrate advanced uses such as mouse tracking, displaying live data, draggable plot components. Source code for this application is available on [GitHub](https://github.com/swharden/ScottPlot), including demos for Windows Forms and WPF.
 
+<div class="alert alert-secondary" role="alert">
+  <strong>⚠️ WARNING: This application demonstrates ScottPlot 4.0.</strong>
+  ScottPlot 4.1 is in active development and has many new features ready for use! See the
+  <strong><a href="https://swharden.com/scottplot/cookbook">ScottPlot Cookbook</a></strong>
+  for the latest code examples demonstrating ScottPlot 4.1.
+</div>
 
 <div class='text-center m-5'>
     <a class="btn btn-primary btn-lg" href="../demos/ScottPlotDemo-4.0.44.zip">
