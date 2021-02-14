@@ -35,20 +35,21 @@ plt.SaveFig("quickstart.png");
 
 ## Windows Forms Quickstart
 
-**Step 1:** Install ScottPlot.WinForms [using NuGet](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio)
+**Step 1:** Install the [`ScottPlot.WinForms`](https://www.nuget.org/packages/ScottPlot.WinForms) NuGet package
 
-**Step 2:** Drag a FormsPlot from the Toolbox onto your Form
+**Step 2:** Drag a `FormsPlot` from the Toolbox onto your Form
 
 **Step 3:** Plot some data in your start-up sequence
 
 ```cs
 double[] dataX = new double[] {1, 2, 3, 4, 5};
 double[] dataY = new double[] {1, 4, 9, 16, 25};
-formsPlot1.plt.AddScatter(dataX, dataY);
-formsPlot1.Render();
+formsPlot1.Plot.AddScatter(dataX, dataY);
 ```
 
-![](scottplot-quickstart-winforms.png)
+![](src/quickstart-winforms/screenshot.png)
+
+_Source code for this application is [available on GitHub](https://github.com/ScottPlot/Website/tree/main/src/quickstart/src/quickstart-winforms)_
 
 ## WPF Quickstart
 
@@ -64,8 +65,7 @@ formsPlot1.Render();
 ```cs
 double[] dataX = new double[] {1, 2, 3, 4, 5};
 double[] dataY = new double[] {1, 4, 9, 16, 25};
-wpfPlot1.plt.AddScatter(dataX, dataY);
-wpfPlot1.Render();
+wpfPlot1.Plot.AddScatter(dataX, dataY);
 ```
 
 ![](scottplot-quickstart-wpf.png)
@@ -87,8 +87,7 @@ var avaplot1 = this.Find<AvaPlot>("avaPlot1");
 
 double[] dataX = new double[] { 1, 2, 3, 4, 5 };
 double[] dataY = new double[] { 1, 4, 9, 16, 25 };
-avaplot1.plt.AddScatter(dataX, dataY);
-avaplot1.Render();
+avaplot1.Plot.AddScatter(dataX, dataY);
 ```
 
 ![](scottplot-quickstart-avalonia.png)
