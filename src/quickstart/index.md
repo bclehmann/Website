@@ -79,13 +79,13 @@ _Source code for this application is [available on GitHub](https://github.com/Sc
 **Step 1:** Install the [`ScottPlot.Avalonia`](https://www.nuget.org/packages/ScottPlot.Avalonia) NuGet package
 
 **Step 2:** Import the `ScottPlot.Avalonia` namespace by adding this to your `Window` element:
-```xaml
+```xml
 xmlns:ScottPlot="clr-namespace:ScottPlot.Avalonia;assembly=ScottPlot.Avalonia"
 ```
 
 Your `Window` element should look something like this:
 
-```xaml
+```xml
 <Window xmlns="https://github.com/avaloniaui"
         <!-- More attributes -->
         x:Class="ScottPlot.Demo.Avalonia.MainWindow"
@@ -95,7 +95,7 @@ Your `Window` element should look something like this:
 
 
 **Step 3:** Add an AvaPlot to your layout and give it a unique name
-```xaml
+```xml
 <ScottPlot:AvaPlot Name="AvaPlot1"/>
 ```
 
