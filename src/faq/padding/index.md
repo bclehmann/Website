@@ -32,7 +32,7 @@ The default behavior is to size every axis according to its contents (the larges
 plt.SaveFig("padding-default.png");
 ```
 
-![](src/paddingDemo/padding-default.png)
+![](src/PaddingDemo/padding-default.png)
 
 ## Customize Padding for All Axes
 
@@ -43,7 +43,7 @@ plt.Layout(padding: 50);
 plt.SaveFig("padding-custom.png");
 ```
 
-![](src/paddingDemo/padding-custom.png)
+![](src/PaddingDemo/padding-custom.png)
 
 ## Adjust Padding for Individual Axes
 
@@ -56,7 +56,7 @@ plt.Layout(left: 100, right: 50, bottom: 10, top: 10);
 plt.SaveFig("padding-defined.png");
 ```
 
-![](src/paddingDemo/padding-defined.png)
+![](src/PaddingDemo/padding-defined.png)
 
 ## Frameless Plot
 
@@ -67,7 +67,7 @@ plt.Frameless();
 plt.SaveFig("padding-none.png");
 ```
 
-![](src/paddingDemo/padding-none.png)
+![](src/PaddingDemo/padding-none.png)
 
 ## Frameless Plot Without Data Padding
 
@@ -79,4 +79,4 @@ plt.AxisAuto(0, 0);
 plt.SaveFig("padding-none-tight.png");
 ```
 
-![](src/paddingDemo/padding-none-tight.png)
+![](src/PaddingDemo/padding-none-tight.png)
