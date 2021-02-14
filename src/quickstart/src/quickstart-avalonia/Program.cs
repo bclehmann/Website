@@ -1,7 +1,7 @@
 ﻿using System;
 using Avalonia;
 
-namespace ScottPlot.Demo.Avalonia
+namespace QuickstartAvalonia
 {
     class Program
     {

@@ -2,7 +2,7 @@
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 
-namespace ScottPlot.Demo.Avalonia
+namespace QuickstartAvalonia
 {
     public class App : Application
     {

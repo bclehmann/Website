@@ -3,8 +3,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        x:Class="ScottPlot.Demo.Avalonia.MainWindow"
+        x:Class="QuickstartAvalonia.MainWindow"
         xmlns:ScottPlot="clr-namespace:ScottPlot.Avalonia;assembly=ScottPlot.Avalonia"
         Title="Avalonia Quickstart" Width="500" Height="350">
-  <AvaPlot Name="AvaPlot1"/>
+	<ScottPlot:AvaPlot Name="AvaPlot1"/>
 </Window>
