@@ -4,7 +4,12 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 ---
 
 ## ScottPlot FAQ
-Answers to common questions and notes about edge cases.
+
+* Read the [**ScottPlot Overview**](https://swharden.com/scottplot/overview) for a general introduction to the ScottPlot API
+
+* Look over the [**ScottPlot Cookbook**](https://swharden.com/scottplot/cookbook) for code examples demonstrating common use cases
+
+* This page contains answers to frequently asked questions and notes about uncommon use cases
 
 <div class="alert alert-warning" role="alert">
   <h4 class="alert-heading">⚠️ Pre-Release Documentation</h4>
