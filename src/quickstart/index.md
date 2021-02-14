@@ -78,12 +78,28 @@ _Source code for this application is [available on GitHub](https://github.com/Sc
 
 **Step 1:** Install the [`ScottPlot.Avalonia`](https://www.nuget.org/packages/ScottPlot.Avalonia) NuGet package
 
-**Step 2:** Add an AvaPlot to your layout and give it a unique name
+**Step 2:** Import the `ScottPlot.Avalonia` namespace by adding this to your `Window` element:
 ```xaml
-<AvaPlot Name="AvaPlot1"/>
+xmlns:ScottPlot="clr-namespace:ScottPlot.Avalonia;assembly=ScottPlot.Avalonia"
 ```
 
-**Step 3:** Plot some data in your start-up sequence
+Your `Window` element should look something like this:
+
+```xaml
+<Window xmlns="https://github.com/avaloniaui"
+        <!-- More attributes -->
+        x:Class="ScottPlot.Demo.Avalonia.MainWindow"
+        xmlns:ScottPlot="clr-namespace:ScottPlot.Avalonia;assembly=ScottPlot.Avalonia"
+        Title="Avalonia Quickstart" Width="500" Height="350">
+```
+
+
+**Step 3:** Add an AvaPlot to your layout and give it a unique name
+```xaml
+<ScottPlot:AvaPlot Name="AvaPlot1"/>
+```
+
+**Step 4:** Plot some data in your start-up sequence
 
 ```cs
 AvaPlot avaPlot1 = this.Find<AvaPlot>("AvaPlot1");
