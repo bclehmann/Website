@@ -7,7 +7,7 @@ description: How to plot data using a DateTime axis
 
 **C# can represent time with the `DateTime` type, but all of ScottPlot's methods prefer `double` arrays.** This page reviews how to plot data with a time axis using ScottPlot.
 
-**TLDR:** Convert `DateTime` to `double` using `DateTime.ToOATime()` before plotting, then call `XAxis.DateTimeFormat(true)` to display axis tick labels in the proper format.
+**💡 TLDR:** Convert `DateTime` to `double` using `DateTime.ToOATime()` before plotting, then call `XAxis.DateTimeFormat(true)` to display axis tick labels in the proper format.
 
 ## Scatter Plot
 

@@ -25,3 +25,5 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 ## FAQ Topics
 
 * [**Plot Data using a DateTime Axis**](datetime)
+* [**Custom Padding around the Data Area**](padding)
+* [**Frameless Plots and Data Margin**](padding/#frameless-plot)
