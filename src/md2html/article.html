@@ -1,9 +1,8 @@
-
 <!-- ARTICLE {{articleGUID}} -->
 <article class="row border-top border-2 mb-5">
     <div class="bg-white text-dark border shadow">
-	
-		<!-- ARTICLE BODY -->
+
+        <!-- ARTICLE BODY -->
         <div class="p-3">
             {{content}}
         </div>
@@ -13,14 +12,20 @@
             <small>
                 <a data-bs-toggle="collapse" href="#source-article-{{articleGUID}}" role="button" aria-expanded="false"
                     aria-controls="source-article-{{id}}" style="opacity: .2; color: black;">view source</a>
+
+                <!--
+                <span style="opacity: .2">|</span>
+                <a href="https://github.com/ScottPlot/Website" style="opacity: .2; color: black;">edit on GitHub</a>
+                -->
             </small>
         </div>
 
-		<!-- ARTICLE SOURCE CONTENT -->
+        <!-- ARTICLE SOURCE CONTENT -->
         <div class="p-3 collapse" id="source-article-{{articleGUID}}">
             <div class="card">
                 <div class="card-header">
-                    Source code last modified on {{modified}}
+                    Source code last modified on {{modified}} (<a href='https://github.com/ScottPlot/Website'>edit on
+                        GitHub</a>)
                 </div>
                 <div class="card-body">
                     <pre class="" style="white-space: pre-wrap;">{{source}}</pre>
