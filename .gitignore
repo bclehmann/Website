@@ -3,6 +3,3 @@ src/cookbooks
 
 # ignore content of demos folder
 src/demos
-
-# ignore key containing secret token
-api.key
