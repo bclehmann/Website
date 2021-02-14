@@ -9,17 +9,6 @@ jobs:
   Website:
     runs-on: ubuntu-latest
     steps:
-      - name: Website
-        id: myRequest
-        uses: fjogeleit/http-request-action@master
-        with:
-          url: "http://swharden.com/scottplot/deploy"
-          method: "POST"
-          username: "deploy"
-          password: ${{ secrets.DEPLOY_PASSWORD }}
-      - name: Show Response
-        run: echo ${{ steps.myRequest.outputs.response }}
-
       - name: Website2
         uses: satak/webrequest-action@master
         with:
