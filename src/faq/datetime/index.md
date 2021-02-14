@@ -1,13 +1,13 @@
 ---
 title: DateTime Axis
-description: How to create plots with DateTime axis labels
+description: How to plot data using a DateTime axis
 ---
 
-# DateTime Axis
+# Plot Data using a DateTime Axis
 
 **C# can represent time with the `DateTime` type, but all of ScottPlot's methods prefer `double` arrays.** This page reviews how to plot data with a time axis using ScottPlot.
 
-**TLDR:** Convert `DateTime` to `double` using `DateTime.ToOATime()` before plotting.
+**TLDR:** Convert `DateTime` to `double` using `DateTime.ToOATime()` before plotting, then call `XAxis.DateTimeFormat(true)` to display axis tick labels in the proper format.
 
 ## Scatter Plot
 
@@ -82,3 +82,9 @@ plt.SaveFig("../../../datetime-signal.png");
 ```
 
 ![](src/DateTimeDemo/datetime-signal.png)
+
+## Notes
+
+* See the [**ScottPlot Cookbook**](https://swharden.com/scottplot/cookbook/) for additional examples using DateTime axis labels.
+
+* Axes have additional options for tick formatting, including the ability to define format strings for the date-to-string conversion, as well as the ability to indicate which culture to use (e.g., different cultures periods, hyphens, or dashes to separate month and year).
