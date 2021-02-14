@@ -8,6 +8,15 @@ Description: These simple examples demonstrate how to use ScottPlot in the conso
 * These examples demonstrate how to plot simple data with ScottPlot
 * The **[ScottPlot Cookbook](http://swharden.com/scottplot/cookbook)** has many more advanced examples
 
+<div class="alert alert-warning" role="alert">
+  <h4 class="alert-heading">⚠️ Pre-Release Documentation</h4>
+  This documentation is specific to <strong>ScottPlot 4.1</strong> which is currently available as a pre-release package on NuGet
+</div>
+
+**Table of Contents:**
+
+![](TOC)
+
 ## Console Quickstart
 
 **Step 1:** Install ScottPlot [using NuGet](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio)
@@ -18,7 +27,7 @@ Description: These simple examples demonstrate how to use ScottPlot in the conso
 double[] dataX = new double[] {1, 2, 3, 4, 5};
 double[] dataY = new double[] {1, 4, 9, 16, 25};
 var plt = new ScottPlot.Plot(400, 300);
-plt.PlotScatter(dataX, dataY);
+plt.AddScatter(dataX, dataY);
 plt.SaveFig("quickstart.png");
 ```
 
@@ -35,7 +44,7 @@ plt.SaveFig("quickstart.png");
 ```cs
 double[] dataX = new double[] {1, 2, 3, 4, 5};
 double[] dataY = new double[] {1, 4, 9, 16, 25};
-formsPlot1.plt.PlotScatter(dataX, dataY);
+formsPlot1.plt.AddScatter(dataX, dataY);
 formsPlot1.Render();
 ```
 
@@ -55,7 +64,7 @@ formsPlot1.Render();
 ```cs
 double[] dataX = new double[] {1, 2, 3, 4, 5};
 double[] dataY = new double[] {1, 4, 9, 16, 25};
-wpfPlot1.plt.PlotScatter(dataX, dataY);
+wpfPlot1.plt.AddScatter(dataX, dataY);
 wpfPlot1.Render();
 ```
 
@@ -78,7 +87,7 @@ var avaplot1 = this.Find<AvaPlot>("avaPlot1");
 
 double[] dataX = new double[] { 1, 2, 3, 4, 5 };
 double[] dataY = new double[] { 1, 4, 9, 16, 25 };
-avaplot1.plt.PlotScatter(dataX, dataY);
+avaplot1.plt.AddScatter(dataX, dataY);
 avaplot1.Render();
 ```
 
