@@ -1,23 +1,34 @@
 <?php
 
-// Ensure root files are accessible
-if (file_exists('../../api.key') == false) {
-    echo "ERROR: api.key does not exist";
+// Ensure key file exists.
+// It should be stored outside the www folder and permission 400.
+$keyFilePath = realpath('/home/customer/deploy.key');
+if (file_exists($keyFilePath) == false) {
+    echo "ERROR: file not found $keyFilePath";
     die();
 }
 
 // Get authorization header from Apache
-$headers = apache_request_headers();
-if (!isset($headers['Authorization'])) {
-    echo "ERROR: Authorization Required";
+$pass = $_SERVER['PHP_AUTH_PW'];
+if (empty($pass)) {
+    echo "ERROR: Password Required";
     die();
 }
 
-// Compare given token vs one on disk
-$givenToken = substr($headers['Authorization'], 7);
-$realToken = trim(file_get_contents('../../api.key'));
-if ($givenToken == $realToken) {
-    system('../../deploy.sh');
+// Compare the given password to the one in the key file
+$correctPassword = trim(file_get_contents($keyFilePath));
+if ($pass == $correctPassword) {
+	
+    echo "\n\nPULL:\n";
+	$outputPull = null;
+    exec('git pull', $outputPull);
+	echo join("\n",$outputPull);
+	
+    echo "\n\nSTATUS:\n";
+	$outputStatus = null;
+    exec('git status', $outputStatus);
+	echo join("\n",$outputStatus);
+
 } else {
-    echo "ERROR: Authorization Failed";
+    echo "ERROR: Incorrect password";
 }

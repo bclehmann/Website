@@ -6,15 +6,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  deployment:
+  Website:
     runs-on: ubuntu-latest
     steps:
-      - name: Make Request
-        id: req
+      - name: Website
+        id: myRequest
         uses: fjogeleit/http-request-action@master
         with:
           url: "http://swharden.com/scottplot/deploy"
           method: "POST"
-          bearerToken: ${{ secrets.API_KEY }}
+          username: "deploy"
+          password: ${{ secrets.DEPLOY_PASSWORD }}
       - name: Show Response
-        run: echo ${{ steps.req.outputs.response }}
+        run: echo ${{ steps.myRequest.outputs.response }}
