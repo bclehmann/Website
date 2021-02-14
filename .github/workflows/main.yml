@@ -19,3 +19,15 @@ jobs:
           password: ${{ secrets.DEPLOY_PASSWORD }}
       - name: Show Response
         run: echo ${{ steps.myRequest.outputs.response }}
+
+      - name: Website2
+        uses: satak/webrequest-action@master
+        with:
+          url: "http://swharden.com/scottplot/deploy"
+          method: POST
+          username: "deploy"
+          password: ${{ secrets.DEPLOY_PASSWORD }}
+
+        run: |
+          $output = '${{ steps.webhook.outputs.output }}' | ConvertFrom-Json
+          Write-Host "Time from output $($output.time) statusCode $($output.statusCode) data $($output.data)"
