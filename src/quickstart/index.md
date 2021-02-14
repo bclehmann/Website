@@ -76,21 +76,23 @@ _Source code for this application is [available on GitHub](https://github.com/Sc
 
 ## Avalonia Quickstart
 
-**Step 1:** Install ScottPlot.Avalonia [using NuGet](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio)
+**Step 1:** Install the [`ScottPlot.Avalonia`](https://www.nuget.org/packages/ScottPlot.Avalonia) NuGet package
 
-**Step 2:** Add an AvaPlot to your layout area and give it a unique name
+**Step 2:** Add an AvaPlot to your layout and give it a unique name
 ```xaml
-<AvaPlot Name="avaPlot1"/>
+<AvaPlot Name="AvaPlot1"/>
 ```
 
 **Step 3:** Plot some data in your start-up sequence
 
 ```cs
-var avaplot1 = this.Find<AvaPlot>("avaPlot1");
+AvaPlot avaPlot1 = this.Find<AvaPlot>("AvaPlot1");
 
 double[] dataX = new double[] { 1, 2, 3, 4, 5 };
 double[] dataY = new double[] { 1, 4, 9, 16, 25 };
-avaplot1.Plot.AddScatter(dataX, dataY);
+avaPlot1.Plot.AddScatter(dataX, dataY);
 ```
 
-![](scottplot-quickstart-avalonia.png)
+![](src/quickstart-avalonia/screenshot.png)
+
+_Source code for this application is [available on GitHub](https://github.com/ScottPlot/Website/tree/main/src/quickstart/src/quickstart-avalonia)_
