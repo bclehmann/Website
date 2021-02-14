@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: HTTP Request
-        run: curl --user "deploy:${{ secrets.DEPLOY_PASSWORD }}" https://swharden.com/scottplot/deploy/
+        run: curl --user deploy:${{ secrets.DEPLOY_PASSWORD }} https://swharden.com/scottplot/deploy/
