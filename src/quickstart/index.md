@@ -55,23 +55,24 @@ _Source code for this application is [available on GitHub](https://github.com/Sc
 
 ## WPF Quickstart
 
-**Step 1:** Install ScottPlot.WPF [using NuGet](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio)
+**Step 1:** Install the [`ScottPlot.WPF`](https://www.nuget.org/packages/ScottPlot.WPF) NuGet package
 
-**Step 2:** Add a WpfPlot to your layout area and give it a unique name
-```xaml
-<WpfPlot Name="wpfPlot1" />
+**Step 2:** Add a `WpfPlot` to your layout and give it a unique name
+```xml
+<WpfPlot Name="WpfPlot1" />
 ```
 
 **Step 3:** Plot some data in your start-up sequence
 
 ```cs
-double[] dataX = new double[] {1, 2, 3, 4, 5};
-double[] dataY = new double[] {1, 4, 9, 16, 25};
-wpfPlot1.Plot.AddScatter(dataX, dataY);
+double[] dataX = new double[] { 1, 2, 3, 4, 5 };
+double[] dataY = new double[] { 1, 4, 9, 16, 25 };
+WpfPlot1.Plot.AddScatter(dataX, dataY);
 ```
 
-![](scottplot-quickstart-wpf.png)
+![](src/quickstart-wpf/screenshot.png)
 
+_Source code for this application is [available on GitHub](https://github.com/ScottPlot/Website/tree/main/src/quickstart/src/quickstart-wpf)_
 
 ## Avalonia Quickstart
 
