@@ -6,17 +6,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  Website:
+  Deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Website2
-        uses: satak/webrequest-action@master
-        with:
-          url: "http://swharden.com/scottplot/deploy"
-          method: POST
-          username: "deploy"
-          password: ${{ secrets.DEPLOY_PASSWORD }}
-
-        run: |
-          $output = '${{ steps.webhook.outputs.output }}' | ConvertFrom-Json
-          Write-Host "Time from output $($output.time) statusCode $($output.statusCode) data $($output.data)"
+      - name: HTTP Request
+        run: curl --user "deploy:${{ secrets.DEPLOY_PASSWORD }}" https://swharden.com/scottplot/deploy/ >> $GITHUB_ENV
