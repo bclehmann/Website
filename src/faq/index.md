@@ -28,6 +28,8 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 * [**Custom Padding around the Data Area**](padding)
 * [**Anti-Aliasing**](anti-aliasing)
 * [**Frameless Plots and Data Margin**](padding/#frameless-plot)
+* [**MultiPlot**](multiplot)
 
 ### User Controls
 * [**Low Quality while Dragging**](anti-aliasing)
+* [**Share Axes Between Plots**](shared-axes)
