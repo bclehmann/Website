@@ -21,9 +21,13 @@ Description: Frequently asked questions about the ScottPlot library, user contro
   This page is being actively worked on in February, 2020. See <a href="https://github.com/ScottPlot/Website/issues/6">issue #6</a> for progress details.
 </div>
 
-
 ## FAQ Topics
 
+### Plots
 * [**Plot Data using a DateTime Axis**](datetime)
 * [**Custom Padding around the Data Area**](padding)
+* [**Anti-Aliasing**](anti-aliasing)
 * [**Frameless Plots and Data Margin**](padding/#frameless-plot)
+
+### User Controls
+* [**Low Quality while Dragging**](anti-aliasing)
