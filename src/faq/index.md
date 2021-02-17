@@ -18,7 +18,7 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 
 <div class="alert alert-primary" role="alert">
   <h4 class="alert-heading">⚠️ This page is in development</h4>
-  This page is being actively worked on in February, 2020. See <a href="https://github.com/ScottPlot/Website/issues/6">issue #6</a> for progress details.
+  This page is being actively worked on in February, 2021. See <a href="https://github.com/ScottPlot/Website/issues/6">issue #6</a> for progress details.
 </div>
 
 ## FAQ Topics
