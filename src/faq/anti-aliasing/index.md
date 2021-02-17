@@ -22,9 +22,13 @@ Bitmap highQualityBitmap = plt.Render(lowQuality: false);
 Bitmap lowQualityBitmap = plt.Render(lowQuality: true);
 ```
 
+<div align="center">
+
 High Quality (Anti-Aliasing On) | Low Quality (Anti-Aliasing Off)
 ---|---
-![](aa-on.png)|![](aa-off.png)
+<img src='aa-on.png' alt='anti-aliasing on'/>|<img src='aa-off.png' alt='anti-aliasing off'/>
+
+</div>
 
 ## Mouse Interactions and Render Quality
 
