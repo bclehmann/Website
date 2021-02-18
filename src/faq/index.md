@@ -33,3 +33,4 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 ### User Controls
 * [**Low Quality while Dragging**](anti-aliasing)
 * [**Share Axes Between Plots**](shared-axes)
+* [**Custom Right-Click Menu**](right-click-menu)

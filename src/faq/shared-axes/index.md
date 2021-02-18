@@ -15,7 +15,7 @@ This page describes how to have two user controls with shared axes so that when 
 
 ## Windows Forms
 
-This example can be [downloaded from GitHub](https://github.com/ScottPlot/Website/tree/main/src/faq/shared-axes/src/)
+[Download this example from GitHub](https://github.com/ScottPlot/Website/tree/main/src/faq/shared-axes/src/)
 
 * Store your plots in an array at the class level
 * Add your custom function to the `AxesChanged` event handler
