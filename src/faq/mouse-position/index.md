@@ -49,7 +49,7 @@ Since it is easy to determine which data point is nearest the cursor, it is poss
 
 ### Show Value Near Mouse with WinForms
 
-[Download the full source code for this demo](https://github.com/ScottPlot/Website/tree/main/src/faq/mouse-position)
+[Download the full source code for this demo](https://github.com/ScottPlot/Website/tree/main/src/faq/mouse-position/src/)
 
 ```cs
 private readonly ScottPlot.Plottable.ScatterPlot MyScatterPlot;

@@ -35,4 +35,4 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 * [**Share Axes Between Plots**](shared-axes)
 * [**Custom Right-Click Menu**](right-click-menu)
 * [**Get the Mouse Position**](mouse-position)
-* [**Highlight the Data Point Near the Mouse**](mouse-position)
+* [**Highlight the Data Point Near the Cursor**](mouse-position#highlight-the-data-point-near-the-cursor)
