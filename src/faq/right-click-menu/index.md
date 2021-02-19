@@ -1,5 +1,5 @@
 ---
-title: Custom Right-Click Menu
+title: Custom Right-Click Menu - ScottPlot FAQ
 description: How to add a custom right-click menu to ScottPlot user controls
 ---
 

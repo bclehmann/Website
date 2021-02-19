@@ -1,5 +1,5 @@
 ---
-title: DateTime Axis
+title: DateTime Axis - ScottPlot FAQ
 description: How to plot data using a DateTime axis
 ---
 

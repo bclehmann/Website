@@ -1,5 +1,5 @@
 ---
-title: Shared Axes
+title: Shared Axes - ScottPlot FAQ
 description: How to have two user controls with shared axes so when one pans, the other pans automatically
 ---
 

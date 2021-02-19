@@ -1,5 +1,5 @@
 ---
-title: Anti-Aliasing
+title: Anti-Aliasing - ScottPlot FAQ
 description: How to configure anti-aliasing settings in ScottPlot
 ---
 

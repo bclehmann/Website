@@ -1,5 +1,5 @@
 ---
-title: MultiPlot
+title: MultiPlot - ScottPlot FAQ
 description: How to create multi-plot figures with ScottPlot
 ---
 
