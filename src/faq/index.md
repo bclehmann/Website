@@ -34,4 +34,5 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 * [**Low Quality while Dragging**](anti-aliasing)
 * [**Share Axes Between Plots**](shared-axes)
 * [**Custom Right-Click Menu**](right-click-menu)
-* [**Get Position Under Mouse**](mouse-position)
+* [**Get the Mouse Position**](mouse-position)
+* [**Highlight the Data Point Near the Mouse**](mouse-position)
