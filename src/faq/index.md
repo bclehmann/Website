@@ -36,7 +36,7 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 * [Custom Right-Click Menu](right-click-menu)
 * [Get the Mouse Position](mouse-position)
 * [Highlight the Data Point Near the Cursor](mouse-position#highlight-the-data-point-near-the-cursor)
-* How to display live, changing data
+* [How to display live, changing data](live-data)
   * [Changing Fixed-Length Data with SignalPlot](live-data/#changing-fixed-length-data-with-signalplot)
   * [Growing Data with Partial Array Rendering](live-data/#growing-data-with-partial-array-rendering)
   * [Growing Data with ScatterPlotList](live-data/#growing-data-with-scatterplotlist)
