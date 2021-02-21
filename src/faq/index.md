@@ -36,3 +36,5 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 * [**Custom Right-Click Menu**](right-click-menu)
 * [**Get the Mouse Position**](mouse-position)
 * [**Highlight the Data Point Near the Cursor**](mouse-position#highlight-the-data-point-near-the-cursor)
+* How to display live, changing data
+  * [**Live Data with ScatterPlotList**]()
