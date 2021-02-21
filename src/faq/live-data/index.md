@@ -15,7 +15,7 @@ description: How to display data plots of live data that changes continuously.
 
 4. **In multi-threaded environments** use `RenderLock()` to ensure you do not modify the length of data arrays in a Plottable while it is actively rendering. Since rendering iterates through every value in an array, changing the length of that array mid-render can produce array index exceptions. This is typically not a concern in single-thread GUI applications (WinForms), but can arise as an issue when multi-threading is used (WPF).
 
-## Changing Fixed-Length Data with SignalPlot
+## Changing Fixed-Length Data
 
 **After plotting an array you can change its values and re-render at any time.** This is the most performant option for displaying changing fixed-length data. Although this same method can be used for most plot types, Signal plots are almost always the most performant option.
 
@@ -25,7 +25,7 @@ description: How to display data plots of live data that changes continuously.
 
 </div>
 
-* [**Download this example project**](https://github.com/ScottPlot/Website/tree/main/src/faq/live-data/src/)
+* [**Download this example project**](https://github.com/ScottPlot/Website/tree/main/src/faq/live-data/src/ChangingFixedSignal-WinForms)
 
 In this example a fixed-length `readonly` array is created and added to the plot, then a `Timer` calls a method to change the values inside that array and re-render the plot.
 
@@ -55,6 +55,58 @@ private void timer1_Tick(object sender, EventArgs e)
 }
 ```
 
+## Rolling Fixed-Length Data
+
+An alternative way to display data is to update a single point at a time, and when the data runs off the screen "roll" it back to the start. This is similar to how an oscilloscope displays a waveform, and sometimes is described as a circular buffer.
+
+In this example a single scatter plot is created with a fixed-length array. New values are added at a position tracked by `NextIndex`, and when that position becomes larger than the array it rolls over to zero. To make this more obvious a vertical line is often added at the roll point to make it more obvious where the break occurs.
+
+<div class="text-center">
+
+![](src/RollFixedSignal-WinForms/screenshot.gif)
+
+</div>
+
+* [**Download this example project**](https://github.com/ScottPlot/Website/tree/main/src/faq/live-data/src/RollFixedSignal-WinForms)
+
+```cs
+readonly double[] Values = new double[500];
+readonly Stopwatch Stopwatch = Stopwatch.StartNew();
+readonly ScottPlot.Plottable.VLine VerticalLine;
+int NextIndex = 0;
+
+public Form1()
+{
+    InitializeComponent();
+    formsPlot1.Plot.AddSignal(Values);
+    VerticalLine = formsPlot1.Plot.AddVerticalLine(0, Color.Red, 2);
+    formsPlot1.Plot.SetAxisLimits(0, Values.Length, -2, 2);
+}
+
+public void AddDataPoint()
+{
+    Values[NextIndex] = Math.Sin(Stopwatch.Elapsed.TotalSeconds * 3);
+
+    NextIndex += 1;
+    if (NextIndex >= Values.Length)
+        NextIndex = 0;
+
+    VerticalLine.X = NextIndex;
+}
+
+// This timer adds data frequently (every 1 ms)
+private void timer1_Tick(object sender, EventArgs e)
+{
+    AddDataPoint();
+}
+
+// This timer renders infrequently (every 20 ms)
+private void timer2_Tick(object sender, EventArgs e)
+{
+    formsPlot1.Render();
+}
+```
+
 ## Growing Data with Partial Array Rendering
 
 **You can create a large array and only display the first N values, increasing N as new data is added.** This gives the illusion of a growing plot, even though its source is a fixed-length array. The range of visible values is controlled by the `MinRenderIndex` and `MaxRenderIndex` fields of Signal plots and Scatter plots.
@@ -65,7 +117,7 @@ private void timer1_Tick(object sender, EventArgs e)
 
 </div>
 
-* [**Download this example project**](https://github.com/ScottPlot/Website/tree/main/src/faq/live-data/src/)
+* [**Download this example project**](https://github.com/ScottPlot/Website/tree/main/src/faq/live-data/src/MaxRenderIndex-WinForms)
 
 ```cs
 readonly double[] Values = new double[100_000];
