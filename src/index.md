@@ -60,13 +60,11 @@ The [**ScottPlot Cookbook**](cookbook) demonstrates how to create line plots, ba
 
 ### Miscellaneous
 
-* **If you enjoy ScottPlot [***give us a star***](https://github.com/ScottPlot/ScottPlot)! ⭐**
+* **If you enjoy ScottPlot** you can [***give us a star***](https://github.com/ScottPlot/ScottPlot) ⭐
 
-* **New features** are listed on the [releases](https://github.com/ScottPlot/ScottPlot/releases) page on GitHub
+* **New features** are listed on the [releases](https://github.com/ScottPlot/ScottPlot/releases) page
 
 * **Contributions are welcome!** See [contributing.md](https://github.com/ScottPlot/ScottPlot/blob/master/CONTRIBUTING.md) to get started
-
-* **Build ScottPlot from source** with notes in [src/readme.md](https://github.com/ScottPlot/ScottPlot/tree/master/src)
 
 ### About ScottPlot
 ScottPlot was created by [Scott W Harden](https://www.swharden.com/wp/about-scott/) (with many contributions from the open-source community) and is provided under the permissive [MIT license](https://github.com/ScottPlot/ScottPlot/blob/master/LICENSE).
