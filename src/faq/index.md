@@ -24,17 +24,20 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 ## FAQ Topics
 
 ### Plots
-* [**Plot Data using a DateTime Axis**](datetime)
-* [**Custom Padding around the Data Area**](padding)
-* [**Anti-Aliasing**](anti-aliasing)
-* [**Frameless Plots and Data Margin**](padding/#frameless-plot)
+* [Plot Data using a DateTime Axis](datetime)
+* [Custom Padding around the Data Area](padding)
+* [Anti-Aliasing](anti-aliasing)
+* [Frameless Plots and Data Margin](padding/#frameless-plot)
 * [**MultiPlot**](multiplot)
 
 ### User Controls
-* [**Low Quality while Dragging**](anti-aliasing)
-* [**Share Axes Between Plots**](shared-axes)
-* [**Custom Right-Click Menu**](right-click-menu)
-* [**Get the Mouse Position**](mouse-position)
-* [**Highlight the Data Point Near the Cursor**](mouse-position#highlight-the-data-point-near-the-cursor)
+* [Low Quality while Dragging](anti-aliasing)
+* [Share Axes Between Plots](shared-axes)
+* [Custom Right-Click Menu](right-click-menu)
+* [Get the Mouse Position](mouse-position)
+* [Highlight the Data Point Near the Cursor](mouse-position#highlight-the-data-point-near-the-cursor)
 * How to display live, changing data
-  * [**Live Data with ScatterPlotList**]()
+  * [Changing Fixed-Length Data with SignalPlot](live-data/#changing-fixed-length-data-with-signalplot)
+  * [Growing Data with Partial Array Rendering](live-data/#growing-data-with-partial-array-rendering)
+  * [Growing Data with ScatterPlotList](live-data/#growing-data-with-scatterplotlist)
+  * [Growing Data with SignalPlotList](live-data/#growing-data-with-signalplotlist)
