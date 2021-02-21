@@ -28,7 +28,7 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 * [Custom Padding around the Data Area](padding)
 * [Anti-Aliasing](anti-aliasing)
 * [Frameless Plots and Data Margin](padding/#frameless-plot)
-* [**MultiPlot**](multiplot)
+* [MultiPlot](multiplot)
 
 ### User Controls
 * [Low Quality while Dragging](anti-aliasing)
