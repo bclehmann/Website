@@ -11,3 +11,7 @@ RewriteRule ^(quickstart.md.html)$ /scottplot/quickstart [R=301,NC,L]
 RewriteCond %{REQUEST_FILENAME} -d 
 RewriteCond %{REQUEST_FILENAME}/index.md -f
 RewriteRule ^(.*)$ md2html/serveIndex.php [L]
+
+# sitemap
+RewriteEngine On
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
