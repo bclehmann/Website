@@ -21,24 +21,30 @@ Description: Frequently asked questions about the ScottPlot library, user contro
   This page is being actively worked on in February, 2021. See <a href="https://github.com/ScottPlot/Website/issues/6">issue #6</a> for progress details.
 </div>
 
-## FAQ Topics
-
-### Plots
+### Plot: Axis and Ticks
 * [Plot Data using a DateTime Axis](datetime)
-* [Custom Padding around the Data Area](padding)
-* [Anti-Aliasing](anti-aliasing)
-* [Frameless Plots and Data Margin](padding/#frameless-plot)
-* [MultiPlot](multiplot)
+* [Plot Data on Multiple or Non-Standard Axes](multi-axis)
 
-### User Controls
+### Plot: Styling
+* [Custom Padding around the Data Area](padding)
+* [Frameless Plots and Data Margin](padding/#frameless-plot)
+* [Anti-Aliasing](anti-aliasing)
+
+### Plot: Miscellaneous
+* [MultiPlot (multiple plots in a single image)](multiplot)
+
+### User Control: Interactive Behavior
 * [Low Quality while Dragging](anti-aliasing)
 * [Share Axes Between Plots](shared-axes)
 * [Custom Right-Click Menu](right-click-menu)
 * [Get the Mouse Position](mouse-position)
 * [Highlight the Data Point Near the Cursor](mouse-position#highlight-the-data-point-near-the-cursor)
-* [How to display live, changing data](live-data)
-  * [Changing Fixed-Length Data](live-data/#changing-fixed-length-data)
-  * [Rolling Fixed-Length Data](live-data/#rolling-fixed-length-data)
+
+
+### User Control: Live Data
+* [How to display live, changing data in a ScottPlot control](live-data)
+  * [Changing Values in Fixed-Length Data](live-data/#changing-fixed-length-data)
+  * [Rolling/Shifting Values in Fixed-Length Data](live-data/#rolling-fixed-length-data)
   * [Growing Data with Partial Array Rendering](live-data/#growing-data-with-partial-array-rendering)
   * [Growing Data with ScatterPlotList](live-data/#growing-data-with-scatterplotlist)
   * [Growing Data with SignalPlotList](live-data/#growing-data-with-signalplotlist)
