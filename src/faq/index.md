@@ -48,3 +48,7 @@ Description: Frequently asked questions about the ScottPlot library, user contro
   * [Growing Data with Partial Array Rendering](live-data/#growing-data-with-partial-array-rendering)
   * [Growing Data with ScatterPlotList](live-data/#growing-data-with-scatterplotlist)
   * [Growing Data with SignalPlotList](live-data/#growing-data-with-signalplotlist)
+
+### About ScottPlot
+* [Who Created ScottPlot and Why?](history)
+* [How Does ScottPlot Compare to Other Plotting Libraries?](compare)
