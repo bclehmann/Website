@@ -31,7 +31,8 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 * [Anti-Aliasing](anti-aliasing)
 
 ### Plot: Miscellaneous
-* [MultiPlot (multiple plots in a single image)](multiplot)
+* [MultiPlot: Multiple Plots in a Single Image](multiplot)
+* [MVVM Pattern and Data Binding](mvvm)
 
 ### User Control: Interactive Behavior
 * [Low Quality while Dragging](anti-aliasing)
@@ -39,7 +40,6 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 * [Custom Right-Click Menu](right-click-menu)
 * [Get the Mouse Position](mouse-position)
 * [Show the Value of the Point Under the Cursor](mouse-position#highlight-the-data-point-near-the-cursor)
-
 
 ### User Control: Live Data
 * [How to display live, changing data in a ScottPlot control](live-data)
