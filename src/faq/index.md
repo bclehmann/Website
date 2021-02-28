@@ -32,6 +32,7 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 
 ### Plot: Data
 * [How to Plot Data Containing Gaps](data-gaps)
+* [How to Plot Data Containing NaN and Infinity](nan)
 
 ### Plot: Miscellaneous
 * [MultiPlot: Multiple Plots in a Single Image](multiplot)
