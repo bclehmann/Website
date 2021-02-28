@@ -37,6 +37,7 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 ### Plot: Miscellaneous
 * [MultiPlot: Multiple Plots in a Single Image](multiplot)
 * [MVVM Pattern and Data Binding](mvvm)
+* [How to Print a ScottPlot](print)
 
 ### User Control: Interactive Behavior
 * [Low Quality while Dragging](anti-aliasing)
