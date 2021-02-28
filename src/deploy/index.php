@@ -1,5 +1,9 @@
 <?php
 
+// disable dynamic PHP caching so the markdown file is forced to parse every time
+//header("Cache-Control: max-age=6000");
+header("Cache-Control: no-cache");
+
 // Ensure key file exists.
 // It should be stored outside the www folder and permission 400.
 $keyFilePath = realpath('/home/customer/deploy.key');
