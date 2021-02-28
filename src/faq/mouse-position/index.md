@@ -49,6 +49,8 @@ Since it is easy to determine which data point is nearest the cursor, it is poss
 
 ### Show Value Near Mouse with WinForms
 
+This example shows how to plot X/Y data using a Scatter plot, then highlight the point nearest the cursor and display its value (in the window title bar).
+
 [Download the full source code for this demo](https://github.com/ScottPlot/Website/tree/main/src/faq/mouse-position/src/)
 
 ```cs
