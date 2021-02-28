@@ -41,7 +41,7 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 
 ### User Control: Interactive Behavior
 * [Low Quality while Dragging](anti-aliasing)
-* [Share Axes Between Plots](shared-axes)
+* [Multiple Plots with a Shared Axis](shared-axes)
 * [Custom Right-Click Menu](right-click-menu)
 * [Get the Mouse Position](mouse-position)
 * [Show the Value of the Point Under the Cursor](mouse-position#highlight-the-data-point-near-the-cursor)
