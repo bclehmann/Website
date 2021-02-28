@@ -30,6 +30,9 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 * [Frameless Plots and Data Margin](padding/#frameless-plot)
 * [Anti-Aliasing](anti-aliasing)
 
+### Plot: Data
+* [How to Plot Data Containing Gaps](data-gaps)
+
 ### Plot: Miscellaneous
 * [MultiPlot: Multiple Plots in a Single Image](multiplot)
 * [MVVM Pattern and Data Binding](mvvm)
