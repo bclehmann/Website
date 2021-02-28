@@ -101,6 +101,43 @@ private void formsPlot1_MouseMove(object sender, MouseEventArgs e)
 }
 ```
 
+### Working with Signal Plots
+
+Unlike Scatter plots which use `GetPointNearest(x, y)`, Signal plots display evenly-spaced data points and only track the mouse horizontally. When working with Signal plots, call `GetPointNearestX(x)` instead. 
+
+[Download the full source code for this demo](https://github.com/ScottPlot/Website/tree/main/src/faq/mouse-position/src/)
+
+```cs
+private readonly ScottPlot.Plottable.SignalPlot MySignalPlot;
+
+public Form1()
+{
+    InitializeComponent();
+
+    // create and store a scatter plot
+    double[] ys = ScottPlot.DataGen.RandomWalk(100_000);
+    MySignalPlot = formsPlot1.Plot.AddSignal(ys);
+
+    // Add a red circle we can move around later as a highlighted point indicator
+    /* same code as above */
+}
+
+private void formsPlot1_MouseMove(object sender, MouseEventArgs e)(){
+    // determine point nearest the cursor
+    (double mouseCoordX, _) = formsPlot1.GetMouseCoordinates();
+    (double pointX, double pointY, int pointIndex) = MySignalPlot.GetPointNearestX(mouseCoordX);
+
+    // Highlight the point closest to the cursor
+    /* same code as above */
+}
+```
+
+<div class="text-center">
+
+![](highlight-signal.gif)
+
+</div>
+
 ## Notes
 
 ### Consider Performance
