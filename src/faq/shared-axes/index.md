@@ -63,20 +63,11 @@ private void OnAxesChanged(object sender, EventArgs e)
 
 **Axes automatically determine their optimal size based on their font size and tick label content, but users who wish to make the layouts line-up across multiple controls will want to define axis size manually.** By setting the min and max size to the same number, you force that axis to be a fixed size.
 
-### Two Plots with Automatic Axis Sizes 
-![](screenshot-not-matched.png)
-
-### Two Plots with Fixed Axis Sizes 
-![](screenshot-matched.png)
-
-### Fixed Axis Size Demo
-
-[**Download this example from GitHub**](https://github.com/ScottPlot/Website/tree/main/src/faq/shared-axes/src/)
-
-
 Automatic Axis Sizes | Fixed Axis Sizes
 ---|---
-![](screenshot-not-matched.png) | ![](screenshot-matched.png)
+<img src='screenshot-not-matched.png'> | <img src='screenshot-matched.png'>
+
+[**Download this example from GitHub**](https://github.com/ScottPlot/Website/tree/main/src/faq/shared-axes/src/)
 
 ```cs
 // plot sample data with greatly different Y scales
