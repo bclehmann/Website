@@ -73,6 +73,11 @@ private void OnAxesChanged(object sender, EventArgs e)
 
 [**Download this example from GitHub**](https://github.com/ScottPlot/Website/tree/main/src/faq/shared-axes/src/)
 
+
+Automatic Axis Sizes | Fixed Axis Sizes
+---|---
+![](screenshot-not-matched.png) | ![](screenshot-matched.png)
+
 ```cs
 // plot sample data with greatly different Y scales
 Random rand = new Random(0);
