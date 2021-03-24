@@ -17,6 +17,22 @@ Description: These simple examples demonstrate how to use ScottPlot in the conso
 
 ![](TOC)
 
+## Setup
+
+If you're targeting Windows you should be good to go. If you are targeting MacOS or Linux you'll need to install GDI+ first.
+
+For APT:
+```sh
+sudo apt install libgdiplus
+```
+
+For Brew:
+```sh
+brew install mono-libgdiplus
+```
+
+If your package manager isn't listed consider making a suggestion or pull request [here](https://github.com/ScottPlot/Website) to add it.
+
 ## Console Quickstart
 
 **Step 1:** Install the [`ScottPlot`](https://www.nuget.org/packages/ScottPlot) NuGet package

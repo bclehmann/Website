@@ -25,6 +25,7 @@ Description: ScottPlot is a free and open-source plotting library for .NET that 
 
 Create an interactive plot in less than a minute!
 
+* [Setup](quickstart#setup)
 * [Windows Forms](quickstart#windows-forms-quickstart)
 * [WPF](quickstart#wpf-quickstart)
 * [Avalonia](quickstart#avalonia-quickstart)
