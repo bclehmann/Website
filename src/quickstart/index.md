@@ -17,22 +17,6 @@ Description: These simple examples demonstrate how to use ScottPlot in the conso
 
 ![](TOC)
 
-## Setup
-
-If you're targeting Windows you should be good to go. If you are targeting MacOS or Linux you'll need to install GDI+ first.
-
-For APT:
-```sh
-sudo apt install libgdiplus
-```
-
-For Brew:
-```sh
-brew install mono-libgdiplus
-```
-
-If your package manager isn't listed consider making a suggestion or pull request [here](https://github.com/ScottPlot/Website) to add it.
-
 ## Console Quickstart
 
 **Step 1:** Install the [`ScottPlot`](https://www.nuget.org/packages/ScottPlot) NuGet package
@@ -128,3 +112,18 @@ avaPlot1.Plot.AddScatter(dataX, dataY);
 ![](src/quickstart-avalonia/screenshot.png)
 
 _Source code for this application is [available on GitHub](https://github.com/ScottPlot/Website/tree/main/src/quickstart/src/quickstart-avalonia)_
+
+
+## libgdiplus
+
+Linux and MacOS require that [libgdiplus](https://www.mono-project.com/docs/gui/libgdiplus) is installed before using ScottPlot:
+
+```sh
+# install with APT
+sudo apt install libgdiplus
+```
+
+```sh
+# install with Brew
+brew install mono-libgdiplus
+```
