@@ -112,3 +112,18 @@ avaPlot1.Plot.AddScatter(dataX, dataY);
 ![](src/quickstart-avalonia/screenshot.png)
 
 _Source code for this application is [available on GitHub](https://github.com/ScottPlot/Website/tree/main/src/quickstart/src/quickstart-avalonia)_
+
+
+## libgdiplus
+
+Linux and MacOS require that [libgdiplus](https://www.mono-project.com/docs/gui/libgdiplus) is installed before using ScottPlot:
+
+```sh
+# install with APT
+sudo apt install libgdiplus
+```
+
+```sh
+# install with Brew
+brew install mono-libgdiplus
+```

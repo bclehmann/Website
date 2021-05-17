@@ -38,6 +38,8 @@ Create an interactive plot in less than a minute!
 
 _ScottPlot [3.1.6](https://github.com/ScottPlot/ScottPlot/releases/tag/3.1.6) was the final version to support .NET Framework 4.5_
 
+_Linux and MacOS users must install [libgdiplus](quickstart#libgdiplus) to use ScottPlot_
+
 ### ScottPlot Cookbook
 
 The [**ScottPlot Cookbook**](cookbook) demonstrates how to create line plots, bar charts, pie graphs, scatter plots, and more with just a few lines of code. An interactive version of every cookbook example is available as part of the [ScottPlot Demo](demo) application.
