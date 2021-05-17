@@ -116,14 +116,16 @@ _Source code for this application is [available on GitHub](https://github.com/Sc
 
 ## libgdiplus
 
-Linux and MacOS require that [libgdiplus](https://www.mono-project.com/docs/gui/libgdiplus) is installed before using ScottPlot:
+Non-Windows systems require [libgdiplus](https://www.mono-project.com/docs/gui/libgdiplus) to use ScottPlot.
 
-```sh
-# install with APT
+**Linux users** can install this manually with APT:
+
+```bash
 sudo apt install libgdiplus
 ```
 
-```sh
-# install with Brew
+**MacOS users** may find that [libgdiplus packaging](https://github.com/CoreCompat/libgdiplus-packaging) is loaded automatically when acquiring ScottPlot with NuGet. If not, it can be installed manually:
+
+```bash
 brew install mono-libgdiplus
 ```
