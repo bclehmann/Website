@@ -7,11 +7,6 @@ Description: This page summarizes the main concepts behind ScottPlot and is inte
 
 This page summarizes the main concepts behind ScottPlot and is intended to help familiarize new users to its API.
 
-<div class="alert alert-warning" role="alert">
-  <h4 class="alert-heading">⚠️ Pre-Release Documentation</h4>
-  This documentation is specific to <strong>ScottPlot 4.1</strong> which is currently available as a pre-release package on NuGet
-</div>
-
 **Table of Contents:**
 
 ![](TOC)
