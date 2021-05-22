@@ -8,11 +8,6 @@ Description: These simple examples demonstrate how to use ScottPlot in the conso
 * These examples demonstrate how to plot simple data with ScottPlot
 * The **[ScottPlot Cookbook](http://swharden.com/scottplot/cookbook)** has many more advanced examples
 
-<div class="alert alert-warning" role="alert">
-  <h4 class="alert-heading">⚠️ Pre-Release Documentation</h4>
-  This documentation is specific to <strong>ScottPlot 4.1</strong> which is currently available as a pre-release package on NuGet
-</div>
-
 **Table of Contents:**
 
 ![](TOC)
