@@ -20,8 +20,8 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 </div>
 
 ### Plot: Axis and Ticks
-* [Plot Data using a DateTime Axis](datetime)
-* [Plot Data on Multiple or Non-Standard Axes](multi-axis)
+* [DateTime Axis Units](datetime)
+* [Using Multiple or Additional Axes](multi-axis)
 
 ### Plot: Styling
 * [Custom Padding around the Data Area](padding)
@@ -29,8 +29,9 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 * [Anti-Aliasing](anti-aliasing)
 
 ### Plot: Data
-* [How to Plot Data Containing Gaps](data-gaps)
-* [How to Plot Data Containing NaN and Infinity](nan)
+* [Plotting Data Types Other than `double[]`](data-format)
+* [Data Containing Gaps](data-gaps)
+* [Data Containing NaN and Infinity](nan)
 
 ### Plot: Miscellaneous
 * [MultiPlot: Multiple Plots in a Single Image](multiplot)
@@ -56,5 +57,6 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 * [What's New in ScottPlot 4.1](version-4.1)
 
 ### About ScottPlot
+* [Why the Name _ScottPlot_?](history/#what-s-with-the-name)
 * [Who Created ScottPlot and Why?](history)
-* [How Does ScottPlot Compare to Other Plotting Libraries?](compare)
+* [ScottPlot vs. Other Plotting Libraries](compare)
