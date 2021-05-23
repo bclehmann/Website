@@ -25,7 +25,6 @@ Version | Date | Cookbook | API
 4.1.4-beta | 2021-02-14 | [Cookbook](../cookbooks/4.1.4-beta)
 4.1.3-beta | 2020-12-27 | [Cookbook](../cookbooks/4.1.3-beta)
 4.1.2-beta | 2020-12-12 | [Cookbook](../cookbooks/4.1.2-beta)
-4.0.48 | 2020-12-27 | [Cookbook](../cookbooks/4.0.48)
 4.0.47 | 2020-12-11 | [Cookbook](../cookbooks/4.0.47)
 4.0.46 | 2020-12-11 | [Cookbook](../cookbooks/4.0.46)
 4.0.44 | 2020-11-22 | [Cookbook](../cookbooks/4.0.44)
