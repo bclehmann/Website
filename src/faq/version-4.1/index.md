@@ -5,7 +5,7 @@ description: Changes likely to be encountered when upgrading from ScottPlot 4.0 
 
 # What's New in ScottPlot 4.1
 
-**ScottPlot 4.1 replaced ScottPlot 4.0 in May, 2021.** This page summarizes major new features and changes likely to be encountered when upgrading from ScottPlot 4.0 and 4.1.
+**ScottPlot 4.1 replaced ScottPlot 4.0 in May, 2021.** This page summarizes major new features and changes likely to be encountered when upgrading from ScottPlot 4.0 and 4.1. The [**ScottPlot Cookbook**](https://swharden.com/scottplot/cookbook) is an excellent source of documentation for how to use these new features.
 
 ### Major New Features
 * Support for multiple X and Y axes
