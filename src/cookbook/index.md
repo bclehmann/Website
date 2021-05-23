@@ -9,6 +9,13 @@ Description: Example plots shown next to the source code used to create them
 
 New cookbooks are only generated after major features have been added to ScottPlot. The changelog and notes about every version are on the [ScottPlot releases page](https://github.com/ScottPlot/ScottPlot/releases).
 
+## ScottPlot 4.1
+
+<div class="alert alert-primary" role="alert">
+  <h4 class="alert-heading">⚠️ ScottPlot 4.1 Released in May, 2021</h4>
+  Version 4.1 has some important changes from 4.0 which may affect existing projects.
+  See the <a href="../faq/version-4.1">What's New in ScottPlot 4.1</a> page for a summary of major changes.
+</div>
 
 Version | Date | Cookbook | API
 ---|---|---|---
@@ -25,6 +32,13 @@ Version | Date | Cookbook | API
 4.1.4-beta | 2021-02-14 | [Cookbook](../cookbooks/4.1.4-beta)
 4.1.3-beta | 2020-12-27 | [Cookbook](../cookbooks/4.1.3-beta)
 4.1.2-beta | 2020-12-12 | [Cookbook](../cookbooks/4.1.2-beta)
+
+## ScottPlot 4.0
+
+ScottPlot 4.0 is stable, but as of late 2020 it is no longer receiving major updates.
+
+Version | Date | Cookbook
+---|---|---
 4.0.47 | 2020-12-11 | [Cookbook](../cookbooks/4.0.47)
 4.0.46 | 2020-12-11 | [Cookbook](../cookbooks/4.0.46)
 4.0.44 | 2020-11-22 | [Cookbook](../cookbooks/4.0.44)
@@ -44,6 +58,13 @@ Version | Date | Cookbook | API
 4.0.23 | 2020-03-23 | [Cookbook](../cookbooks/4.0.23)
 4.0.22 | 2020-03-16 | [Cookbook](../cookbooks/4.0.22)
 4.0.21 | 2020-03-14 | [Cookbook](../cookbooks/4.0.21)
+
+## ScottPlot 3.1
+
+This is the last version that supported .NET Framework 4.5
+
+Version | Date | Cookbook
+---|---|---
 3.1.6 | 2019-10-10 | [Cookbook](../cookbooks/3.1.6)
 
 </div>
