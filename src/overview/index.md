@@ -7,6 +7,13 @@ Description: This page summarizes the main concepts behind ScottPlot and is inte
 
 This page summarizes the main concepts behind ScottPlot and is intended to help familiarize new users to its API.
 
+<div class="alert alert-primary" role="alert">
+  <h4 class="alert-heading">⚠️ This Page Contains Outdated Information</h4>
+  This page is written to describe ScottPlot 4.0.
+  Version 4.1 has some important changes from 4.0 which may affect existing projects.
+  See the <a href="../faq/version-4.1">What's New in ScottPlot 4.1</a> page for a summary of major changes.
+</div>
+
 **Table of Contents:**
 
 ![](TOC)
