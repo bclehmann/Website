@@ -50,15 +50,15 @@ The [**ScottPlot Cookbook**](cookbook) demonstrates how to create line plots, ba
 
 </div>
 
-### Plot in the Cloud
+### Plot in the Cloud with ScottPlot
 
-**This figure is an example of ScottPlot running in the cloud.** Once daily an [Azure Function](https://azure.microsoft.com/en-us/services/functions/) logs the number of stars this repository has and creates a graph of the star history using ScottPlot. Since the output is simply a static image accessible by a URL, it can be displayed in places where JavaScript is not permitted like in this readme file. Rendering plots server-side allows automatically-updating plots to be displayed in many interesting places. Source code can be found in the [StarGraph](https://github.com/swharden/StarGraph) repository.
+**This figure is an example of ScottPlot running in the cloud.** Every hour an [Azure Function](https://azure.microsoft.com/en-us/services/functions/) hits the [GitHub API](https://docs.github.com/en/rest) to get an updated list of stargazers, then uses ScottPlot to create a figure from this data and saves it to web-accessible blob storage. Since this automatically-generated plot is just a static image accessible by a URL, it can be displayed in places where JavaScript is not permitted (like in this readme file). Creating plots as images on a server allows dynamic plots to be displayed in many interesting places!
 
-<div class="text-center">
-
-![](https://swhardendev.z13.web.core.windows.net/packagestats/scottplot-stars.png)
-
-</div>
+<p align="center">
+  <a href="https://stargraph.z20.web.core.windows.net/scottplot-stars.png" target="_blank">
+    <img src="https://stargraph.z20.web.core.windows.net/scottplot-stars.png?">
+  </a>
+</p>
 
 ### Miscellaneous
 
