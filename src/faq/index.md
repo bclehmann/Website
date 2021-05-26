@@ -5,19 +5,18 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 
 ## ScottPlot FAQ
 
-### Getting Started
-
-* Read the [**ScottPlot Overview**](https://swharden.com/scottplot/overview) for a general introduction to the ScottPlot API
-
-* Look over the [**ScottPlot Cookbook**](https://swharden.com/scottplot/cookbook) for code examples demonstrating common use cases
-
-* This page contains answers to frequently asked questions and notes about uncommon use cases
+This page contains answers to frequently asked questions and notes about uncommon use cases
 
 <div class="alert alert-primary" role="alert">
   <h4 class="alert-heading">⚠️ ScottPlot 4.1 Released in May, 2021</h4>
   Version 4.1 has some important changes from 4.0 which may affect existing projects.
   See the <a href="version-4.1">What's New in ScottPlot 4.1</a> page for a summary of major changes.
 </div>
+
+### Introduction to ScottPlot
+* [Creating, Adding, and Modifying Plottable objects](plottable)
+* [Favor SignalPlot over ScatterPlot](scatter-vs-signal)
+* [Axis Styles, Axis Limits, and Multiple Axes](axis)
 
 ### Plot: Axis and Ticks
 * [DateTime Axis Units](datetime)
