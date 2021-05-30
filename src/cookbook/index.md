@@ -7,31 +7,34 @@ Description: Example plots shown next to the source code used to create them
 
 **The ScottPlot Cookbook is a collection of example plots shown next to the source code used to create them.** Because the API evolves over time, each cookbook is specific to the version of ScottPlot that was used to create it. 
 
-New cookbooks are only generated after major features have been added to ScottPlot. The changelog and notes about every version are on the [ScottPlot releases page](https://github.com/ScottPlot/ScottPlot/releases).
-
-## ScottPlot 4.1
-
 <div class="alert alert-primary" role="alert">
   <h4 class="alert-heading">⚠️ ScottPlot 4.1 Released in May, 2021</h4>
   Version 4.1 has some important changes from 4.0 which may affect existing projects.
   See the <a href="../faq/version-4.1">What's New in ScottPlot 4.1</a> page for a summary of major changes.
 </div>
 
-Version | Date | Cookbook | API
----|---|---|---
-4.1.14 | 2021-05-22 | [Cookbook](../cookbooks/4.1.14) | [API](../cookbooks/4.1.14/docfx)
-4.1.13-beta | 2021-05-02 | [Cookbook](../cookbooks/4.1.13-beta) | [API](../cookbooks/4.1.13-beta/docfx)
-4.1.12-beta | 2021-04-12 | [Cookbook](../cookbooks/4.1.12-beta) | [API](../cookbooks/4.1.12-beta/#the-plot-module)
-4.1.11-beta | 2021-03-29 | [Cookbook](../cookbooks/4.1.11-beta) | [API](../cookbooks/4.1.11-beta/#the-plot-module)
-4.1.10-beta | 2021-03-21 | [Cookbook](../cookbooks/4.1.10-beta) | [API](../cookbooks/4.1.10-beta/#the-plot-module)
-4.1.9-beta | 2021-02-21 | [Cookbook](../cookbooks/4.1.9-beta) | [API](../cookbooks/4.1.9-beta/#the-plot-module)
-4.1.8-beta | 2021-02-16 | [Cookbook](../cookbooks/4.1.8-beta) | [API](../cookbooks/4.1.8-beta/#the-plot-module)
-4.1.7-beta | 2021-02-14 | [Cookbook](../cookbooks/4.1.7-beta) | [API](../cookbooks/4.1.7-beta/#the-plot-module)
-4.1.6-beta | 2021-02-08 | [Cookbook](../cookbooks/4.1.6-beta) | [API](../cookbooks/4.1.6-beta/#the-plot-module)
-4.1.5-beta | 2021-02-01 | [Cookbook](../cookbooks/4.1.5-beta)
-4.1.4-beta | 2021-02-14 | [Cookbook](../cookbooks/4.1.4-beta)
-4.1.3-beta | 2020-12-27 | [Cookbook](../cookbooks/4.1.3-beta)
-4.1.2-beta | 2020-12-12 | [Cookbook](../cookbooks/4.1.2-beta)
+## ScottPlot 4.1
+
+New cookbooks are only generated after major features have been added to ScottPlot. 
+
+The changelog and notes about every version are on the [ScottPlot releases page](https://github.com/ScottPlot/ScottPlot/releases).
+
+Version | Date | Cookbook
+---|---|---
+4.1.16 | 2021-05-30 | [**Cookbook**](../cookbooks/4.1.16) ([API](https://www.fuget.org/packages/ScottPlot/4.1.16))
+4.1.14 | 2021-05-22 | [Cookbook](../cookbooks/4.1.14) ([API](https://www.fuget.org/packages/ScottPlot/4.1.14))
+4.1.13-beta | 2021-05-02 | [Cookbook](../cookbooks/4.1.13-beta) ([API](https://www.fuget.org/packages/ScottPlot/4.1.13-beta))
+4.1.12-beta | 2021-04-12 | [Cookbook](../cookbooks/4.1.12-beta) ([API](https://www.fuget.org/packages/ScottPlot/4.1.12-beta))
+4.1.11-beta | 2021-03-29 | [Cookbook](../cookbooks/4.1.11-beta) ([API](https://www.fuget.org/packages/ScottPlot/4.1.11-beta))
+4.1.10-beta | 2021-03-21 | [Cookbook](../cookbooks/4.1.10-beta) ([API](https://www.fuget.org/packages/ScottPlot/4.1.10-beta))
+4.1.9-beta | 2021-02-21 | [Cookbook](../cookbooks/4.1.9-beta) ([API](https://www.fuget.org/packages/ScottPlot/4.1.9-beta))
+4.1.8-beta | 2021-02-16 | [Cookbook](../cookbooks/4.1.8-beta) ([API](https://www.fuget.org/packages/ScottPlot/4.1.8-beta))
+4.1.7-beta | 2021-02-14 | [Cookbook](../cookbooks/4.1.7-beta) ([API](https://www.fuget.org/packages/ScottPlot/4.1.7-beta))
+4.1.6-beta | 2021-02-08 | [Cookbook](../cookbooks/4.1.6-beta) ([API](https://www.fuget.org/packages/ScottPlot/4.1.6-beta))
+4.1.5-beta | 2021-02-01 | [Cookbook](../cookbooks/4.1.5-beta) ([API](https://www.fuget.org/packages/ScottPlot/4.1.5-beta))
+4.1.4-beta | 2021-02-14 | [Cookbook](../cookbooks/4.1.4-beta) ([API](https://www.fuget.org/packages/ScottPlot/4.1.4-beta))
+4.1.3-beta | 2020-12-27 | [Cookbook](../cookbooks/4.1.3-beta) ([API](https://www.fuget.org/packages/ScottPlot/4.1.3-beta))
+4.1.2-beta | 2020-12-12 | [Cookbook](../cookbooks/4.1.2-beta) ([API](https://www.fuget.org/packages/ScottPlot/4.1.2-beta))
 
 ## ScottPlot 4.0
 
