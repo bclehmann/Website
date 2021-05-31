@@ -37,7 +37,7 @@ Description: Example plots shown next to the source code used to create them
   See the <a href="../faq/version-4.1">What's New in ScottPlot 4.1</a> page for a summary of major changes.
 </div>
 
-### Primary API Reference
+### ScottPlot API Reference
 
 * [**ScottPlot.Plot**](https://www.fuget.org/packages/ScottPlot/latest/lib/netstandard2.0/ScottPlot.dll/ScottPlot/Plot) - This is the primary object users interact with to create and render plots
 * [**ScottPlot.Plottable**](https://www.fuget.org/packages/ScottPlot/latest/lib/netstandard2.0/ScottPlot.dll/ScottPlot.Plottable) - This namespace contains all major plot types
@@ -53,8 +53,6 @@ Description: Example plots shown next to the source code used to create them
 ### Historical Cookbook Versions
 
 New cookbooks are only generated after major features have been added to ScottPlot. 
-
-The changelog and notes about every version are on the [ScottPlot releases page](https://github.com/ScottPlot/ScottPlot/releases).
 
 Version | Date | Cookbook | Release Notes
 ---|---|---|---
