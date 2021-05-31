@@ -51,7 +51,7 @@ for line in versions.split("\n"):
     apiUrl = f"https://www.fuget.org/packages/ScottPlot/{version}"
     controlUrl = f"https://www.fuget.org/packages/ScottPlot.WinForms/{version}"
     releaseNotesUrl = f"https://github.com/ScottPlot/ScottPlot/releases/tag/{version}"
-    line = f"{version} | {date} | [Cookbook]({cookbookUrl}) | [ScottPlot API]({apiUrl}) | [Control API]({controlUrl}) | [Release Notes]({releaseNotesUrl})"
+    line = f"{version} | {date} | [Cookbook]({cookbookUrl}) | [Release Notes]({releaseNotesUrl})"
     all += line+"\n"
 
 print(all)

@@ -37,49 +37,61 @@ Description: Example plots shown next to the source code used to create them
   See the <a href="../faq/version-4.1">What's New in ScottPlot 4.1</a> page for a summary of major changes.
 </div>
 
-### Other Cookbook Versions
+### Primary API Reference
+
+* [**ScottPlot.Plot**](https://www.fuget.org/packages/ScottPlot/latest/lib/netstandard2.0/ScottPlot.dll/ScottPlot/Plot) - This is the primary object users interact with to create and render plots
+* [**ScottPlot.Plottable**](https://www.fuget.org/packages/ScottPlot/latest/lib/netstandard2.0/ScottPlot.dll/ScottPlot.Plottable) - This namespace contains all major plot types
+* [**ScottPlot.DataGen**](https://www.fuget.org/packages/ScottPlot/latest/lib/netstandard2.0/ScottPlot.dll/ScottPlot/DataGen) - This class generates sample data useful for testing
+
+### User Control API Reference
+* [**Configuration**](https://www.fuget.org/packages/ScottPlot/latest/lib/netstandard2.0/ScottPlot.dll/ScottPlot.Control/Configuration) - This object is exposed in all controls and is used to modify their behavior
+* [**ScottPlot.WinForms.FormsPlot**](https://www.fuget.org/packages/ScottPlot.WinForms/latest/lib/netcoreapp3.1/ScottPlot.WinForms.dll/ScottPlot/FormsPlot) - Windows Forms control
+* [**ScottPlot.WPF.WpfPlot**](https://www.fuget.org/packages/ScottPlot.WPF/latest/lib/netcoreapp3.1/ScottPlot.WPF.dll/ScottPlot/WpfPlot) - Windows Presentation Foundation Control
+* [**ScottPlot.Avalonia.AvaPlot**](https://www.fuget.org/packages/ScottPlot.Avalonia/latest/lib/netcoreapp3.1/ScottPlot.Avalonia.dll/ScottPlot.Avalonia/AvaPlot) - Avalonia Control
+
+
+### Historical Cookbook Versions
 
 New cookbooks are only generated after major features have been added to ScottPlot. 
 
 The changelog and notes about every version are on the [ScottPlot releases page](https://github.com/ScottPlot/ScottPlot/releases).
 
-Version | Date | Cookbook | ScottPlot API | Control API | Release Notes
----|---|---|---|---|---
-4.1.16 | 2021-05-30 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.16) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.1.16) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.1.16) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.16)
-4.1.14 | 2021-05-22 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.14) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.1.14) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.1.14) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.14)
-4.1.13-beta | 2021-05-02 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.13-beta) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.1.13-beta) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.1.13-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.13-beta)
-4.1.12-beta | 2021-04-12 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.12-beta) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.1.12-beta) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.1.12-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.12-beta)
-4.1.11-beta | 2021-03-29 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.11-beta) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.1.11-beta) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.1.11-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.11-beta)
-4.1.10-beta | 2021-03-21 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.10-beta) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.1.10-beta) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.1.10-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.10-beta)
-4.1.9-beta | 2021-02-21 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.9-beta) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.1.9-beta) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.1.9-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.9-beta)
-4.1.8-beta | 2021-02-16 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.8-beta) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.1.8-beta) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.1.8-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.8-beta)
-4.1.7-beta | 2021-02-14 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.7-beta) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.1.7-beta) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.1.7-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.7-beta)
-4.1.6-beta | 2021-02-08 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.6-beta) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.1.6-beta) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.1.6-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.6-beta)
-4.1.5-beta | 2021-02-01 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.5-beta) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.1.5-beta) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.1.5-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.5-beta)
-4.1.4-beta | 2021-02-14 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.4-beta) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.1.4-beta) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.1.4-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.4-beta)
-4.1.3-beta | 2020-12-27 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.3-beta) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.1.3-beta) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.1.3-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.3-beta)
-4.1.2-beta | 2020-12-12 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.2-beta) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.1.2-beta) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.1.2-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.2-beta)
-4.0.47 | 2020-12-11 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.47) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.0.47) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.0.47) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.47)
-4.0.46 | 2020-12-11 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.46) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.0.46) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.0.46) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.46)
-4.0.44 | 2020-11-22 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.44) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.0.44) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.0.44) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.44)
-4.0.40 | 2020-09-20 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.40) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.0.40) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.0.40) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.40)
-4.0.38 | 2020-07-06 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.38) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.0.38) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.0.38) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.38)
-4.0.36 | 2020-06-21 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.36) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.0.36) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.0.36) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.36)
-4.0.35 | 2020-09-09 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.35) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.0.35) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.0.35) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.35)
-4.0.32 | 2020-05-17 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.32) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.0.32) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.0.32) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.32)
-4.0.31 | 2020-05-05 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.31) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.0.31) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.0.31) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.31)
-4.0.30 | 2020-05-03 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.30) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.0.30) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.0.30) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.30)
-4.0.29 | 2020-04-11 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.29) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.0.29) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.0.29) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.29)
-4.0.28 | 2020-04-07 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.28) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.0.28) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.0.28) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.28)
-4.0.27 | 2020-04-05 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.27) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.0.27) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.0.27) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.27)
-4.0.26 | 2020-04-04 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.26) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.0.26) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.0.26) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.26)
-4.0.25 | 2020-03-29 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.25) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.0.25) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.0.25) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.25)
-4.0.24 | 2020-03-27 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.24) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.0.24) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.0.24) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.24)
-4.0.23 | 2020-03-23 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.23) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.0.23) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.0.23) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.23)
-4.0.22 | 2020-03-16 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.22) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.0.22) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.0.22) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.22)
-4.0.21 | 2020-03-14 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.21) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/4.0.21) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/4.0.21) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.21)
-3.1.6 | 2019-10-10 | [Cookbook](https://swharden.com/scottplot/cookbooks/3.1.6) | [ScottPlot API](https://www.fuget.org/packages/ScottPlot/3.1.6) | [Control API](https://www.fuget.org/packages/ScottPlot.WinForms/3.1.6) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/3.1.6)
-
+Version | Date | Cookbook | Release Notes
+---|---|---|---
+4.1.16 | 2021-05-30 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.16) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.16)
+4.1.14 | 2021-05-22 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.14) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.14)
+4.1.13-beta | 2021-05-02 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.13-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.13-beta)
+4.1.12-beta | 2021-04-12 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.12-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.12-beta)
+4.1.11-beta | 2021-03-29 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.11-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.11-beta)
+4.1.10-beta | 2021-03-21 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.10-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.10-beta)
+4.1.9-beta | 2021-02-21 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.9-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.9-beta)
+4.1.8-beta | 2021-02-16 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.8-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.8-beta)
+4.1.7-beta | 2021-02-14 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.7-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.7-beta)
+4.1.6-beta | 2021-02-08 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.6-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.6-beta)
+4.1.5-beta | 2021-02-01 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.5-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.5-beta)
+4.1.4-beta | 2021-02-14 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.4-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.4-beta)
+4.1.3-beta | 2020-12-27 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.3-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.3-beta)
+4.1.2-beta | 2020-12-12 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.2-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.2-beta)
+4.0.47 | 2020-12-11 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.47) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.47)
+4.0.46 | 2020-12-11 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.46) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.46)
+4.0.44 | 2020-11-22 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.44) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.44)
+4.0.40 | 2020-09-20 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.40) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.40)
+4.0.38 | 2020-07-06 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.38) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.38)
+4.0.36 | 2020-06-21 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.36) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.36)
+4.0.35 | 2020-09-09 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.35) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.35)
+4.0.32 | 2020-05-17 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.32) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.32)
+4.0.31 | 2020-05-05 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.31) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.31)
+4.0.30 | 2020-05-03 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.30) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.30)
+4.0.29 | 2020-04-11 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.29) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.29)
+4.0.28 | 2020-04-07 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.28) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.28)
+4.0.27 | 2020-04-05 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.27) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.27)
+4.0.26 | 2020-04-04 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.26) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.26)
+4.0.25 | 2020-03-29 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.25) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.25)
+4.0.24 | 2020-03-27 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.24) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.24)
+4.0.23 | 2020-03-23 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.23) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.23)
+4.0.22 | 2020-03-16 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.22) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.22)
+4.0.21 | 2020-03-14 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.0.21) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.0.21)
+3.1.6 | 2019-10-10 | [Cookbook](https://swharden.com/scottplot/cookbooks/3.1.6) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/3.1.6)
 
 
 * Late versions of `4.0.x` are stable, but as of late 2020 are no longer receiving major updates.
