@@ -31,12 +31,6 @@ Description: Example plots shown next to the source code used to create them
     </div>
 </div>
 
-<div class="alert alert-primary" role="alert">
-  <h4 class="alert-heading">⚠️ ScottPlot 4.1 Released in May, 2021</h4>
-  Version 4.1 has some important changes from 4.0 which may affect existing projects.
-  See the <a href="../faq/version-4.1">What's New in ScottPlot 4.1</a> page for a summary of major changes.
-</div>
-
 ### ScottPlot API Reference
 
 * [**ScottPlot.Plot**](https://www.fuget.org/packages/ScottPlot/latest/lib/netstandard2.0/ScottPlot.dll/ScottPlot/Plot) - This is the primary object users interact with to create and render plots
@@ -56,6 +50,7 @@ New cookbooks are only generated after major features have been added to ScottPl
 
 Version | Date | Cookbook | Release Notes
 ---|---|---|---
+4.1.17 | 2021-08-24 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.17) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.17)
 4.1.16 | 2021-05-30 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.16) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.16)
 4.1.14 | 2021-05-22 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.14) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.14)
 4.1.13-beta | 2021-05-02 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.13-beta) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.13-beta)
