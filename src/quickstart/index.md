@@ -119,6 +119,12 @@ Non-Windows systems require [libgdiplus](https://www.mono-project.com/docs/gui/l
 sudo apt install libgdiplus
 ```
 
+Linux users may experience text rendering issues. These can be fixed by explicitly adding `System.Drawing.Common` as a dependency:
+
+```sh
+dotnet add package System.Drawing.Common
+```
+
 **MacOS users** may find that [libgdiplus packaging](https://github.com/CoreCompat/libgdiplus-packaging) is loaded automatically when acquiring ScottPlot with NuGet. If not, it can be installed manually:
 
 ```bash
