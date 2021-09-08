@@ -15,23 +15,23 @@ Description: A click-to-run application designed to make it easy to assess the c
 
 ## Download
 
-<div class="container p-2">
+<div class="container p-2 mb-3">
     <div class="row">
-        <div class="col">
+        <div class="col text-center">
             <a href="https://swharden.com/scottplot/demos/ScottPlotDemo-4.1.18-WinForms.zip"
                 class="btn btn-success btn-lg shadow-sm">
                 <div class="fs-3">Windows Forms</div>
                 <div class="fs-6 fw-light">ScottPlot 4.1.18 Demo</div>
             </a>
         </div>
-        <div class="col">
+        <div class="col text-center">
             <a href="https://swharden.com/scottplot/demos/ScottPlotDemo-4.1.18-WPF.zip"
                 class="btn btn-primary btn-lg shadow-sm">
                 <div class="fs-3">WPF</div>
                 <div class="fs-6 fw-light">ScottPlot 4.1.18 Demo</div>
             </a>
         </div>
-        <div class="col">
+        <div class="col text-center">
             <a href="https://swharden.com/scottplot/demos/ScottPlotDemo-4.1.18-Avalonia.zip"
                 class="btn btn-secondary btn-lg shadow-sm">
                 <div class="fs-3">Avalonia</div>
