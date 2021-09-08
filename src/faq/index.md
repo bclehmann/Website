@@ -7,11 +7,13 @@ Description: Frequently asked questions about the ScottPlot library, user contro
 
 This page contains answers to frequently asked questions and notes about uncommon use cases
 
+<!--
 <div class="alert alert-primary" role="alert">
   <h4 class="alert-heading">⚠️ ScottPlot 4.1 Released in May, 2021</h4>
   Version 4.1 has some important changes from 4.0 which may affect existing projects.
   See the <a href="version-4.1">What's New in ScottPlot 4.1</a> page for a summary of major changes.
 </div>
+-->
 
 ### Introduction to ScottPlot
 * [Creating, Adding, and Modifying Plottable objects](plottable)
