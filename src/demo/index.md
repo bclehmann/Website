@@ -15,7 +15,7 @@ Description: A click-to-run application designed to make it easy to assess the c
 
 ## Download
 
-<div class="border container p-5">
+<div class="container p-2">
     <div class="row">
         <div class="col">
             <a href="https://swharden.com/scottplot/demos/ScottPlotDemo-4.1.18-WinForms.zip"
