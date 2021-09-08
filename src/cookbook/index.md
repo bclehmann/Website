@@ -50,6 +50,7 @@ New cookbooks are only generated after major features have been added to ScottPl
 
 Version | Date | Cookbook | Release Notes
 ---|---|---|---
+4.1.18 | 2021-09-07 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.18) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.18)
 4.1.17 | 2021-08-24 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.17) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.17)
 4.1.16 | 2021-05-30 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.16) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.16)
 4.1.14 | 2021-05-22 | [Cookbook](https://swharden.com/scottplot/cookbooks/4.1.14) | [Release Notes](https://github.com/ScottPlot/ScottPlot/releases/tag/4.1.14)
