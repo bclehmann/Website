@@ -29,6 +29,7 @@ Create an interactive plot in less than a minute!
 * [WPF](quickstart#wpf-quickstart)
 * [Avalonia](quickstart#avalonia-quickstart)
 * [Console Application](quickstart#console-quickstart)
+* [Console Application (F#)](quickstart#console-quickstart-f)
 
 ### Supported Platforms
 

@@ -30,6 +30,24 @@ plt.SaveFig("quickstart.png");
 
 _Source code for this application is [available on GitHub](https://github.com/ScottPlot/Website/tree/main/src/quickstart/src/quickstart-console)_
 
+## Console Quickstart (F#)
+
+**Step 1:** Install the [`ScottPlot`](https://www.nuget.org/packages/ScottPlot) NuGet package
+
+**Step 2:** Add the following to your start-up sequence:
+
+```fs
+let dataX = [| 1.0 .. 5.0 |]
+let dataY = [| for x in dataX -> x * x |]
+let plt = Plot(400, 300);
+plt.AddScatter(dataX, dataY);
+plt.SaveFig("quickstart.png");
+```
+
+![](src/quickstart-console/screenshot.png)
+
+_Source code for this application is [available on GitHub](https://github.com/ScottPlot/Website/tree/main/src/quickstart/src/quickstart-console-fsharp)_
+
 ## Windows Forms Quickstart
 
 **Step 1:** Install the [`ScottPlot.WinForms`](https://www.nuget.org/packages/ScottPlot.WinForms) NuGet package
